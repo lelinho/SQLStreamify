@@ -13,6 +13,15 @@ SELECT * FROM history_uint WHERE itemid=64431 ORDER BY clock DESC limit 30
 
 
 
+- Construir imagem:
+docker build -t app_consulta .
+
+
+- Executar o container:
+docker run -it --rm --name app --link mysql app_consulta
+
+
+
 
 - Deletar regras criadas
 ufw status numbered
