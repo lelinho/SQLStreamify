@@ -9,16 +9,15 @@ ufw allow 3306
 - Executar container do phpMyAdmin
 docker run --rm --name myadmin -it -e PMA_HOST=172.17.0.1 -e PMA_PORT=3306 -p 8080:80 phpmyadmin/phpmyadmin
 
-SELECT * FROM history_uint WHERE itemid=64431 ORDER BY clock DESC limit 30 
+SELECT * FROM history_uint WHERE itemid=64431 DESC limit 30 
 
 
 
 - Construir imagem:
-docker build -t app_consulta .
-
+docker build -t container_consulta .
 
 - Executar o container:
-docker run -it --rm --name app --link mysql app_consulta
+docker run -it --rm --name consulta container_consulta
 
 
 
