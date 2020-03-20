@@ -4,13 +4,13 @@ SERVIDOR 200.145.181.62
 	https://receitasdecodigo.com.br/banco-de-dados/liberar-acesso-remoto-para-servidores-mysql
 	
 - Liberar porta 3306
-ufw allow 3306
+ufw allow from 172.17.0.0/24 to any port 3306
+
 
 - Executar container do phpMyAdmin
 docker run --rm --name myadmin -it -e PMA_HOST=172.17.0.1 -e PMA_PORT=3306 -p 8080:80 phpmyadmin/phpmyadmin
 
-SELECT * FROM history_uint WHERE itemid=64431 DESC limit 30 
-
+"SELECT * FROM history_uint WHERE itemid=27456 ORDER BY clock DESC limit 5"
 
 
 - Construir imagem:
@@ -22,10 +22,5 @@ docker run -it --rm --name consulta container_consulta
 
 
 
-- Deletar regras criadas
-ufw status numbered
-ufw delete [numero da regra]
-
-
-
+- Logs _ mysql/mariadb
 
