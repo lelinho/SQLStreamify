@@ -21,6 +21,12 @@ docker run -it --rm --name consulta container_consulta
 
 
 
-
 - Logs _ mysql/mariadb
+https://mariadb.com/kb/en/general-query-log/
 
+
+- checar alteraçoes em tabela
+https://medium.com/@mohammedalrowad/monitoring-mysql-data-changes-in-real-time-via-nodejs-binary-logs-c379720c0333
+
+https://blog.sqlauthority.com/2009/05/09/sql-server-find-last-date-time-updated-for-any-table/
+https://stackoverflow.com/questions/17489469/find-the-last-time-table-was-updated
