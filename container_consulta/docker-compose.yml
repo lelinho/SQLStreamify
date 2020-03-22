@@ -1,6 +1,0 @@
-consulta:
-    build: .
-    expose:
-        - 5000
-    ports:
-        - 8080:5000

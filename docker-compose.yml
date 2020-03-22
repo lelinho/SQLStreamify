@@ -1,0 +1,12 @@
+manager:
+    build: container_manager
+
+eventos:
+    build: container_eventos
+
+consulta:
+    build: container_consulta
+    expose:
+        - 5000
+    ports:
+        - 8080:5000

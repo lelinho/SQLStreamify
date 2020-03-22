@@ -26,7 +26,22 @@ https://mariadb.com/kb/en/general-query-log/
 
 
 - checar alteraçoes em tabela
+https://aws.amazon.com/pt/blogs/database/streaming-changes-in-a-database-with-amazon-kinesis/
+
 https://medium.com/@mohammedalrowad/monitoring-mysql-data-changes-in-real-time-via-nodejs-binary-logs-c379720c0333
+
+
+
+- Alteraçoes nas configuraçoes do mysql:
+
+log_bin                 = /var/log/mysql/mysql-bin.log
+expire_logs_days        = 1
+max_binlog_size         = 10M
+binlog_format           = row
+
+- Comando para verificar alteraçoes:
+mysqlbinlog --no-defaults -v mysql-bin.000001
+
 
 https://blog.sqlauthority.com/2009/05/09/sql-server-find-last-date-time-updated-for-any-table/
 https://stackoverflow.com/questions/17489469/find-the-last-time-table-was-updated
