@@ -10,7 +10,7 @@ ufw allow from 172.17.0.0/24 to any port 3306
 - Executar container do phpMyAdmin
 docker run --rm --name myadmin -it -e PMA_HOST=172.17.0.1 -e PMA_PORT=3306 -p 8080:80 phpmyadmin/phpmyadmin
 
-"SELECT * FROM history_uint WHERE itemid=27456 ORDER BY clock DESC limit 5"
+"SELECT * FROM history_uint, history_text WHERE itemid=27456 ORDER BY clock DESC limit 5"
 
 
 - Construir imagem:
