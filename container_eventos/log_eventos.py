@@ -4,6 +4,8 @@
 #
 # Verifica eventos
 #
+from flask import Flask, Response
+import socket
 import configparser
 from pymysqlreplication import BinLogStreamReader
 from pymysqlreplication.row_event import (
@@ -12,14 +14,6 @@ from pymysqlreplication.row_event import (
     WriteRowsEvent,
 )
 
-'''
-MYSQL_SETTINGS = {
-    "host": "172.17.0.1",
-    "port": 3306,
-    "user": "zabbix",
-    "passwd": "z@bb1x"
-}
-'''
 config = configparser.ConfigParser()
 config.read('config.ini')
 
@@ -31,25 +25,40 @@ MYSQL_SETTINGS = {
 }
 
 
+app = Flask(__name__)
+hostname = socket.gethostname()
 
-def main():
+@app.route("/")
+def index():
+    return "log_eventos running on {}\n".format(hostname)
+
+
+@app.route("/<string:tabela>")
+def eventos(tabela):
+    # Busca eventos da tabela solicitada
+
     # server_id is your slave identifier, it should be unique.
     # set blocking to True if you want to block and wait for the next event at
     # the end of the stream
     stream = BinLogStreamReader(connection_settings=MYSQL_SETTINGS,
                                 server_id=1,
                                 only_events=[DeleteRowsEvent, WriteRowsEvent, UpdateRowsEvent],
-                                only_tables=[config['SQL']['table']],
+                                only_tables=[tabela],
                                 blocking=True)
-    contador = 0
+    #contador = 0
 
     for binlogevent in stream:
-        #binlogevent.dump()
-        contador = contador + 1
-        print(contador)
+        binlogevent.dump()
+        #contador = contador + 1
+        #print(contador)
 
     stream.close()
 
+    
+    return Response(
+        "Capturando eventos de " + tabela,
+        content_type="application/octet-stream")
+    
 
 if __name__ == "__main__":
-    main()
+    app.run(host="0.0.0.0", port=80)

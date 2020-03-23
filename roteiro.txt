@@ -31,6 +31,11 @@ https://aws.amazon.com/pt/blogs/database/streaming-changes-in-a-database-with-am
 https://medium.com/@mohammedalrowad/monitoring-mysql-data-changes-in-real-time-via-nodejs-binary-logs-c379720c0333
 
 
+- Serialização dos dados:
+https://medium.com/galvanize/streaming-structured-json-18da4edd4f20
+
+
+
 
 - Alteraçoes nas configuraçoes do mysql:
 

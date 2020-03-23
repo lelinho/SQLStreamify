@@ -1,11 +1,10 @@
 FROM python:3
 
-WORKDIR /usr/src/app
-
 RUN pip install --no-cache-dir mysql-replication 
+RUN pip install --no-cache-dir flask
 
-ADD /container_eventos .
-COPY . .
-COPY ./config.ini .
+COPY container_eventos/log_eventos.py /
+COPY ./config.ini /
 
-CMD [ "python", "./log_eventos.py" ]
+CMD [ "python", "log_eventos.py" ]
+EXPOSE 80
