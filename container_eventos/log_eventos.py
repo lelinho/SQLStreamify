@@ -85,7 +85,7 @@ def eventos(query):
                                 only_events=[DeleteRowsEvent, WriteRowsEvent, UpdateRowsEvent],
                                 only_tables=tabelas,
                                 blocking=True)
-    #contador = 0
+    #contador = 0    
 
     for binlogevent in stream:
         binlogevent.dump()
@@ -93,11 +93,10 @@ def eventos(query):
         #print(contador)
 
     stream.close()
+    
+    return "Capturando eventos \n"
 
     
-    return Response(
-        "Capturando eventos de " + tabela,
-        content_type="application/octet-stream")
     
 
 if __name__ == "__main__":
