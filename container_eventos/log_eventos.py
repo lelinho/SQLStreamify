@@ -16,7 +16,7 @@ from pymysqlreplication.row_event import (
 )
 
 config = configparser.ConfigParser()
-config.read('config.ini')
+config.read('/config/config.ini')
 
 MYSQL_SETTINGS = {
     "host": config['DB']['host'],

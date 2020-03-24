@@ -8,7 +8,7 @@
 import configparser
 
 config = configparser.ConfigParser()
-config.read('config.ini')
+config.read('/config/config.ini')
 
 def main():
     #Cria um set com as queries registradas no arquivo de configuração

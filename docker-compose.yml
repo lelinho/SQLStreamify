@@ -1,12 +1,27 @@
 manager:
     build: container_manager
+    ports:
+        - "8000:80"
+    volumes:
+        - ./configuracao:/config
+
 
 eventos:
     build: container_eventos
+    ports:
+        - "8001:80"
+    volumes:
+        - ./configuracao:/config
 
 consulta:
     build: container_consulta
-    expose:
-        - 5000
     ports:
-        - 8080:5000
+        - "8002:80"
+    volumes:
+        - ./configuracao:/config
+
+
+
+redis:
+    image: redis
+

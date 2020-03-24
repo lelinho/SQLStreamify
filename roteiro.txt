@@ -50,3 +50,7 @@ mysqlbinlog --no-defaults -v mysql-bin.000001
 
 https://blog.sqlauthority.com/2009/05/09/sql-server-find-last-date-time-updated-for-any-table/
 https://stackoverflow.com/questions/17489469/find-the-last-time-table-was-updated
+
+
+Documentaçao do MariaDB
+https://mariadb.com/resources/blog/data-streaming-with-mariadb/
