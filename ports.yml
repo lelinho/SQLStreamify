@@ -1,0 +1,4 @@
+redis: 6379
+manager: 80
+eventos: 80
+consulta: 80

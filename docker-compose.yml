@@ -1,10 +1,12 @@
+redis:
+    image: redis
+
 manager:
     build: container_manager
     ports:
         - "8000:80"
     volumes:
         - ./configuracao:/config
-
 
 eventos:
     build: container_eventos
@@ -19,9 +21,5 @@ consulta:
         - "8002:80"
     volumes:
         - ./configuracao:/config
-
-
-
-redis:
-    image: redis
-
+    links:
+        - redis
