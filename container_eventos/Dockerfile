@@ -2,6 +2,7 @@ FROM python:3
 
 RUN pip install --no-cache-dir mysql-replication 
 RUN pip install --no-cache-dir flask
+RUN pip install requests
 
 COPY log_eventos.py /
 

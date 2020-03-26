@@ -36,7 +36,6 @@ https://medium.com/galvanize/streaming-structured-json-18da4edd4f20
 
 
 
-
 - Alteraçoes nas configuraçoes do mysql:
 
 log_bin                 = /var/log/mysql/mysql-bin.log
@@ -54,3 +53,4 @@ https://stackoverflow.com/questions/17489469/find-the-last-time-table-was-update
 
 Documentaçao do MariaDB
 https://mariadb.com/resources/blog/data-streaming-with-mariadb/
+

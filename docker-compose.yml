@@ -1,25 +1,60 @@
-redis:
-    image: redis
+version: "2.2"
 
-manager:
-    build: container_manager
-    ports:
-        - "8000:80"
-    volumes:
-        - ./configuracao:/config
+services:
+    redis:
+        image: redis
 
-eventos:
-    build: container_eventos
-    ports:
-        - "8001:80"
-    volumes:
-        - ./configuracao:/config
+    manager:
+        build: container_manager
+        ports:
+            - "8000:80"
+        volumes:
+            - ./configuracao:/config
+        links:
+            - eventos
+            - lbeventos
+        depends_on: 
+            - lbeventos
+            - lbconsulta
 
-consulta:
-    build: container_consulta
-    ports:
-        - "8002:80"
-    volumes:
-        - ./configuracao:/config
-    links:
-        - redis
+    lbconsulta:
+        image: dockercloud/haproxy
+        depends_on:
+            - consulta
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+        environment:
+            - ADDITIONAL_SERVICES=streamdbmiddleware:consulta
+
+
+    lbeventos:
+        image: dockercloud/haproxy
+        depends_on:
+            - eventos
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+        environment:
+            - ADDITIONAL_SERVICES=streamdbmiddleware:eventos
+        
+
+    eventos:
+        scale: 2
+        build: container_eventos
+        #ports:
+        #    - "8001:80"
+        volumes:
+            - ./configuracao:/config
+        links:
+            - lbconsulta
+            - consulta
+        depends_on:
+            - lbconsulta
+            - consulta
+
+    consulta:
+        scale: 4
+        build: container_consulta
+        volumes:
+            - ./configuracao:/config
+        links:
+            - redis      

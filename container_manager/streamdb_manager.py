@@ -6,6 +6,7 @@
 #
 
 import configparser
+import requests
 
 config = configparser.ConfigParser()
 config.read('/config/config.ini')
@@ -16,6 +17,7 @@ def main():
     for section_name in config.sections():
         if section_name != "DB":
             queries.add(section_name)
+            r = requests.get("http://lbeventos/" + section_name)
     #print(queries)
 
 if __name__ == "__main__":

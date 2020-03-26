@@ -8,6 +8,7 @@ from flask import Flask, Response
 import socket
 import configparser
 import re
+import requests
 from pymysqlreplication import BinLogStreamReader
 from pymysqlreplication.row_event import (
     DeleteRowsEvent,
@@ -88,9 +89,10 @@ def eventos(query):
     #contador = 0    
 
     for binlogevent in stream:
-        binlogevent.dump()
+        #binlogevent.dump()
         #contador = contador + 1
         #print(contador)
+        r = requests.get("http://lbconsulta/" + query)
 
     stream.close()
     
