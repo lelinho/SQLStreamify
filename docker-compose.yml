@@ -38,7 +38,7 @@ services:
         
 
     eventos:
-        scale: 2
+        scale: 1
         build: container_eventos
         #ports:
         #    - "8001:80"
@@ -52,8 +52,17 @@ services:
             - consulta
 
     consulta:
-        scale: 4
+        scale: 1
         build: container_consulta
+        volumes:
+            - ./configuracao:/config
+        links:
+            - redis      
+            
+    webui:
+        build: webui
+        ports: 
+            - 8080:80
         volumes:
             - ./configuracao:/config
         links:

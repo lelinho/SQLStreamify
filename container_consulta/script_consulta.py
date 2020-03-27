@@ -1,12 +1,10 @@
 import pymysql as MySQLdb
 import configparser
 import socket
-import pandas as pd
 import re
 import datetime
 from redis import Redis
-from pandas.io import sql
-from flask import Flask, escape, request
+from flask import Flask, escape, request, jsonify
 
 # Le informaçoes do arquivo de configuracao
 config = configparser.ConfigParser()
@@ -32,20 +30,25 @@ def query(consulta):
     db = MySQLdb.connect(config['DB']['host'],config['DB']['user'],config['DB']['password'],config['DB']['db'])
     
     # prepara o cursor
-    #cursor = db.cursor()
-    e = pd.read_sql(sql,db)
-    result_json = e.to_json()
+    cursor = db.cursor()
+    
+    cursor.execute(sql)
+    row_headers=[x[0] for x in cursor.description] #this will extract row headers
+    data = cursor.fetchall()
+    json_data=[]
+    for result in data:
+        json_data.append(dict(zip(row_headers,result)))
+    
+    result_json = jsonify(json_data)
+    #print(json_data)
+    #print(result_json)
 
     datahora = str(datetime.datetime.now())
-    created = redis.hset(consulta,datahora,result_json)
-    
-    #cursor.execute(sql)
-    #data = cursor.fetchall()
-    #result = dict(data)
+    #created = redis.hset(consulta,datahora,result_json)
 
     # disconnect from server
     db.close()
-    return f'{escape(result_json)}'
+    return result_json
 
 
 if __name__ == "__main__":
