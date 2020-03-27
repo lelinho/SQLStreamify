@@ -3,8 +3,11 @@ import configparser
 import socket
 import re
 import datetime
+import json
+import logging
 from redis import Redis
 from flask import Flask, escape, request, jsonify
+from deepdiff import DeepDiff
 
 # Le informaçoes do arquivo de configuracao
 config = configparser.ConfigParser()
@@ -15,16 +18,31 @@ hostname = socket.gethostname()
 
 redis = Redis("redis")
 
+def ultimoResultado(consulta):
+    ultimo = redis.hget(consulta, "resultado")
+    if ultimo:
+        ultimo = ultimo.decode("utf-8")
+    return ultimo
+
+def comparaResultados(consulta1, consulta2):
+    diff = DeepDiff(consulta1, consulta2)
+    if diff:
+        print(diff, flush=True)
+    return diff
+
+
 @app.route("/")
 def index():
     return "script_consulta running on {}\n".format(hostname)
 
 
 @app.route("/<string:consulta>")
-def query(consulta):
-    
+def query(consulta):    
     #buscar query correspondente ao identificador
     sql = config[consulta]['query']
+
+    #busca resultado da ultima consulta gravada
+    ultimo = ultimoResultado(consulta)
 
     # Conexão com o Banco de Dados
     db = MySQLdb.connect(config['DB']['host'],config['DB']['user'],config['DB']['password'],config['DB']['db'])
@@ -39,13 +57,16 @@ def query(consulta):
     for result in data:
         json_data.append(dict(zip(row_headers,result)))
     
-    result_json = jsonify(json_data)
-    #print(json_data)
-    #print(result_json)
+    result_json = json.dumps(json_data)
 
-    datahora = str(datetime.datetime.now())
-    #created = redis.hset(consulta,datahora,result_json)
-
+    # Compara os resultados
+    # do ultimo armazenado em memória, e do buscado agora
+    diff = comparaResultados(ultimo, result_json)
+    if diff:
+        created = redis.hset(consulta,"resultado",result_json)
+        print("Alterado!", flush=True)
+        # Aqui será executada a próxima ação, de publicar a diferença na busca
+    
     # disconnect from server
     db.close()
     return result_json

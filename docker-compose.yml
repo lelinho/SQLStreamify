@@ -52,7 +52,7 @@ services:
             - consulta
 
     consulta:
-        scale: 1
+        scale: 4
         build: container_consulta
         volumes:
             - ./configuracao:/config

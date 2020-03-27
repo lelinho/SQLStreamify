@@ -89,11 +89,12 @@ def eventos(query):
     #contador = 0    
 
     for binlogevent in stream:
-        #binlogevent.dump()
+        binlogevent.dump()
         #contador = contador + 1
         #print(contador)
         r = requests.get("http://lbconsulta/" + query)
-
+        
+        
     stream.close()
     
     return "Capturando eventos \n"
