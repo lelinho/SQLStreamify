@@ -84,6 +84,20 @@ def identificaTabelas(query):
     return table
 
 
+def verificaRequisitos(where, linha_binlog, query):    
+    if where:
+        for statement in where.items():            
+            #print(statement[0], flush = True)
+            #print(linha_binlog[statement[1][0]], flush=True)
+            #print(statement[1][1], flush=True)
+
+            #MONTAR PARA AS OUTRAS OPERAÇÕES SQL
+            if statement[0] == "eq":
+                if linha_binlog[statement[1][0]] == statement[1][1]:                    
+                    r = requests.get("http://lbconsulta/" + query)
+    else:
+        r = requests.get("http://lbconsulta/" + query)
+
 
 @app.route("/")
 def index():
@@ -124,16 +138,31 @@ def eventos(query):
                 #print(row["values"]["itemid"], flush=True)
                 
                 #FAZER A VERIFICAÇÃO DO WHERE
+            
+                verificaRequisitos(where,row["values"],query)
+                
+                #Melhorar métricas
+                i += 1.0
+                #print("%d eventos por segundo (%d total)" % (i / (perf_counter() - start), i), flush = True)
+
+
+                """
+                if where:                    
+                    for statement in where.item:
+                        if statement = "eq":
+                            print(statement[0], flush=True)
+                            print(statement[1], flush=True)
+                            if row["values"].statement[0] == statement[1]
+
+
                 if row["values"]["itemid"] == 59197:                    
                     #r = requests.get("http://lbconsulta/" + query)
-                    i += 1.0
-                    print("%d eventos por segundo (%d total)" % (i / (perf_counter() - start), i), flush = True)
+                """
         
     stream.close()
     
     return "Capturando eventos \n"
 
-    
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=80)
