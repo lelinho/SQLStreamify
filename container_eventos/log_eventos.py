@@ -10,6 +10,8 @@ import configparser
 import re
 import requests
 import sqlparse
+import json
+from moz_sql_parser import parse
 from time import perf_counter
 from pymysqlreplication import BinLogStreamReader
 from pymysqlreplication.row_event import (
@@ -32,61 +34,23 @@ app = Flask(__name__)
 hostname = socket.gethostname()
 
 
-def get_tokens(where):
-    sql_tokens = []
-    identifier = None
-    print(where, flush=True)
-    for i in where.tokens:
-        try:
-            name = i.get_real_name()
-            if name and isinstance(i, sqlparse.sql.Identifier):
-                identifier = i
-            elif identifier and isinstance(i, sqlparse.sql.Parenthesis):
-                sql_tokens.append({
-                    'key': str(identifier),
-                    'value': token.value
-                })
-            elif name:
-                identifier = None
-                # sql_tokens.append("{0} - {1} - {2}".format(str(i), str(name), i.value))
-                sql_tokens.append({
-                    'key': str(name),
-                    'value': u''.join(token.value for token in i.flatten()),
-                })
-            else:
-                get_tokens(i)
-        except Exception as e:
-            pass
-    return sql_tokens
-
 def identificaWhere(query):
     #buscar query correspondente ao identificador
     sql_str = config[query]['query']
-    sql_tokens = []
+    parsed = parse(sql_str)
+    
+    where = parsed["where"]
 
-    parsed = sqlparse.parse(sql_str)
-    print(parsed, flush=True)
-    identifier = None
-    for i in parsed:
-        name = i.get_real_name()
-        print(name, flush = True)
-        if name and isinstance(i, sqlparse.sql.Identifier):
-            identifier = i
-        elif identifier and isinstance(i, sqlparse.sql.Parenthesis):
-            sql_tokens.append({
-                'key': str(identifier),
-                'value': token.value
-            })
-        elif name:
-            identifier = None
-            # sql_tokens.append("{0} - {1} - {2}".format(str(i), str(name), i.value))
-            sql_tokens.append({
-                'key': str(name),
-                'value': u''.join(token.value for token in i.flatten()),
-            })
 
-    print(sql_tokens, flush=True)
-    return sql_tokens
+    """
+    for statments in where:
+        print(statments, flush=True)
+        
+    print(where, flush=True)
+    """
+
+    return where
+
 
 
 def identificaTabelas(query):    
@@ -121,8 +85,6 @@ def identificaTabelas(query):
 
 
 
-
-
 @app.route("/")
 def index():
     return "log_eventos running on {}\n".format(hostname)
@@ -138,7 +100,6 @@ def eventos(query):
     print(tabelas)
 
     where = identificaWhere(query)
-
 
     # Busca eventos da tabela solicitada
 
@@ -161,6 +122,8 @@ def eventos(query):
         for row in binlogevent.rows:            
             if isinstance(binlogevent, WriteRowsEvent):
                 #print(row["values"]["itemid"], flush=True)
+                
+                #FAZER A VERIFICAÇÃO DO WHERE
                 if row["values"]["itemid"] == 59197:                    
                     #r = requests.get("http://lbconsulta/" + query)
                     i += 1.0

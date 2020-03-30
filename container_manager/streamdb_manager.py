@@ -15,7 +15,7 @@ config.read('/config/config.ini')
 def main():
     #Aguarda um instante enquanto os conteineres estejam prontos para receber comandos.
     print("Aguardando inicialização dos conteineres...", flush=True)
-    time.sleep(5)
+    time.sleep(1)
     
     #Cria um set com as queries registradas no arquivo de configuração
     queries = set()

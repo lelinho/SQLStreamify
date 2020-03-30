@@ -54,3 +54,7 @@ https://stackoverflow.com/questions/17489469/find-the-last-time-table-was-update
 Documentaçao do MariaDB
 https://mariadb.com/resources/blog/data-streaming-with-mariadb/
 
+
+
+PARSER DO SQL:
+https://github.com/mozilla/moz-sql-parser
