@@ -7,9 +7,7 @@
 from flask import Flask, Response
 import socket
 import configparser
-import re
 import requests
-import sqlparse
 import json
 from moz_sql_parser import parse
 from time import perf_counter
@@ -59,19 +57,23 @@ def identificaTabelas(query):
     table = []
     tabelas = parsed["from"]
 
-    for conteudo in tabelas:
-        #print(conteudo, flush=True)
-        if "value" in conteudo:
-            #print(conteudo["value"], flush=True)
-            table.append(conteudo["value"])
-        else:
-            a = [value for key, value in conteudo.items() if 'join' in key.lower()]
-            if a:
-                #print(a[0], flush=True)
-                if "value" in a[0]:
-                    #print(a[0]["value"], flush=True)
-                    table.append(a[0]["value"])
-
+    if type(tabelas) == str:
+        table.append(tabelas)
+    else:
+        for conteudo in tabelas:
+            #print(conteudo, flush=True)
+            if "value" in conteudo:
+                #print(conteudo["value"], flush=True)
+                table.append(conteudo["value"])
+            else:
+                a = [value for key, value in conteudo.items() if 'join' in key.lower()]
+                if a:
+                    #print(a[0], flush=True)
+                    if "value" in a[0]:
+                        #print(a[0]["value"], flush=True)
+                        table.append(a[0]["value"])
+    
+    print(table, flush=True)
     return table
 
 

@@ -25,6 +25,7 @@ def main():
             r = requests.get("http://lbeventos/" + section_name)
     #print(queries)
 
+    #De tempo em tempo consulta informações sobre as buscas
     while True:
         a = 1
 
