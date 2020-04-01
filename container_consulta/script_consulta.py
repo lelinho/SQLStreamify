@@ -64,6 +64,7 @@ def query(consulta):
     diff = comparaResultados(ultimo, result_json)
     if diff:
         created = redis.hset(consulta,"resultado",result_json)
+        redis.hincrby(consulta,"count", 1)
         print("Alterado!", flush=True)
         # Aqui será executada a próxima ação, de publicar a diferença na busca
     

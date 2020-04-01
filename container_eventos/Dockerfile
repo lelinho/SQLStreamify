@@ -4,6 +4,7 @@ RUN pip install --no-cache-dir mysql-replication
 RUN pip install --no-cache-dir flask
 RUN pip install requests
 RUN pip install moz-sql-parser
+RUN pip install --no-cache-dir redis
 
 COPY log_eventos.py /
 

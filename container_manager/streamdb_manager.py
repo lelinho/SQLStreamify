@@ -8,26 +8,39 @@
 import configparser
 import requests
 import time
+from time import perf_counter
+from redis import Redis
 
 config = configparser.ConfigParser()
 config.read('/config/config.ini')
 
+redis = Redis("redis")
+
 def main():
     #Aguarda um instante enquanto os conteineres estejam prontos para receber comandos.
     print("Aguardando inicialização dos conteineres...", flush=True)
-    time.sleep(1)
+    time.sleep(5)
     
     #Cria um set com as queries registradas no arquivo de configuração
     queries = set()
     for section_name in config.sections():
         if section_name != "DB":
             queries.add(section_name)
+            redis.hset(section_name,"count", 0)
             r = requests.get("http://lbeventos/" + section_name)
+
     #print(queries)
 
+
     #De tempo em tempo consulta informações sobre as buscas
+    start = perf_counter()
     while True:
-        a = 1
+        time.sleep(10)
+        print("***************", flush=True)
+        for query in queries:
+            contador = float(redis.hget(query, "count"))            
+            print("%s : %d eventos por segundo (%d total)" % (query, contador / (perf_counter() - start), contador), flush = True)            
+        print("***************", flush=True)
 
     return queries
 

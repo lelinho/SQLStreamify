@@ -4,13 +4,13 @@
 #
 # Verifica eventos
 #
-from flask import Flask, Response
 import socket
 import configparser
 import requests
 import json
+from redis import Redis
+from flask import Flask, Response
 from moz_sql_parser import parse
-from time import perf_counter
 from pymysqlreplication import BinLogStreamReader
 from pymysqlreplication.row_event import (
     DeleteRowsEvent,
@@ -30,6 +30,8 @@ MYSQL_SETTINGS = {
 
 app = Flask(__name__)
 hostname = socket.gethostname()
+
+redis = Redis("redis")
 
 
 def identificaWhere(query):
@@ -87,9 +89,11 @@ def verificaRequisitos(where, linha_binlog, query):
             #MONTAR PARA AS OUTRAS OPERAÇÕES SQL
             if statement[0] == "eq":
                 if linha_binlog[statement[1][0]] == statement[1][1]:                    
-                    r = requests.get("http://lbconsulta/" + query)
+                    r = requests.get("http://lbconsulta/" + query)                    
     else:
         r = requests.get("http://lbconsulta/" + query)
+        
+
 
 
 @app.route("/")
@@ -120,8 +124,6 @@ def eventos(query):
                                 blocking=True)
     #contador = 0    
 
-    start = perf_counter()
-    i = 0.0
     for binlogevent in stream:
         #binlogevent.dump()
         #contador = contador + 1
@@ -132,14 +134,9 @@ def eventos(query):
                 
                 #FAZER A VERIFICAÇÃO DO WHERE
                 verificaRequisitos(where,row["values"],query)
-                
-                #Melhorar métricas
-                i += 1.0
-                #print("%d eventos por segundo (%d total)" % (i / (perf_counter() - start), i), flush = True)
-        
+                        
     stream.close()
     
-    return "Capturando eventos \n"
 
 
 if __name__ == "__main__":

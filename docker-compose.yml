@@ -13,9 +13,11 @@ services:
         links:
             - eventos
             - lbeventos
+            - redis
         depends_on: 
             - lbeventos
             - lbconsulta
+            - redis
 
     lbconsulta:
         image: dockercloud/haproxy
@@ -47,9 +49,11 @@ services:
         links:
             - lbconsulta
             - consulta
+            - redis
         depends_on:
             - lbconsulta
             - consulta
+            - redis
 
     consulta:
         scale: 2
