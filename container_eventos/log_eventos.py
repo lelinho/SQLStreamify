@@ -39,48 +39,39 @@ def identificaWhere(query):
     sql_str = config[query]['query']
     parsed = parse(sql_str)
     
-    where = parsed["where"]
-
-
-    """
-    for statments in where:
-        print(statments, flush=True)
-        
-    print(where, flush=True)
-    """
-
+    where = None
+    if "where" in parsed:
+        where = parsed["where"]
+    
     return where
 
 
 
-def identificaTabelas(query):    
+def identificaTabelas(query):
     #buscar query correspondente ao identificador
-    sql_str = config[query]['query']
+    sql_str = config[query]['query']    
 
-    # remove the /* */ comments
-    q = re.sub(r"/\*[^*]*\*+(?:[^*/][^*]*\*+)*/", "", sql_str)
-
-    # remove whole line -- and # comments
-    lines = [line for line in q.splitlines() if not re.match("^\s*(--|#)", line)]
-
-    # remove trailing -- and # comments
-    q = " ".join([re.split("--|#", line)[0] for line in lines])
-
-    # split on blanks, parens and semicolons
-    tokens = re.split(r"[\s)(;]+", q)
-
-    # scan the tokens. if we see a FROM or JOIN, we set the get_next
-    # flag, and grab the next one (unless it's SELECT).
+    try:
+        parsed = parse(sql_str)
+    except:
+        print("Erro no parse do SQL", flush=True)
 
     table = []
-    get_next = False
-    for tok in tokens:
-        if get_next:
-            if tok.lower() not in ["", "select"]:                
-                table.append(tok)
-            get_next = False
-        get_next = tok.lower() in ["from", "join"]
-    
+    tabelas = parsed["from"]
+
+    for conteudo in tabelas:
+        #print(conteudo, flush=True)
+        if "value" in conteudo:
+            #print(conteudo["value"], flush=True)
+            table.append(conteudo["value"])
+        else:
+            a = [value for key, value in conteudo.items() if 'join' in key.lower()]
+            if a:
+                #print(a[0], flush=True)
+                if "value" in a[0]:
+                    #print(a[0]["value"], flush=True)
+                    table.append(a[0]["value"])
+
     return table
 
 
@@ -111,11 +102,11 @@ def eventos(query):
     
     #busca tabelas afetadas pela consulta
     tabelas = identificaTabelas(query)
-    print(tabelas)
 
+    #busca condições
     where = identificaWhere(query)
 
-    # Busca eventos da tabela solicitada
+    # Monitora eventos das tabelas que fazem parte da consulta
 
     # server_id is your slave identifier, it should be unique.
     # set blocking to True if you want to block and wait for the next event at
@@ -138,26 +129,11 @@ def eventos(query):
                 #print(row["values"]["itemid"], flush=True)
                 
                 #FAZER A VERIFICAÇÃO DO WHERE
-            
                 verificaRequisitos(where,row["values"],query)
                 
                 #Melhorar métricas
                 i += 1.0
                 #print("%d eventos por segundo (%d total)" % (i / (perf_counter() - start), i), flush = True)
-
-
-                """
-                if where:                    
-                    for statement in where.item:
-                        if statement = "eq":
-                            print(statement[0], flush=True)
-                            print(statement[1], flush=True)
-                            if row["values"].statement[0] == statement[1]
-
-
-                if row["values"]["itemid"] == 59197:                    
-                    #r = requests.get("http://lbconsulta/" + query)
-                """
         
     stream.close()
     
