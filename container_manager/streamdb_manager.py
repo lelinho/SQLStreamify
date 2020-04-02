@@ -32,13 +32,13 @@ def main():
     #print(queries)
 
 
-    #De tempo em tempo consulta informações sobre as buscas
+    #Consulta informações sobre as buscas a cada 10 segundos
     start = perf_counter()
     while True:
         time.sleep(10)
         print("***************", flush=True)
         for query in queries:
-            contador = float(redis.hget(query, "count"))            
+            contador = float(redis.hget(query, "count"))         
             print("%s : %d eventos por segundo (%d total)" % (query, contador / (perf_counter() - start), contador), flush = True)            
         print("***************", flush=True)
 

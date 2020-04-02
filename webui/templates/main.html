@@ -115,6 +115,24 @@
               </div>
             </div>
 
+            <!-- Quantidade de Containeres -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">SQL1</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="viewCount">0</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-box-open fa-2x text-gray-300"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
           <!-- Content Row -->
           
 
@@ -137,6 +155,26 @@
 
 
   {% include 'include_bottom.html' %}
+  
+  <script>
+    function buscarStatsLive() {
+      const textViewCount = document.getElementById('viewCount');
+      
+      setInterval(function (){
+        fetch('/count/SQL1').then(function (response) {
+          return response.json();          
+        }).then(function (data) {
+          textViewCount.textContent = data.count;
+        }).catch (function (error) {
+          console.log(error);
+        });
+      }, 5000);
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      buscarStatsLive();
+    });
+  </script>
 </body>
 
 </html>
