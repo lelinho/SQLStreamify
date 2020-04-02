@@ -8,6 +8,7 @@ import socket
 import configparser
 import requests
 import json
+from datetime import datetime
 from redis import Redis
 from flask import Flask, Response
 from moz_sql_parser import parse
@@ -121,8 +122,13 @@ def eventos(query):
                                 server_id=1,
                                 only_events=[DeleteRowsEvent, WriteRowsEvent, UpdateRowsEvent],
                                 only_tables=tabelas,
+                                #skip_to_timestamp: busca apenas novos eventos, ignora logs antigos...
+                                skip_to_timestamp=datetime.timestamp(datetime.now()),
                                 blocking=True)
     #contador = 0    
+    
+    #Realiza uma primeira busca antes de começar a consultar apenas quando tiver eventos...
+    r = requests.get("http://lbconsulta/" + query)
 
     for binlogevent in stream:
         #binlogevent.dump()
@@ -130,8 +136,7 @@ def eventos(query):
         #print(contador)
         for row in binlogevent.rows:            
             if isinstance(binlogevent, WriteRowsEvent):
-                #print(row["values"]["itemid"], flush=True)
-                
+                #print(row["values"]["itemid"], flush=True)                
                 #FAZER A VERIFICAÇÃO DO WHERE
                 verificaRequisitos(where,row["values"],query)
                         
