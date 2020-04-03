@@ -54,8 +54,10 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Queries:</h6>
-            <a class="collapse-item" href="buttons.html">SQL1</a>
-            <a class="collapse-item" href="cards.html">SQL2</a>
+            <!-- IMPRIME E CRIA O LINK D AS QUERIES -->
+            {% for item in queries %}
+              <a class="collapse-item" href="/{{ item }}">{{ item }}</a>                        
+            {% endfor %}
           </div>
         </div>
       </li>
@@ -98,14 +100,15 @@
           <!-- Content Row - Linha com sumário -->
           <div class="row">
 
+            {% for item in queries %}
             <!-- Quantidade de Containeres -->
             <div class="col-xl-3 col-md-6 mb-4">
               <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Containeres em execução</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800">12</div>
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">{{ item }}</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="viewCount{{ item }}">-</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-box-open fa-2x text-gray-300"></i>
@@ -114,25 +117,7 @@
                 </div>
               </div>
             </div>
-
-            <!-- Quantidade de Containeres -->
-            <div class="col-xl-3 col-md-6 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">SQL1</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="viewCount">0</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-box-open fa-2x text-gray-300"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
+            {% endfor %}
           <!-- Content Row -->
           
 
@@ -158,18 +143,23 @@
   
   <script>
     function buscarStatsLive() {
-      const textViewCount = document.getElementById('viewCount');
+      {% for item in queries %}      
+        const textViewCount{{ item }} = document.getElementById('viewCount{{ item }}');      
+      {% endfor %}
+
+        setInterval(function (){
+          {% for item in queries %}
+          fetch('/count/{{ item }}').then(function (response) {
+            return response.json();          
+          }).then(function (data) {
+            textViewCount{{ item }}.textContent = data.count;
+          }).catch (function (error) {
+            console.log(error);
+          });
+          {% endfor %}
+        }, 5000);
+      }
       
-      setInterval(function (){
-        fetch('/count/SQL1').then(function (response) {
-          return response.json();          
-        }).then(function (data) {
-          textViewCount.textContent = data.count;
-        }).catch (function (error) {
-          console.log(error);
-        });
-      }, 5000);
-    }
 
     document.addEventListener('DOMContentLoaded', function () {
       buscarStatsLive();

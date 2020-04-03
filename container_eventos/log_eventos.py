@@ -102,8 +102,8 @@ def index():
     return "log_eventos running on {}\n".format(hostname)
 
 
-@app.route("/<string:query>")
-def eventos(query):
+@app.route("/<string:query>/<int:server_id>")
+def eventos(query, server_id):
 
     #buscar query correspondente ao identificador
     
@@ -119,7 +119,7 @@ def eventos(query):
     # set blocking to True if you want to block and wait for the next event at
     # the end of the stream
     stream = BinLogStreamReader(connection_settings=MYSQL_SETTINGS,
-                                server_id=1,
+                                server_id=server_id,
                                 only_events=[DeleteRowsEvent, WriteRowsEvent, UpdateRowsEvent],
                                 only_tables=tabelas,
                                 #skip_to_timestamp: busca apenas novos eventos, ignora logs antigos...
@@ -135,11 +135,14 @@ def eventos(query):
         #contador = contador + 1
         #print(contador)
         for row in binlogevent.rows:            
-            if isinstance(binlogevent, WriteRowsEvent):
-                #print(row["values"]["itemid"], flush=True)                
+            #print(row, flush=True)            
+            if isinstance(binlogevent, WriteRowsEvent):                
                 #FAZER A VERIFICAÇÃO DO WHERE
                 verificaRequisitos(where,row["values"],query)
-                        
+            if isinstance(binlogevent, UpdateRowsEvent):
+                #print(row, flush=True)
+                verificaRequisitos(where,row["before_values"],query)
+                
     stream.close()
     
 

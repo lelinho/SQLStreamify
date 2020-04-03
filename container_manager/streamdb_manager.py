@@ -23,11 +23,13 @@ def main():
     
     #Cria um set com as queries registradas no arquivo de configuração
     queries = set()
+    server_id = 1
     for section_name in config.sections():
         if section_name != "DB":
             queries.add(section_name)
             redis.hset(section_name,"count", 0)
-            r = requests.get("http://lbeventos/" + section_name)
+            r = requests.get("http://lbeventos/" + section_name + "/" + str(server_id))
+            server_id+=1
 
     #print(queries)
 

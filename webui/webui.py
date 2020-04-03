@@ -16,6 +16,12 @@ hostname = socket.gethostname()
 
 redis = Redis("redis")
 
+#Cria um set com as queries registradas no arquivo de configuração
+queries = set()
+for section_name in config.sections():
+    if section_name != "DB":
+        queries.add(section_name)
+
 
 @app.route("/count/<string:consulta>")
 def stats(consulta):
@@ -26,9 +32,10 @@ def stats(consulta):
 
 
 @app.route("/")
-def index():
-    return render_template("main.html")
-
+def index():    
+    #retornar set de consultas
+    return render_template("main.html", queries = queries)
+    
 
 if __name__ == "__main__":
     app.jinja_env.auto_reload = True
