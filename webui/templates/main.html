@@ -142,6 +142,7 @@
   {% include 'include_bottom.html' %}
   
   <script>
+    //buscar por stats de cada busca e atualizar utilizando JS
     function buscarStatsLive() {
       {% for item in queries %}      
         const textViewCount{{ item }} = document.getElementById('viewCount{{ item }}');      
