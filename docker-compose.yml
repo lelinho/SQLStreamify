@@ -61,7 +61,8 @@ services:
         volumes:
             - ./configuracao:/config
         links:
-            - redis      
+            - redis
+            - mqtt  
             
     webui:
         build: webui

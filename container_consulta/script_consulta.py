@@ -4,7 +4,7 @@ import socket
 import re
 import datetime
 import json
-import logging
+import pika
 from redis import Redis
 from flask import Flask, escape, request, jsonify
 from deepdiff import DeepDiff
@@ -13,9 +13,11 @@ from deepdiff import DeepDiff
 config = configparser.ConfigParser()
 config.read('/config/config.ini')
 
+#informações sobre o script
 app = Flask(__name__)    
 hostname = socket.gethostname()
 
+#conexão com o redis
 redis = Redis("redis")
 
 def ultimoResultado(consulta):
@@ -26,8 +28,8 @@ def ultimoResultado(consulta):
 
 def comparaResultados(consulta1, consulta2):
     diff = DeepDiff(consulta1, consulta2)
-    if diff:
-        print(diff, flush=True)
+    #if diff:
+        #print(diff, flush=True)        
     return diff
 
 
@@ -65,13 +67,29 @@ def query(consulta):
     if diff:
         created = redis.hset(consulta,"resultado",result_json)
         redis.hincrby(consulta,"count", 1)
-        print("Alterado!", flush=True)
-        # Aqui será executada a próxima ação, de publicar a diferença na busca
-    
+        print("Alterado e publicado!", flush=True)        
+        ###############################
+        # publicacao por MQTT         #
+        ###############################
+        
+        #conexão com o MQTT utilizando pika(RabbitMQ)
+        conexao_mqtt = pika.BlockingConnection(pika.ConnectionParameters('mqtt'))
+        canal = conexao_mqtt.channel()
+        
+        #seta o canal de conexão do MQTT
+        canal.queue_declare(queue=consulta)
+
+        #publica a alteraçao
+        canal.basic_publish(exchange='',
+                            routing_key = consulta,
+                            body = result_json)
+        
+        #fecha a conexao do mqtt
+        conexao_mqtt.close()
+
     # disconnect from server
     db.close()
     return result_json
-
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=80)
