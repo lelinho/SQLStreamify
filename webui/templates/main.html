@@ -56,7 +56,10 @@
             <h6 class="collapse-header">Consultas:</h6>
             <!-- IMPRIME E CRIA O LINK D AS QUERIES -->
             {% for item in queries %}
-              <a class="collapse-item fas fa-table" href="/{{ item }}">{{ item }}</a>                        
+              <a class="collapse-item" href="/{{ item }}">
+                <i class="fas fa-table"></i>
+                <span>{{ item }}</span>
+              </a>                        
             {% endfor %}
           </div>
         </div>
@@ -138,7 +141,9 @@
           fetch('/count/{{ item }}').then(function (response) {
             return response.json();          
           }).then(function (data) {
+            $('viewCount{{ item }}').fadeOut("slow");
             textViewCount{{ item }}.textContent = data.count;
+            $('viewCount{{ item }}').fadeIn();
           }).catch (function (error) {
             console.log(error);
           });

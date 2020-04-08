@@ -59,7 +59,10 @@
             <h6 class="collapse-header">Consultas:</h6>
             <!-- IMPRIME E CRIA O LINK D AS QUERIES -->
             {% for item in retorno.queries %}
-              <a class="collapse-item fas fa-table" href="/{{ item }}">{{ item }}</a>                        
+              <a class="collapse-item" href="/{{ item }}">
+                <i class="fas fa-table"></i>
+                <span>{{ item }}</span>
+              </a>                        
             {% endfor %}
           </div>
         </div>
@@ -124,8 +127,8 @@
                   <h6 class="m-0 font-weight-bold text-primary">Tabela</h6>
                 </div>
                 <div class="card-body">
-                  <div class="table-responsive">
-                    <table class="table table-bordered" id="table" width="100%" cellspacing="0"></table>
+                  <div class="table-responsive-sm">
+                    <table class="table w-auto small" id="table" width="100%" cellspacing="0"></table>
                   </div>
                 </div>
               </div>
@@ -153,32 +156,20 @@
   {% include 'include_bottom.html' %}
   
   <script>
-    //buscar por stats da busca e atualizar utilizando JS
-    function buscarStatsLive() {
-        const textViewCount{{ retorno.consulta }} = document.getElementById('viewCount{{ retorno.consulta }}');      
-
-        setInterval(function (){
-          fetch('/count/{{ retorno.consulta }}').then(function (response) {
-            return response.json();          
-          }).then(function (data) {
-            textViewCount{{ retorno.consulta }}.textContent = data.count;
-          }).catch (function (error) {
-            console.log(error);
-          });
-        }, 2000);
-      }
-    document.addEventListener('DOMContentLoaded', function () {
-      buscarStatsLive();
-    });
-  </script>
-
-  <script>
-    //script para preenchimento da tabela com resultados
+    //-----------------------------------------------------------------------------
+    //Script para preenchimento da Tabela com resultados e o número de atualizaçoes
+    //-----------------------------------------------------------------------------
+    
+    //variavel para mostrar o número de atualizações
+    const textViewCount{{ retorno.consulta }} = document.getElementById('viewCount{{ retorno.consulta }}');
+    
+    //inicializa o componente da tabela
     $("#table").bootstrapTable({formatNoMatches: function () {
       return "Aguardando atualização...";
       }
     });
 
+    //CLIENTE PARA BUSCAR ATUALIZAÇÕES UTILIZANDO WEBSOCKET
     // Stomp.js boilerplate
     var client = Stomp.client('ws://{{ retorno.ip }}:15674/ws');
     //client.debug = pipe('#second');
@@ -186,8 +177,7 @@
     var on_connect = function(x) {
         id = client.subscribe("/amq/queue/{{ retorno.consulta }}", function(d) {            
             data = JSON.parse(d.body);
-            //console.log("Impressao:")            
-            //console.log(data)
+            //busca as "colunas" no JSON para montagem do cabeçalho
             var cols= [];
             $.each(data[0], function(key, value){
                 cols.push({
@@ -197,12 +187,29 @@
                 });
             });
             console.log(cols)
-
+            //--------------
+        
+            //atualiza a tabela sempre que tiver dados novos
+            $('#table').fadeOut();
             $('#table').bootstrapTable('refreshOptions',{
                 showRefresh: false,
                 columns: cols,
                 data: data
-            });            
+            });
+            $('#table').fadeIn();
+
+            //busca o contador de atualizações para a consulta e preenche o textView
+            fetch('/count/{{ retorno.consulta }}').then(function (response) {
+              return response.json();          
+            }).then(function (data) {
+              $('viewCount{{ retorno.consulta }}').fadeOut("slow");      
+              textViewCount{{ retorno.consulta }}.textContent = data.count;
+              $('viewCount{{ retorno.consulta }}').fadeIn();
+            }).catch (function (error) {
+              console.log(error);
+            });
+            //-----------------
+  
         });
     };
     var on_error =  function() {

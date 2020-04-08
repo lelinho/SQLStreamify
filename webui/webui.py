@@ -27,7 +27,7 @@ for section_name in config.sections():
 @app.route("/count/<string:consulta>")
 def stats(consulta):
     contador = 0
-    if redis.hget(consulta, "count")!= [None]:
+    if redis.hget(consulta, "count")!= None:
         #print(redis.hget(consulta, "count"), flush=True)
         contador = int(redis.hget(consulta, "count"))    
     return jsonify(
@@ -39,7 +39,7 @@ def stats(consulta):
 @app.route("/<string:consulta>")
 def detail(consulta):
     contador = str(0)
-    if redis.hget(consulta,"count") != [None]:
+    if redis.hget(consulta,"count") != None:
         #print(redis.hget(consulta, "count"), flush=True)
         contador = str(int(redis.hget(consulta, "count")))
 
