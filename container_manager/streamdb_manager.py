@@ -25,7 +25,7 @@ def main():
     queries = set()
     server_id = 1
     for section_name in config.sections():
-        if section_name != "DB":
+        if section_name != "DB" and section_name != "EXPOSICAO":
             queries.add(section_name)
             redis.hset(section_name,"count", 0)
             r = requests.get("http://lbeventos/" + section_name + "/" + str(server_id))

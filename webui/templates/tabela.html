@@ -12,6 +12,9 @@
   <title>StreamDB - Middleware</title>
 
   {% include 'include_top.html' %}
+  <link href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+  <script src="{{ url_for('static', filename='js/stomp.js') }}"></script>
 </head>
 
 <body id="page-top">
@@ -55,13 +58,12 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Consultas:</h6>
             <!-- IMPRIME E CRIA O LINK D AS QUERIES -->
-            {% for item in queries %}
+            {% for item in retorno.queries %}
               <a class="collapse-item fas fa-table" href="/{{ item }}">{{ item }}</a>                        
             {% endfor %}
           </div>
         </div>
       </li>
-
       <!-- Divider -->
       <hr class="sidebar-divider">      
     </ul>
@@ -78,22 +80,32 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+            <h1 class="h3 mb-0 text-gray-800">{{ retorno.consulta }}</h1>
             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Gerar Relatório</a>
           </div>
 
           <!-- Content Row - Linha com sumário -->
           <div class="row">
+            <!-- Card com o SQL -->
+            <div class="col-md-9 mb-4">
+              <div class="card shadow">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Consulta - SQL</h6>
+                </div>
+                <div class="card-body">
+                  {{ retorno.sql }}
+                </div>
+              </div>
+            </div>
 
-            {% for item in queries %}
-            <!-- Quantidade de Containeres -->
-            <div class="col-xl-3 col-md-6 mb-4">
+            <!-- Card com o contador -->
+            <div class="col-xl-3 col-md-3 mb-4">
               <div class="card border-left-primary shadow h-100 py-2">
                 <div class="card-body">
                   <div class="row no-gutters align-items-center">
                     <div class="col mr-2">
-                      <a href="/{{ item }}"" class="text-xs font-weight-bold text-primary text-uppercase mb-1">{{ item }}</a>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="viewCount{{ item }}">-</div>
+                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Atualizações</div>
+                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="viewCount{{ retorno.consulta }}">-</div>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-box-open fa-2x text-gray-300"></i>
@@ -101,10 +113,24 @@
                   </div>
                 </div>
               </div>
-            </div>
-            {% endfor %}
+            </div>            
           <!-- Content Row -->
-          
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 mb-4">
+              <div class="card shadow">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Tabela</h6>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-bordered" id="table" width="100%" cellspacing="0"></table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
         </div>
         <!-- /.container-fluid -->
@@ -127,29 +153,62 @@
   {% include 'include_bottom.html' %}
   
   <script>
-    //buscar por stats de cada busca e atualizar utilizando JS
+    //buscar por stats da busca e atualizar utilizando JS
     function buscarStatsLive() {
-      {% for item in queries %}      
-        const textViewCount{{ item }} = document.getElementById('viewCount{{ item }}');      
-      {% endfor %}
+        const textViewCount{{ retorno.consulta }} = document.getElementById('viewCount{{ retorno.consulta }}');      
 
         setInterval(function (){
-          {% for item in queries %}
-          fetch('/count/{{ item }}').then(function (response) {
+          fetch('/count/{{ retorno.consulta }}').then(function (response) {
             return response.json();          
           }).then(function (data) {
-            textViewCount{{ item }}.textContent = data.count;
+            textViewCount{{ retorno.consulta }}.textContent = data.count;
           }).catch (function (error) {
             console.log(error);
           });
-          {% endfor %}
-        }, 5000);
+        }, 2000);
       }
-      
-
     document.addEventListener('DOMContentLoaded', function () {
       buscarStatsLive();
     });
+  </script>
+
+  <script>
+    //script para preenchimento da tabela com resultados
+    $("#table").bootstrapTable({formatNoMatches: function () {
+      return "Aguardando atualização...";
+      }
+    });
+
+    // Stomp.js boilerplate
+    var client = Stomp.client('ws://{{ retorno.ip }}:15674/ws');
+    //client.debug = pipe('#second');
+
+    var on_connect = function(x) {
+        id = client.subscribe("/amq/queue/{{ retorno.consulta }}", function(d) {            
+            data = JSON.parse(d.body);
+            //console.log("Impressao:")            
+            //console.log(data)
+            var cols= [];
+            $.each(data[0], function(key, value){
+                cols.push({
+                    field: key,
+                    title: key,
+                    sortable: false
+                });
+            });
+            console.log(cols)
+
+            $('#table').bootstrapTable('refreshOptions',{
+                showRefresh: false,
+                columns: cols,
+                data: data
+            });            
+        });
+    };
+    var on_error =  function() {
+    console.log('error');
+    };
+    client.connect('guest', 'guest', on_connect, on_error, '/');    
   </script>
 </body>
 

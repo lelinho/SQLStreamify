@@ -19,18 +19,40 @@ redis = Redis("redis")
 #Cria um set com as queries registradas no arquivo de configuração
 queries = set()
 for section_name in config.sections():
-    if section_name != "DB":
+    if section_name != "DB" and section_name != "EXPOSICAO":
         queries.add(section_name)
 
 
+#Retorna o contador da busca em JSON
 @app.route("/count/<string:consulta>")
 def stats(consulta):
-    contador = int(redis.hget(consulta, "count"))
+    contador = 0
+    if redis.hget(consulta, "count")!= [None]:
+        #print(redis.hget(consulta, "count"), flush=True)
+        contador = int(redis.hget(consulta, "count"))    
     return jsonify(
         count=str(contador)
     )
 
 
+#Página com detalhes de cada busca
+@app.route("/<string:consulta>")
+def detail(consulta):
+    contador = str(0)
+    if redis.hget(consulta,"count") != [None]:
+        #print(redis.hget(consulta, "count"), flush=True)
+        contador = str(int(redis.hget(consulta, "count")))
+
+    return render_template("tabela.html",retorno = {
+        "queries": queries,
+        "consulta": consulta,
+        "ip": config['EXPOSICAO']['ip'],
+        "count": contador,
+        "sql": config[consulta]['query']        
+    })
+
+
+#Página inicial do Dashboard
 @app.route("/")
 def index():    
     #retornar set de consultas
