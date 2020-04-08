@@ -1,0 +1,46 @@
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<link href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css" rel="stylesheet">
+<script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+<script src="stomp.js"></script>
+
+
+<table id="table">
+</table>
+
+<script>       
+    $("#table").bootstrapTable({formatNoMatches: function () {
+        return "Aguardando atualização...";
+        }
+    });
+
+    // Stomp.js boilerplate
+    var client = Stomp.client('ws://200.145.181.62:15674/ws');
+    //client.debug = pipe('#second');
+
+    var on_connect = function(x) {
+        id = client.subscribe("/amq/queue/SQL_HISTORY", function(d) {            
+            data = JSON.parse(d.body);
+            //console.log("Impressao:")            
+            //console.log(data)
+            var cols= [];
+            $.each(data[0], function(key, value){
+                cols.push({
+                    field: key,
+                    title: key,
+                    sortable: false
+                });
+            });
+            console.log(cols)
+
+            $('#table').bootstrapTable('refreshOptions',{
+                showRefresh: true,
+                columns: cols,
+                data: data
+            });            
+        });
+    };
+    var on_error =  function() {
+    console.log('error');
+    };
+    client.connect('guest', 'guest', on_connect, on_error, '/');
+</script>
