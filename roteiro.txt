@@ -59,4 +59,10 @@ https://mariadb.com/resources/blog/data-streaming-with-mariadb/
 PARSER DO SQL:
 https://github.com/mozilla/moz-sql-parser
 
-teste rsync
+
+#####
+Syncar arquivos com o servidor para produção
+rsync:
+#####
+rsync -avz --delete ~/Documents/GitHub/StreamDB_middleware root@200.145.181.62:/opt
+
