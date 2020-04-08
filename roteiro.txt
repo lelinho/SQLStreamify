@@ -58,3 +58,5 @@ https://mariadb.com/resources/blog/data-streaming-with-mariadb/
 
 PARSER DO SQL:
 https://github.com/mozilla/moz-sql-parser
+
+teste rsync
