@@ -1,10 +1,8 @@
-FROM python:3
+FROM python:3-alpine
 
-RUN pip install --no-cache-dir pymysql
-RUN pip install --no-cache-dir flask
-RUN pip install --no-cache-dir redis
-RUN pip install --no-cache-dir deepdiff
-RUN pip install --no-cache-dir pika
+COPY requirements.txt ./
+
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY script_consulta.py /
 
