@@ -1,0 +1,5 @@
+mysql-replication 
+flask
+requests
+moz-sql-parser
+redis
