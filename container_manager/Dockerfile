@@ -4,10 +4,9 @@ COPY requirements.txt ./
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-RUN pip install requests
-RUN pip install --no-cache-dir redis
+WORKDIR /app
 
-COPY streamdb_manager.py /
+ADD . /app
 
-CMD [ "python", "streamdb_manager.py" ]
+CMD [ "python", "/app/streamdb_manager.py" ]
 #EXPOSE 80

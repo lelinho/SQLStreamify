@@ -3,3 +3,4 @@ flask
 requests
 moz-sql-parser
 redis
+uwsgi
