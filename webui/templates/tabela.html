@@ -1,222 +1,256 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
 
-<head>
+    <title>StreamDB - Middleware</title>
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
+    {% include 'include_top.html' %}
+    <link
+      href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+    <script src="{{ url_for('static', filename='js/stomp.js') }}"></script>
+  </head>
 
-  <title>StreamDB - Middleware</title>
-
-  {% include 'include_top.html' %}
-  <link href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css" rel="stylesheet">
-  <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
-  <script src="{{ url_for('static', filename='js/stomp.js') }}"></script>
-</head>
-
-<body id="page-top">
-
-  <!-- Page Wrapper -->
-  <div id="wrapper">
-
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-        <div class="sidebar-brand-text mx-3">StreamDB</div>
-      </a>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="/">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
-      </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Configuração
-      </div>
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          <i class="fas fa-fw fa-cog"></i>
-          <span>Consultas</span>
+  <body id="page-top">
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+      <!-- Sidebar -->
+      <ul
+        class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+        id="accordionSidebar"
+      >
+        <!-- Sidebar - Brand -->
+        <a
+          class="sidebar-brand d-flex align-items-center justify-content-center"
+          href="/"
+        >
+          <div class="sidebar-brand-text mx-3">StreamDB</div>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Consultas:</h6>
-            <!-- IMPRIME E CRIA O LINK D AS QUERIES -->
-            {% for item in retorno.queries %}
+
+        <!-- Divider -->
+        <hr class="sidebar-divider my-0" />
+
+        <!-- Nav Item - Dashboard -->
+        <li class="nav-item active">
+          <a class="nav-link" href="/">
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span></a
+          >
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider" />
+
+        <!-- Heading -->
+        <div class="sidebar-heading">
+          Configuração
+        </div>
+
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+          <a
+            class="nav-link collapsed"
+            href="#"
+            data-toggle="collapse"
+            data-target="#collapseTwo"
+            aria-expanded="true"
+            aria-controls="collapseTwo"
+          >
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Consultas</span>
+          </a>
+          <div
+            id="collapseTwo"
+            class="collapse"
+            aria-labelledby="headingTwo"
+            data-parent="#accordionSidebar"
+          >
+            <div class="bg-white py-2 collapse-inner rounded">
+              <h6 class="collapse-header">Consultas:</h6>
+              <!-- IMPRIME E CRIA O LINK D AS QUERIES -->
+              {% for item in retorno.queries %}
               <a class="collapse-item" href="/{{ item }}">
                 <i class="fas fa-table"></i>
                 <span>{{ item }}</span>
-              </a>                        
-            {% endfor %}
+              </a>
+              {% endfor %}
+            </div>
           </div>
-        </div>
-      </li>
-      <!-- Divider -->
-      <hr class="sidebar-divider">      
-    </ul>
-    <!-- End of Sidebar -->
+        </li>
+        <!-- Divider -->
+        <hr class="sidebar-divider" />
+      </ul>
+      <!-- End of Sidebar -->
 
-    <!-- Content Wrapper -->
-    <div id="content-wrapper" class="d-flex flex-column">
-
-      <!-- Main Content -->
-      <div id="content">
-
-        <!-- Begin Page Content -->
-        <div class="container-fluid mt-4">
-
-          <!-- Page Heading -->
-          <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">{{ retorno.consulta }}</h1>
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Gerar Relatório</a>
-          </div>
-
-          <!-- Content Row - Linha com sumário -->
-          <div class="row">
-            <!-- Card com o SQL -->
-            <div class="col-md-9 mb-4">
-              <div class="card shadow">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Consulta - SQL</h6>
-                </div>
-                <div class="card-body">
-                  {{ retorno.sql }}
-                </div>
-              </div>
+      <!-- Content Wrapper -->
+      <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+          <!-- Begin Page Content -->
+          <div class="container-fluid mt-4">
+            <!-- Page Heading -->
+            <div
+              class="d-sm-flex align-items-center justify-content-between mb-4"
+            >
+              <h1 class="h3 mb-0 text-gray-800">{{ retorno.consulta }}</h1>
+              <a
+                href="#"
+                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+                ><i class="fas fa-download fa-sm text-white-50"></i> Gerar
+                Relatório</a
+              >
             </div>
 
-            <!-- Card com o contador -->
-            <div class="col-xl-3 col-md-3 mb-4">
-              <div class="card border-left-primary shadow h-100 py-2">
-                <div class="card-body">
-                  <div class="row no-gutters align-items-center">
-                    <div class="col mr-2">
-                      <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Atualizações</div>
-                      <div class="h5 mb-0 font-weight-bold text-gray-800" id="viewCount{{ retorno.consulta }}">-</div>
-                    </div>
-                    <div class="col-auto">
-                      <i class="fas fa-box-open fa-2x text-gray-300"></i>
+            <!-- Content Row - Linha com sumário -->
+            <div class="row">
+              <!-- Card com o SQL -->
+              <div class="col-md-9 mb-4">
+                <div class="card shadow">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">
+                      Consulta - SQL
+                    </h6>
+                  </div>
+                  <div class="card-body">
+                    {{ retorno.sql }}
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card com o contador -->
+              <div class="col-xl-3 col-md-3 mb-4">
+                <div class="card border-left-primary shadow h-100 py-2">
+                  <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                      <div class="col mr-2">
+                        <div
+                          class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+                        >
+                          Atualizações
+                        </div>
+                        <div
+                          class="h5 mb-0 font-weight-bold text-gray-800"
+                          id="viewCount{{ retorno.consulta }}"
+                        >
+                          -
+                        </div>
+                      </div>
+                      <div class="col-auto">
+                        <i class="fas fa-box-open fa-2x text-gray-300"></i>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>            
-          <!-- Content Row -->
-          </div>
+              <!-- Content Row -->
+            </div>
 
-          <div class="row">
-            <div class="col-md-12 mb-4">
-              <div class="card shadow">
-                <div class="card-header py-3">
-                  <h6 class="m-0 font-weight-bold text-primary">Tabela</h6>
-                </div>
-                <div class="card-body">
-                  <div class="table-responsive-sm">
-                    <table class="table w-auto small" id="table" width="100%" cellspacing="0"></table>
+            <div class="row">
+              <div class="col-md-12 mb-4">
+                <div class="card shadow">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Tabela</h6>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive-sm">
+                      <table
+                        class="table w-auto small"
+                        id="table"
+                        width="100%"
+                        cellspacing="0"
+                      ></table>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
+          <!-- /.container-fluid -->
         </div>
-        <!-- /.container-fluid -->
-
+        <!-- End of Main Content -->
       </div>
-      <!-- End of Main Content -->
-
+      <!-- End of Content Wrapper -->
     </div>
-    <!-- End of Content Wrapper -->
+    <!-- End of Page Wrapper -->
 
-  </div>
-  <!-- End of Page Wrapper -->
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fas fa-angle-up"></i>
+    </a>
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+    {% include 'include_bottom.html' %}
 
+    <script>
+      //-----------------------------------------------------------------------------
+      //Script para preenchimento da Tabela com resultados e o número de atualizaçoes
+      //-----------------------------------------------------------------------------
 
-  {% include 'include_bottom.html' %}
-  
-  <script>
-    //-----------------------------------------------------------------------------
-    //Script para preenchimento da Tabela com resultados e o número de atualizaçoes
-    //-----------------------------------------------------------------------------
-    
-    //variavel para mostrar o número de atualizações
-    const textViewCount{{ retorno.consulta }} = document.getElementById('viewCount{{ retorno.consulta }}');
-    
-    //inicializa o componente da tabela
-    $("#table").bootstrapTable({formatNoMatches: function () {
-      return "Aguardando atualização...";
-      }
-    });
+      //variavel para mostrar o número de atualizações
+      const textViewCount{{ retorno.consulta }} = document.getElementById('viewCount{{ retorno.consulta }}');
 
-    //CLIENTE PARA BUSCAR ATUALIZAÇÕES UTILIZANDO WEBSOCKET
-    // Stomp.js boilerplate
-    var client = Stomp.client('ws://{{ retorno.ip }}:15674/ws');
-    //client.debug = pipe('#second');
+      //inicializa o componente da tabela
+      $("#table").bootstrapTable({formatNoMatches: function () {
+        return "Aguardando atualização...";
+        }
+      });
 
-    var on_connect = function(x) {
-        id = client.subscribe("/amq/queue/{{ retorno.consulta }}", function(d) {            
-            data = JSON.parse(d.body);
-            //busca as "colunas" no JSON para montagem do cabeçalho
-            var cols= [];
-            $.each(data[0], function(key, value){
-                cols.push({
-                    field: key,
-                    title: key,
-                    sortable: false
-                });
-            });
-            console.log(cols)
-            //--------------
-        
-            //atualiza a tabela sempre que tiver dados novos
-            $('#table').fadeOut();
-            $('#table').bootstrapTable('refreshOptions',{
-                showRefresh: false,
-                columns: cols,
-                data: data
-            });
-            $('#table').fadeIn();
+      //CLIENTE PARA BUSCAR ATUALIZAÇÕES UTILIZANDO WEBSOCKET
+      // Stomp.js boilerplate
+      var client = Stomp.client('ws://{{ retorno.ip }}:15674/ws');
+      //client.debug = pipe('#second');
 
-            //busca o contador de atualizações para a consulta e preenche o textView
-            fetch('/count/{{ retorno.consulta }}').then(function (response) {
-              return response.json();          
-            }).then(function (data) {
-              $('viewCount{{ retorno.consulta }}').fadeOut("slow");      
-              textViewCount{{ retorno.consulta }}.textContent = data.count;
-              $('viewCount{{ retorno.consulta }}').fadeIn();
-            }).catch (function (error) {
-              console.log(error);
-            });
-            //-----------------
-  
-        });
-    };
-    var on_error =  function() {
-    console.log('error');
-    };
-    client.connect('guest', 'guest', on_connect, on_error, '/');    
-  </script>
-</body>
+      var on_connect = function(x) {
+          id = client.subscribe("/amq/queue/{{ retorno.consulta }}", function(d) {
+              data = JSON.parse(d.body);
+              //busca as "colunas" no JSON para montagem do cabeçalho
+              var cols= [];
+              $.each(data[0], function(key, value){
+                  cols.push({
+                      field: key,
+                      title: key,
+                      sortable: false
+                  });
+              });
+              console.log(cols)
+              //--------------
 
+              //atualiza a tabela sempre que tiver dados novos
+              $('#table').fadeOut();
+              $('#table').bootstrapTable('refreshOptions',{
+                  showRefresh: false,
+                  columns: cols,
+                  data: data
+              });
+              $('#table').fadeIn();
+
+              //busca o contador de atualizações para a consulta e preenche o textView
+              fetch('/count/{{ retorno.consulta }}').then(function (response) {
+                return response.json();
+              }).then(function (data) {
+                $('viewCount{{ retorno.consulta }}').fadeOut("slow");
+                textViewCount{{ retorno.consulta }}.textContent = data.count;
+                $('viewCount{{ retorno.consulta }}').fadeIn();
+              }).catch (function (error) {
+                console.log(error);
+              });
+              //-----------------
+
+          });
+      };
+      var on_error =  function() {
+      console.log('error');
+      };
+      client.connect('guest', 'guest', on_connect, on_error, '/');
+    </script>
+  </body>
 </html>
