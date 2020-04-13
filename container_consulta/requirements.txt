@@ -1,6 +1,6 @@
 pymysql
 flask
 redis
-deepdiff
+jsondiff
 pika
 uwsgi

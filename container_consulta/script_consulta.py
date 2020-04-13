@@ -14,7 +14,7 @@ import json
 import pika
 from redis import Redis
 from flask import Flask, escape, request, jsonify
-from deepdiff import DeepDiff
+from jsondiff import diff
 
 # Le informaçoes do arquivo de configuracao
 config = configparser.ConfigParser()
@@ -58,13 +58,10 @@ def ultimoResultado(consulta):
 
 
 def comparaResultados(consulta1, consulta2):
-    diff = DeepDiff(consulta1, consulta2,
-                    ignore_order=True,
-                    report_repetition=True)
-
+    dif = diff(consulta1, consulta2, load=True, dump=True)
     # if diff:
     #print(diff, flush=True)
-    return diff
+    return dif
 
 
 @app.route("/")
@@ -85,6 +82,8 @@ def query(consulta):
 
     # busca resultado da ultima consulta gravada
     ultimo = ultimoResultado(consulta)
+    print("Ultimo\n", flush=True)
+    print(ultimo, flush=True)
 
     # Conexão com o Banco de Dados
     db = MySQLdb.connect(config['DB']['host'], config['DB']
