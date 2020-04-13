@@ -1,0 +1,5 @@
+.scroll {
+  max-height: 350px;
+  font-size: 0.7rem;
+  overflow-y: auto;
+}

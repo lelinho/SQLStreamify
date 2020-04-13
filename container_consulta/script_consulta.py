@@ -58,7 +58,10 @@ def ultimoResultado(consulta):
 
 
 def comparaResultados(consulta1, consulta2):
-    diff = DeepDiff(consulta1, consulta2)
+    diff = DeepDiff(consulta1, consulta2,
+                    ignore_order=True,
+                    report_repetition=True)
+
     # if diff:
     #print(diff, flush=True)
     return diff

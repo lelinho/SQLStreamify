@@ -118,11 +118,12 @@
                 <div class="card shadow">
                   <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">
-                      Consulta - SQL
+                      Consulta
                     </h6>
                   </div>
                   <div class="card-body">
-                    {{ retorno.sql }}
+                    <p><strong>SQL: </strong> {{ retorno.sql }}</p>
+                    <p><strong>Modo: </strong> {{ retorno.modo }}</p>
                   </div>
                 </div>
               </div>
@@ -136,7 +137,7 @@
                         <div
                           class="text-xs font-weight-bold text-primary text-uppercase mb-1"
                         >
-                          Atualizações
+                          Eventos
                         </div>
                         <div
                           class="h5 mb-0 font-weight-bold text-gray-800"
@@ -155,6 +156,23 @@
               <!-- Content Row -->
             </div>
 
+            <!-- Linha com as mensagens do MQTT -->
+            <div class="row">
+              <div class="col-md-12 mb-4">
+                <div class="card shadow">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Mensagens</h6>
+                  </div>
+                  <div class="card-body scroll">
+                    <div id="stream">
+                      <p><code>...</code></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Linha com a tabela dos dados recebidos -->
             <div class="row">
               <div class="col-md-12 mb-4">
                 <div class="card shadow">
@@ -209,9 +227,20 @@
       var client = Stomp.client('ws://{{ retorno.ip }}:15674/ws');
       //client.debug = pipe('#second');
 
+      //div que recebe os streams
+      var div = document.getElementById('stream');
+
       var on_connect = function(x) {
           id = client.subscribe("/amq/queue/{{ retorno.consulta }}", function(d) {
               data = JSON.parse(d.body);
+
+              //preenche as mensagens recebidas
+              p = (d.body === undefined) ? '' : (d.body);
+              div.innerHTML += '<p><code>';
+              div.innerHTML += p;
+              div.innerHTML += '</code></p>';
+              console.log(p)
+
               //busca as "colunas" no JSON para montagem do cabeçalho
               var cols= [];
               $.each(data[0], function(key, value){
@@ -225,13 +254,13 @@
               //--------------
 
               //atualiza a tabela sempre que tiver dados novos
-              $('#table').fadeOut();
+              //$('#table').fadeOut();
               $('#table').bootstrapTable('refreshOptions',{
                   showRefresh: false,
                   columns: cols,
                   data: data
               });
-              $('#table').fadeIn();
+              //$('#table').fadeIn();
 
               //busca o contador de atualizações para a consulta e preenche o textView
               fetch('/count/{{ retorno.consulta }}').then(function (response) {

@@ -8,6 +8,7 @@ import socket
 import configparser
 import requests
 import json
+import re
 from datetime import datetime
 from redis import Redis
 from flask import Flask, Response
@@ -82,15 +83,18 @@ def identificaTabelas(query):
 
 def verificaRequisitos(where, linha_binlog, query):
     if where:
-        for statement in where.items():
-            #print(statement[0], flush = True)
-            #print(linha_binlog[statement[1][0]], flush=True)
-            #print(statement[1][1], flush=True)
+        #print(where, flush=True)
+        # {'and': [{'eq': ['itemid', 53939]}, {'gt': ['clock', 1586801554]}]}
 
-            # MONTAR PARA AS OUTRAS OPERAÇÕES SQL
-            if statement[0] == "eq":
-                if linha_binlog[statement[1][0]] == statement[1][1]:
-                    r = requests.get("http://lbconsulta/" + query)
+        # busca por igualdades no where
+        equal = re.findall(r'\'eq\':(.*?)}', str(where))
+        for eq in equal:
+            # transforma a string em uma lista
+            eq = eval(eq)
+            #print(eq, flush=True)
+            #print(eq[0], flush=True)
+            if linha_binlog[eq[0]] == eq[1]:
+                r = requests.get("http://lbconsulta/" + query)
     else:
         r = requests.get("http://lbconsulta/" + query)
 
