@@ -1,8 +1,24 @@
 # Roteiro de passos para funcionamento e links úteis
 
-## Configs:
+## config.ini:
 
-SERVIDOR 200.145.181.62
+### DB
+
+- type = mysql
+- host = local onde está o BD
+- port = porta para acesso ao BD
+- db = nome_do_banco
+- user = usuario
+- password = senha
+
+### EXPOSICAO
+
+- ip = IP no qual será exposto o middleware
+
+### Queries [nome_para_query]
+
+- query = SELECT
+- modo = full_dataset ou only_diff
 
 ---
 

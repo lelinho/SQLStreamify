@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 #
-# Verifica eventos
+# Verifica eventos nas tabelas relacionadas a busca
 #
 import socket
 import configparser
@@ -36,21 +36,20 @@ redis = Redis("redis")
 
 
 def identificaWhere(query):
-    #buscar query correspondente ao identificador
+    # buscar query correspondente ao identificador
     sql_str = config[query]['query']
     parsed = parse(sql_str)
-    
+
     where = None
     if "where" in parsed:
         where = parsed["where"]
-    
+
     return where
 
 
-
 def identificaTabelas(query):
-    #buscar query correspondente ao identificador
-    sql_str = config[query]['query']    
+    # buscar query correspondente ao identificador
+    sql_str = config[query]['query']
 
     try:
         parsed = parse(sql_str)
@@ -69,32 +68,31 @@ def identificaTabelas(query):
                 #print(conteudo["value"], flush=True)
                 table.append(conteudo["value"])
             else:
-                a = [value for key, value in conteudo.items() if 'join' in key.lower()]
+                a = [value for key, value in conteudo.items()
+                     if 'join' in key.lower()]
                 if a:
                     #print(a[0], flush=True)
                     if "value" in a[0]:
                         #print(a[0]["value"], flush=True)
                         table.append(a[0]["value"])
-    
+
     print(table, flush=True)
     return table
 
 
-def verificaRequisitos(where, linha_binlog, query):    
+def verificaRequisitos(where, linha_binlog, query):
     if where:
-        for statement in where.items():            
+        for statement in where.items():
             #print(statement[0], flush = True)
             #print(linha_binlog[statement[1][0]], flush=True)
             #print(statement[1][1], flush=True)
 
-            #MONTAR PARA AS OUTRAS OPERAÇÕES SQL
+            # MONTAR PARA AS OUTRAS OPERAÇÕES SQL
             if statement[0] == "eq":
-                if linha_binlog[statement[1][0]] == statement[1][1]:                    
-                    r = requests.get("http://lbconsulta/" + query)                    
+                if linha_binlog[statement[1][0]] == statement[1][1]:
+                    r = requests.get("http://lbconsulta/" + query)
     else:
         r = requests.get("http://lbconsulta/" + query)
-        
-
 
 
 @app.route("/")
@@ -105,12 +103,12 @@ def index():
 @app.route("/<string:query>/<int:server_id>")
 def eventos(query, server_id):
 
-    #buscar query correspondente ao identificador
-    
-    #busca tabelas afetadas pela consulta
+    # buscar query correspondente ao identificador
+
+    # busca tabelas afetadas pela consulta
     tabelas = identificaTabelas(query)
 
-    #busca condições
+    # busca condições
     where = identificaWhere(query)
 
     # Monitora eventos das tabelas que fazem parte da consulta
@@ -120,31 +118,32 @@ def eventos(query, server_id):
     # the end of the stream
     stream = BinLogStreamReader(connection_settings=MYSQL_SETTINGS,
                                 server_id=server_id,
-                                only_events=[DeleteRowsEvent, WriteRowsEvent, UpdateRowsEvent],
+                                only_events=[DeleteRowsEvent,
+                                             WriteRowsEvent, UpdateRowsEvent],
                                 only_tables=tabelas,
-                                #skip_to_timestamp: busca apenas novos eventos, ignora logs antigos...
-                                skip_to_timestamp=datetime.timestamp(datetime.now()),
+                                # skip_to_timestamp: busca apenas novos eventos, ignora logs antigos...
+                                skip_to_timestamp=datetime.timestamp(
+                                    datetime.now()),
                                 blocking=True)
-    #contador = 0    
-    
-    #Realiza uma primeira busca antes de começar a consultar apenas quando tiver eventos...
+    #contador = 0
+
+    # Realiza uma primeira busca antes de começar a consultar apenas quando tiver eventos...
     r = requests.get("http://lbconsulta/" + query)
 
     for binlogevent in stream:
-        #binlogevent.dump()
+        # binlogevent.dump()
         #contador = contador + 1
-        #print(contador)
-        for row in binlogevent.rows:            
-            #print(row, flush=True)            
-            if isinstance(binlogevent, WriteRowsEvent):                
-                #FAZER A VERIFICAÇÃO DO WHERE
-                verificaRequisitos(where,row["values"],query)
+        # print(contador)
+        for row in binlogevent.rows:
+            #print(row, flush=True)
+            if isinstance(binlogevent, WriteRowsEvent):
+                # FAZER A VERIFICAÇÃO DO WHERE
+                verificaRequisitos(where, row["values"], query)
             if isinstance(binlogevent, UpdateRowsEvent):
                 #print(row, flush=True)
-                verificaRequisitos(where,row["before_values"],query)
-                
+                verificaRequisitos(where, row["before_values"], query)
+
     stream.close()
-    
 
 
 if __name__ == "__main__":
