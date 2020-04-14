@@ -18,7 +18,7 @@
 ### Queries [nome_para_query]
 
 - query = SELECT
-- modo = full_dataset ou only_diff
+- modo = full_dataset ou one_at_time
 
 ---
 

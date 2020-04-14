@@ -58,10 +58,8 @@ def ultimoResultado(consulta):
 
 
 def comparaResultados(consulta1, consulta2):
-    dif = diff(consulta1, consulta2, load=True, dump=True)
-    # if diff:
-    #print(diff, flush=True)
-    return dif
+    # utilizando o jsondiff
+    return diff(consulta1, consulta2, load=True, dump=True)
 
 
 @app.route("/")
