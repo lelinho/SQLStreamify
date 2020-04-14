@@ -1,92 +1,89 @@
 version: "2.2"
 
 services:
-    redis:
-        image: redis
+  redis:
+    image: redis:5-alpine
+    command: [sh, -c, "rm -f /data/dump.rdb && redis-server --save ''"]
 
-    manager:
-        build: container_manager
-        ports:
-            - "8000:80"
-        volumes:
-            - ./configuracao:/config
-        links:
-            - eventos
-            - lbeventos
-            - redis
-        depends_on: 
-            - lbeventos
-            - lbconsulta
-            - redis
+  manager:
+    build: container_manager
+    ports:
+      - "8000:80"
+    volumes:
+      - ./configuracao:/config
+    links:
+      - eventos
+      - lbeventos
+      - redis
+    depends_on:
+      - lbeventos
+      - lbconsulta
+      - redis
 
-    lbconsulta:
-        image: dockercloud/haproxy
-        depends_on:
-            - consulta
-        volumes:
-            - /var/run/docker.sock:/var/run/docker.sock
-        environment:
-            - ADDITIONAL_SERVICES=streamdbmiddleware:consulta
+  lbconsulta:
+    image: dockercloud/haproxy
+    depends_on:
+      - consulta
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - ADDITIONAL_SERVICES=streamdbmiddleware:consulta
 
+  lbeventos:
+    image: dockercloud/haproxy
+    depends_on:
+      - eventos
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - ADDITIONAL_SERVICES=streamdbmiddleware:eventos
 
-    lbeventos:
-        image: dockercloud/haproxy
-        depends_on:
-            - eventos
-        volumes:
-            - /var/run/docker.sock:/var/run/docker.sock
-        environment:
-            - ADDITIONAL_SERVICES=streamdbmiddleware:eventos
-        
+  eventos:
+    scale: 2
+    build: container_eventos
+    #ports:
+    #    - "8001:80"
+    volumes:
+      - ./configuracao:/config
+    links:
+      - lbconsulta
+      - consulta
+      - redis
+    depends_on:
+      - lbconsulta
+      - consulta
+      - redis
 
-    eventos:
-        scale: 2
-        build: container_eventos
-        #ports:
-        #    - "8001:80"
-        volumes:
-            - ./configuracao:/config
-        links:
-            - lbconsulta
-            - consulta
-            - redis
-        depends_on:
-            - lbconsulta
-            - consulta
-            - redis
+  consulta:
+    scale: 2
+    build: container_consulta
+    volumes:
+      - ./configuracao:/config
+    links:
+      - redis
+      - mqtt
 
-    consulta:
-        scale: 2
-        build: container_consulta
-        volumes:
-            - ./configuracao:/config
-        links:
-            - redis
-            - mqtt  
-            
-    webui:
-        build: webui
-        ports: 
-            - 8080:80
-        volumes:
-            - ./configuracao:/config
-        links:
-            - redis      
+  webui:
+    build: webui
+    ports:
+      - 8080:80
+    volumes:
+      - ./configuracao:/config
+    links:
+      - redis
 
-
-
-    mqtt:
-        build: mqtt        
-        #environment:
-            #RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
-            #RABBITMQ_DEFAULT_USER: "rabbitmq"
-            #RABBITMQ_DEFAULT_PASS: "rabbitmq"
-            #RABBITMQ_DEFAULT_VHOST: "/"
-        ports:
-            - "15672:15672"
-            - "5672:5672"
-            - "15674:15674"
-        #volumes:
-            #- "./enabled_plugins:/etc/rabbitmq/enabled_plugins"
-            #- "./rabbitmq.config:/etc/rabbitmq/rabbitmq.config:ro"
-            #- "./autocluster-0.4.1.ez:/usr/lib/rabbitmq/lib/rabbitmq_server-3.5.5/plugins/autocluster-0.4.1.ez"            
+  mqtt:
+    build: mqtt
+    #environment:
+    #RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
+    #RABBITMQ_DEFAULT_USER: "rabbitmq"
+    #RABBITMQ_DEFAULT_PASS: "rabbitmq"
+    #RABBITMQ_DEFAULT_VHOST: "/"
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+      - "15674:15674"
+    #volumes:
+    #- "./enabled_plugins:/etc/rabbitmq/enabled_plugins"
+    #- "./rabbitmq.config:/etc/rabbitmq/rabbitmq.config:ro"
+    #- "./autocluster-0.4.1.ez:/usr/lib/rabbitmq/lib/rabbitmq_server-3.5.5/plugins/autocluster-0.4.1.ez"

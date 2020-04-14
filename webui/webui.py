@@ -42,8 +42,8 @@ def detail(consulta):
     # Especificaçoes da query
     modo = "full_dataset"
     if config.has_option(consulta, 'modo'):
-        if config[consulta]['modo'] == "only_diff":
-            modo = "only_diff"
+        if config[consulta]['modo'] == "one_at_time":
+            modo = "one_at_time"
 
     contador = str(0)
     if redis.hget(consulta, "count") != None:

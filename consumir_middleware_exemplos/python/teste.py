@@ -1,0 +1,9 @@
+from jsondiff import diff
+
+
+um = """[{"a": 1}]"""
+outro = """[{"itemid": 53939, "clock": 1586868755, "value": "Link_Bloco_de_Aulas_1_POSMAC_187.167", "ns": 775325865}, {"itemid": 53939, "clock": 1586868815, "value": "Link_Bloco_de_Aulas_1_POSMAC_187.167", "ns": 642513308}, {"itemid": 53939, "clock": 1586868875, "value": "Link_Bloco_de_Aulas_1_POSMAC_187.167", "ns": 672115631}, {"itemid": 53939, "clock": 1586868935, "value": "Link_Bloco_de_Aulas_1_POSMAC_187.167", "ns": 656269611}, {"itemid": 53939, "clock": 1586868995, "value": "Link_Bloco_de_Aulas_1_POSMAC_187.167", "ns": 647783135}, {"itemid": 53939, "clock": 1586869055, "value": "Link_Bloco_de_Aulas_1_POSMAC_187.167", "ns": 624782591}, {"itemid": 53939, "clock": 1586869115, "value": "Link_Bloco_de_Aulas_1_POSMAC_187.167", "ns": 516561448}, {"itemid": 53939, "clock": 1586869175, "value": "Link_Bloco_de_Aulas_1_POSMAC_187.167", "ns": 566531709}, {"itemid": 53939, "clock": 1586869235, "value": "Link_Bloco_de_Aulas_1_POSMAC_187.167", "ns": 845192498}, {"itemid": 53939, "clock": 1586869295, "value": "Link_Bloco_de_Aulas_1_POSMAC_187.167", "ns": 752989631}, {"itemid": 53939, "clock": 1586869355, "value": "Link_Bloco_de_Aulas_1_POSMAC_187.167", "ns": 755129315}, {"itemid": 53939, "clock": 1586869415, "value": "Link_Bloco_de_Aulas_1_POSMAC_187.167", "ns": 527575923}, {"itemid": 53939, "clock": 1586869475, "value": "Link_Bloco_de_Aulas_1_POSMAC_187.167", "ns": 618263110}, {"itemid": 53939, "clock": 1586869535, "value": "Link_Bloco_de_Aulas_1_POSMAC_187.167", "ns": 803258868}, {"itemid": 53939, "clock": 1586869595, "value": "Link_Bloco_de_Aulas_1_POSMAC_187.167", "ns": 798109915}, {"itemid": 53939, "clock": 1586869655, "value": "Link_Bloco_de_Aulas_1_POSMAC_187.167", "ns": 662282603}]"""
+
+dif = diff(um, outro, load=True, dump=True, syntax='explicit')
+
+print(dif)

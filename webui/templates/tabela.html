@@ -234,6 +234,18 @@
           id = client.subscribe("/amq/queue/{{ retorno.consulta }}", function(d) {
               data = JSON.parse(d.body);
 
+              //busca o contador de atualizações para a consulta e preenche o textView
+              fetch('/count/{{ retorno.consulta }}').then(function (response) {
+                return response.json();
+              }).then(function (data) {
+                $('viewCount{{ retorno.consulta }}').fadeOut("slow");
+                textViewCount{{ retorno.consulta }}.textContent = data.count;
+                $('viewCount{{ retorno.consulta }}').fadeIn();
+              }).catch (function (error) {
+                console.log(error);
+              });
+              //-----------------
+
               //preenche as mensagens recebidas
               p = (d.body === undefined) ? '' : (d.body);
               div.innerHTML += '<p><code>';
@@ -261,19 +273,6 @@
                   data: data
               });
               //$('#table').fadeIn();
-
-              //busca o contador de atualizações para a consulta e preenche o textView
-              fetch('/count/{{ retorno.consulta }}').then(function (response) {
-                return response.json();
-              }).then(function (data) {
-                $('viewCount{{ retorno.consulta }}').fadeOut("slow");
-                textViewCount{{ retorno.consulta }}.textContent = data.count;
-                $('viewCount{{ retorno.consulta }}').fadeIn();
-              }).catch (function (error) {
-                console.log(error);
-              });
-              //-----------------
-
           });
       };
       var on_error =  function() {
