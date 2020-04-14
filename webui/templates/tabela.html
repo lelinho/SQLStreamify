@@ -156,25 +156,10 @@
               <!-- Content Row -->
             </div>
 
-            <!-- Linha com as mensagens do MQTT -->
+            <!-- Linha com as mensagens do MQTT e tabela -->
             <div class="row">
-              <div class="col-md-12 mb-4">
-                <div class="card shadow">
-                  <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Mensagens</h6>
-                  </div>
-                  <div class="card-body scroll">
-                    <div id="stream">
-                      <p><code>...</code></p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Linha com a tabela dos dados recebidos -->
-            <div class="row">
-              <div class="col-md-12 mb-4">
+              <!-- Coluna com a tabela -->
+              <div class="col-md-6 mb-4">
                 <div class="card shadow">
                   <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">Tabela</h6>
@@ -187,6 +172,20 @@
                         width="100%"
                         cellspacing="0"
                       ></table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Coluna com as mensagens -->
+              <div class="col-md-6 mb-4">
+                <div class="card shadow">
+                  <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Mensagens</h6>
+                  </div>
+                  <div class="card-body scroll">
+                    <div id="stream">
+                      <p><code>...</code></p>
                     </div>
                   </div>
                 </div>
@@ -215,6 +214,7 @@
 
       //variavel para mostrar o número de atualizações
       const textViewCount{{ retorno.consulta }} = document.getElementById('viewCount{{ retorno.consulta }}');
+      var cont = 0;
 
       //inicializa o componente da tabela
       $("#table").bootstrapTable({formatNoMatches: function () {
@@ -233,6 +233,8 @@
       var on_connect = function(x) {
           id = client.subscribe("/amq/queue/{{ retorno.consulta }}", function(d) {
               data = JSON.parse(d.body);
+              console.log("data");
+              console.log(data);
 
               //busca o contador de atualizações para a consulta e preenche o textView
               fetch('/count/{{ retorno.consulta }}').then(function (response) {
@@ -262,17 +264,38 @@
                       sortable: false
                   });
               });
-              console.log(cols)
+              console.log(cols);
               //--------------
 
-              //atualiza a tabela sempre que tiver dados novos
-              //$('#table').fadeOut();
-              $('#table').bootstrapTable('refreshOptions',{
+              //------------------------------------------------
+              //Montagem da tabela com os dados
+              //------------------------------------------------
+              //Caso seja full_dataset
+              if ('{{ retorno.modo }}' == 'full_dataset'){
+                //atualiza a tabela sempre que tiver dados novos
+                //$('#table').fadeOut();
+                $('#table').bootstrapTable('refreshOptions',{
                   showRefresh: false,
                   columns: cols,
                   data: data
-              });
-              //$('#table').fadeIn();
+                });
+                //$('#table').fadeIn();
+              }
+
+              //Caso seja one_at_time
+              if ('{{ retorno.modo }}' == 'one_at_time'){
+                if (cont == 0){
+                  $('#table').bootstrapTable('refreshOptions',{
+                    showRefresh: false,
+                    columns: cols,
+                    data: data
+                  });
+                  cont++;
+                } else {
+                  $('#table').bootstrapTable('append', data);
+                  cont++;
+                }
+              }
           });
       };
       var on_error =  function() {

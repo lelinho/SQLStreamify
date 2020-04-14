@@ -114,30 +114,25 @@ def query(consulta):
         # No modo "one_at_time" cada registro da consulta é retornado um por vez, para montagem e atualização do dataset
         if modo == "one_at_time":
             created = redis.hset(consulta, "resultado", result_json)
-            print("****** Diff ********", flush=True)
-            print(diff, flush=True)
+            #print(diff, flush=True)
             diff_loaded = json.loads(diff)
             for i in diff_loaded:
                 # verificar se é lista - primeiro diff
                 if isinstance(diff_loaded, list):
                     item_loaded = i
-                    print("****** item_loaded_ ********", flush=True)
-                    print(i, flush=True)
                     redis.hincrby(consulta, "count", 1)
-                    result_diff = json.dumps(i)
+                    json_data = []
+                    json_data.append(i)
+                    result_diff = json.dumps(json_data)
                     publicaMQTT(consulta, result_diff)
                 else:
                     # senao:
                     item_loaded = diff_loaded[i]
-                    print("****** item_loaded ********", flush=True)
-                    print(item_loaded, flush=True)
                     for x in item_loaded:
-                        print("****** X ********", flush=True)
-                        print(x, flush=True)
                         redis.hincrby(consulta, "count", 1)
-                        print("****** x[1] ********", flush=True)
-                        print(x[1], flush=True)
-                        result_diff = json.dumps(x[1])
+                        json_data = []
+                        json_data.append(x[1])
+                        result_diff = json.dumps(json_data)
                         publicaMQTT(consulta, result_diff)
 
                 #publicaMQTT(consulta, json.dumps(diff))
