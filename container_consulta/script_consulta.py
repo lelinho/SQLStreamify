@@ -82,8 +82,8 @@ def query(consulta):
 
     # busca resultado da ultima consulta gravada
     ultimo = ultimoResultado(consulta)
-    print("****** Ultimo ********", flush=True)
-    print(ultimo, flush=True)
+    #print("****** Ultimo ********", flush=True)
+    #print(ultimo, flush=True)
 
     # Conexão com o Banco de Dados
     db = MySQLdb.connect(config['DB']['host'], config['DB']
