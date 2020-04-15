@@ -21,189 +21,138 @@
     <script src="{{ url_for('static', filename='js/stomp.js') }}"></script>
   </head>
 
-  <body id="page-top">
-    <!-- Page Wrapper -->
-    <div id="wrapper">
-      <!-- Sidebar -->
-      <ul
-        class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
-        id="accordionSidebar"
-      >
-        <!-- Sidebar - Brand -->
-        <a
-          class="sidebar-brand d-flex align-items-center justify-content-center"
-          href="/"
-        >
-          <div class="sidebar-brand-text mx-3">StreamDB</div>
-        </a>
+  <body>
+    <!-- Barra superior -->
+    {% include 'barra_superior.html' %}
 
-        <!-- Divider -->
-        <hr class="sidebar-divider my-0" />
+    <div class="container-fluid">
+      <!-- Barra Lateral -->
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky pt-5 mt-3">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="/">
+                  <i class="fas fa-fw fa-tachometer-alt"></i>
+                  <span>Dashboard</span></a
+                >
+              </li>
+            </ul>
 
-        <!-- Nav Item - Dashboard -->
-        <li class="nav-item active">
-          <a class="nav-link" href="/">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a
-          >
-        </li>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider" />
-
-        <!-- Heading -->
-        <div class="sidebar-heading">
-          Configuração
-        </div>
-
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-          <a
-            class="nav-link collapsed"
-            href="#"
-            data-toggle="collapse"
-            data-target="#collapseTwo"
-            aria-expanded="true"
-            aria-controls="collapseTwo"
-          >
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Consultas</span>
-          </a>
-          <div
-            id="collapseTwo"
-            class="collapse"
-            aria-labelledby="headingTwo"
-            data-parent="#accordionSidebar"
-          >
-            <div class="bg-white py-2 collapse-inner rounded">
-              <h6 class="collapse-header">Consultas:</h6>
-              <!-- IMPRIME E CRIA O LINK D AS QUERIES -->
-              {% for item in retorno.queries %}
-              <a class="collapse-item" href="/{{ item }}">
-                <i class="fas fa-table"></i>
-                <span>{{ item }}</span>
-              </a>
-              {% endfor %}
-            </div>
-          </div>
-        </li>
-        <!-- Divider -->
-        <hr class="sidebar-divider" />
-      </ul>
-      <!-- End of Sidebar -->
-
-      <!-- Content Wrapper -->
-      <div id="content-wrapper" class="d-flex flex-column">
-        <!-- Main Content -->
-        <div id="content">
-          <!-- Begin Page Content -->
-          <div class="container-fluid mt-4">
-            <!-- Page Heading -->
-            <div
-              class="d-sm-flex align-items-center justify-content-between mb-4"
+            <h6
+              class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted"
             >
-              <h1 class="h3 mb-0 text-gray-800">{{ retorno.consulta }}</h1>
-              <a
-                href="#"
-                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-                ><i class="fas fa-download fa-sm text-white-50"></i> Gerar
-                Relatório</a
-              >
+              <span>Consultas em execução</span>
+              <a class="d-flex align-items-center text-muted" href="#">
+                <span data-feather="plus-circle"></span>
+              </a>
+            </h6>
+            <ul class="nav flex-column mb-2">
+              {% for item in retorno.queries %}
+              <li class="nav-item"></li>
+                <a class="nav-link" href="/{{ item }}">
+                  <i class="fas fa-table"></i>
+                  {{ item }}
+                </a>
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </nav>
+        <!--Fim da barra lateral-->
+
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom"
+          >
+            <h1 class="h2">{{ retorno.consulta }}</h1>
+          </div>
+
+          <!-- Content Row - Linha com sumário -->
+          <div class="row">
+            <!-- Card com o SQL -->
+            <div class="col-md-9 mb-4">
+              <div class="card shadow">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">
+                    Consulta
+                  </h6>
+                </div>
+                <div class="card-body">
+                  <p><strong>SQL: </strong> {{ retorno.sql }}</p>
+                  <p><strong>Modo: </strong> {{ retorno.modo }}</p>
+                </div>
+              </div>
             </div>
 
-            <!-- Content Row - Linha com sumário -->
-            <div class="row">
-              <!-- Card com o SQL -->
-              <div class="col-md-9 mb-4">
-                <div class="card shadow">
-                  <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">
-                      Consulta
-                    </h6>
-                  </div>
-                  <div class="card-body">
-                    <p><strong>SQL: </strong> {{ retorno.sql }}</p>
-                    <p><strong>Modo: </strong> {{ retorno.modo }}</p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Card com o contador -->
-              <div class="col-xl-3 col-md-3 mb-4">
-                <div class="card border-left-primary shadow h-100 py-2">
-                  <div class="card-body">
-                    <div class="row no-gutters align-items-center">
-                      <div class="col mr-2">
-                        <div
-                          class="text-xs font-weight-bold text-primary text-uppercase mb-1"
-                        >
-                          Eventos
-                        </div>
-                        <div
-                          class="h5 mb-0 font-weight-bold text-gray-800"
-                          id="viewCount{{ retorno.consulta }}"
-                        >
-                          -
-                        </div>
+            <!-- Card com o contador -->
+            <div class="col-xl-3 col-md-3 mb-4">
+              <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div
+                        class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+                      >
+                        Eventos
                       </div>
-                      <div class="col-auto">
-                        <i class="fas fa-box-open fa-2x text-gray-300"></i>
+                      <div
+                        class="h5 mb-0 font-weight-bold text-gray-800"
+                        id="viewCount{{ retorno.consulta }}"
+                      >
+                        -
                       </div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-box-open fa-2x text-gray-300"></i>
                     </div>
                   </div>
                 </div>
               </div>
-              <!-- Content Row -->
+            </div>
+            <!-- Content Row -->
+          </div>  
+
+          <!-- Linha com as mensagens do MQTT e tabela -->
+          <div class="row">
+            <!-- Coluna com a tabela -->
+            <div class="col-md-6 mb-4">
+              <div class="card shadow">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Tabela</h6>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive-sm">
+                    <table
+                      class="table w-auto small"
+                      id="table"
+                      width="100%"
+                      cellspacing="0"
+                    ></table>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <!-- Linha com as mensagens do MQTT e tabela -->
-            <div class="row">
-              <!-- Coluna com a tabela -->
-              <div class="col-md-6 mb-4">
-                <div class="card shadow">
-                  <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Tabela</h6>
-                  </div>
-                  <div class="card-body">
-                    <div class="table-responsive-sm">
-                      <table
-                        class="table w-auto small"
-                        id="table"
-                        width="100%"
-                        cellspacing="0"
-                      ></table>
-                    </div>
-                  </div>
+            <!-- Coluna com as mensagens -->
+            <div class="col-md-6 mb-4">
+              <div class="card shadow">
+                <div class="card-header py-3">
+                  <h6 class="m-0 font-weight-bold text-primary">Mensagens</h6>
                 </div>
-              </div>
-
-              <!-- Coluna com as mensagens -->
-              <div class="col-md-6 mb-4">
-                <div class="card shadow">
-                  <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Mensagens</h6>
-                  </div>
-                  <div class="card-body scroll">
-                    <div id="stream">
-                      <p><code>...</code></p>
-                    </div>
+                <div class="card-body scroll">
+                  <div id="stream">
+                    <p><code>...</code></p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <!-- /.container-fluid -->
         </div>
-        <!-- End of Main Content -->
-      </div>
-      <!-- End of Content Wrapper -->
+        <!-- /.container-fluid -->
+      </main>
     </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-      <i class="fas fa-angle-up"></i>
-    </a>
+  </div>
 
     {% include 'include_bottom.html' %}
 
