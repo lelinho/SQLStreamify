@@ -39,7 +39,7 @@ services:
       - ADDITIONAL_SERVICES=streamdbmiddleware:eventos
 
   eventos:
-    scale: 2
+    scale: ${EVENTOS_SCALE}
     build: container_eventos
     #ports:
     #    - "8001:80"
@@ -55,7 +55,7 @@ services:
       - redis
 
   consulta:
-    scale: 2
+    scale: ${CONSULTA_SCALE}
     build: container_consulta
     volumes:
       - ./configuracao:/config
