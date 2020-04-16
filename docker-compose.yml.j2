@@ -10,7 +10,7 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - ./configuracao:/config
+      - ./config.ini:/config/config.ini
     links:
       - eventos
       - lbeventos
@@ -39,12 +39,12 @@ services:
       - ADDITIONAL_SERVICES=streamdbmiddleware:eventos
 
   eventos:
-    scale: ${EVENTOS_SCALE}
+    scale: {{ v.instancias_eventos }}
     build: container_eventos
     #ports:
     #    - "8001:80"
     volumes:
-      - ./configuracao:/config
+      - ./config.ini:/config/config.ini
     links:
       - lbconsulta
       - consulta
@@ -55,10 +55,10 @@ services:
       - redis
 
   consulta:
-    scale: ${CONSULTA_SCALE}
+    scale: {{ v.instancias_consulta }}
     build: container_consulta
     volumes:
-      - ./configuracao:/config
+      - ./config.ini:/config/config.ini
     links:
       - redis
       - mqtt
@@ -68,7 +68,7 @@ services:
     ports:
       - 8080:80
     volumes:
-      - ./configuracao:/config
+      - ./config.ini:/config/config.ini
     links:
       - redis
 
