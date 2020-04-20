@@ -10,6 +10,10 @@ import os
 from jinja2 import Environment, FileSystemLoader
 
 
+instancias_eventos = 1
+instancias_consulta = 1
+
+# Le o arquivo de configuração
 config = configparser.ConfigParser()
 config.read('/config/config.ini')
 
@@ -18,8 +22,8 @@ file_loader = FileSystemLoader('.')
 env = Environment(loader=file_loader)
 template = env.get_template('docker-compose.yml.j2')
 
-instancias_eventos = 1
-instancias_consulta = 1
+# Verificar se o arquivo de configuração existe
+# Verificar se os itens necessarios estão no arquivo de configuração
 
 
 def geraCompose():
