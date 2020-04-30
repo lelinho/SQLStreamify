@@ -37,8 +37,8 @@ redis = Redis("redis")
 
 
 def identificaWhere(query):
-    # buscar query correspondente ao identificador
-    sql_str = config[query]['query']
+    # buscar query correspondente ao identificador gravada no Redis
+    sql_str = redis.hget("queries", query).decode('utf-8')    
     parsed = parse(sql_str)
 
     where = None
@@ -50,7 +50,7 @@ def identificaWhere(query):
 
 def identificaTabelas(query):
     # buscar query correspondente ao identificador
-    sql_str = config[query]['query']
+    sql_str = redis.hget("queries", query).decode('utf-8') 
 
     try:
         parsed = parse(sql_str)

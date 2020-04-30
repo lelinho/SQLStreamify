@@ -72,13 +72,10 @@ def index():
 @app.route("/<string:consulta>")
 def query(consulta):
     # buscar query correspondente ao identificador
-    sql = config[consulta]['query']
-
-    # Especificaçoes da query
-    modo = "full_dataset"
-    if config.has_option(consulta, 'modo'):
-        if config[consulta]['modo'] == "one_at_time":
-            modo = "one_at_time"
+    sql = redis.hget("queries", consulta).decode('utf-8')    
+    
+    # Especificaçoes da query - alterar para buscar no banco
+    modo = redis.hget(consulta, "modo").decode('utf-8')
 
     # busca resultado da ultima consulta gravada
     ultimo = ultimoResultado(consulta)

@@ -28,6 +28,15 @@ def main():
     for section_name in config.sections():
         if section_name != "DB" and section_name != "EXPOSICAO":
             queries.add(section_name)
+            #Um set com todas as queries e os SQL de cada
+            redis.hset("queries", section_name, config[section_name]['query'])
+            #grava o modo de cada query - Se nao existir usa o full_dataset
+            modo = "full_dataset"
+            if config.has_option(section_name, 'modo'):
+                if config[section_name]['modo'] == "one_at_time":
+                    modo = "one_at_time"
+            redis.hset(section_name, "modo", modo)
+            #inicializa um contador para cada query
             redis.hset(section_name, "count", 0)
             r = requests.get("http://lbeventos/" +
                              section_name + "/" + str(server_id))
