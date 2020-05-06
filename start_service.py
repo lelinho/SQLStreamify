@@ -15,7 +15,7 @@ instancias_consulta = 1
 
 # Le o arquivo de configuração
 config = configparser.ConfigParser()
-config.read('/config/config.ini')
+config.read('config.ini')
 
 # Carrega o template do docker-compose.yml.j2
 file_loader = FileSystemLoader('.')
@@ -53,15 +53,16 @@ def buscaNumQueries():
 
 def main():
     num_queries = buscaNumQueries()
-    print("Estão configuradas xxx queries no config.ini.")
+    print("Estão configuradas %s queries no config.ini." % (num_queries))
     instancias_consulta = num_queries * 2
     instancias_eventos = num_queries
     geraCompose()
     print("Arquivo docker-compose.yml gerado.")
+    print("%s instancias de consulta" % (instancias_consulta))
+    print("%s instancias de eventos" % (instancias_eventos))
     print("Inicializando o serviço")
     cmd = 'docker-compose up --build'
     os.system(cmd)
-
 
 if __name__ == "__main__":
     main()

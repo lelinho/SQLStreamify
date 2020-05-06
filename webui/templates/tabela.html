@@ -81,6 +81,7 @@
                 <div class="card-body">
                   <p><strong>SQL: </strong> {{ retorno.sql }}</p>
                   <p><strong>Modo: </strong> {{ retorno.modo }}</p>
+                  <p><strong>Performance: </strong><span id="viewEPM{{ retorno.consulta }}">{{ retorno.epm }}</span> eventos por minutos</p>
                 </div>
               </div>
             </div>
@@ -100,7 +101,7 @@
                         class="h5 mb-0 font-weight-bold text-gray-800"
                         id="viewCount{{ retorno.consulta }}"
                       >
-                        -
+                        {{retorno.count}}
                       </div>
                     </div>
                     <div class="col-auto">
@@ -163,6 +164,7 @@
 
       //variavel para mostrar o número de atualizações
       const textViewCount{{ retorno.consulta }} = document.getElementById('viewCount{{ retorno.consulta }}');
+      const textViewEPM{{ retorno.consulta }} = document.getElementById('viewEPM{{ retorno.consulta }}');
       var cont = 0;
 
       //inicializa o componente da tabela
@@ -196,6 +198,21 @@
                 console.log(error);
               });
               //-----------------
+
+              //busca o epm de atualizações para a consulta e preenche
+              fetch('/epm/{{ retorno.consulta }}').then(function (response) {
+                return response.json();
+              }).then(function (data) {
+                $('viewEPM{{ retorno.consulta }}').fadeOut("slow");
+                textViewEPM{{ retorno.consulta }}.textContent = data.epm;
+                $('viewEPM{{ retorno.consulta }}').fadeIn();
+              }).catch (function (error) {
+                console.log(error);
+              });
+              //-----------------
+
+
+
 
               //preenche as mensagens recebidas
               p = (d.body === undefined) ? '' : (d.body);

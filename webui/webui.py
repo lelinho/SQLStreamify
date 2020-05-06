@@ -35,6 +35,17 @@ def stats(consulta):
         count=str(contador)
     )
 
+# Retorna a performance da busca em JSON
+@app.route("/epm/<string:consulta>")
+def stats_epm(consulta):
+    epm_calc = 0
+    if redis.hget(consulta, "epm") != None:
+        #print(redis.hget(consulta, "count"), flush=True)
+        epm_calc = float(redis.hget(consulta, "epm"))
+    return jsonify(
+        epm=str(epm_calc)
+    )
+
 
 # Página com detalhes de cada busca
 @app.route("/<string:consulta>")
@@ -43,11 +54,15 @@ def detail(consulta):
     # Especificaçoes da query
     modo = redis.hget(consulta,"modo").decode('utf-8')
     sql = redis.hget("queries", consulta).decode('utf-8')
-
+    
     contador = str(0)
     if redis.hget(consulta, "count") != None:
         #print(redis.hget(consulta, "count"), flush=True)
         contador = str(int(redis.hget(consulta, "count")))
+    
+    epm = str(0)
+    if redis.hget(consulta,"epm") != None:
+        epm = str(float(redis.hget(consulta,"epm")))
 
     return render_template("tabela.html", retorno={
         "queries": queries,
@@ -55,7 +70,8 @@ def detail(consulta):
         "ip": config['EXPOSICAO']['ip'],
         "count": contador,
         "sql": sql,
-        "modo": modo
+        "modo": modo,
+        "epm": epm
     })
 
 

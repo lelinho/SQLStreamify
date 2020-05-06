@@ -21,8 +21,7 @@ server_id = 1
 
 
 def inicalizaServico():
-    # Cria um set com as queries registradas no arquivo de configuração
-    queries = set()
+    # Cria um set com as queries registradas no arquivo de configuração    
     server_id = 1
     for section_name in config.sections():
         if section_name != "DB" and section_name != "EXPOSICAO":
@@ -52,12 +51,15 @@ def main():
     # Consulta informações sobre as buscas a cada 10 segundos
     start = perf_counter()
     while True:
-        time.sleep(10)
+        time.sleep(5)
         print("***************", flush=True)
         for query in queries:
             contador = float(redis.hget(query, "count"))
-            print("%s : %d eventos por segundo (%d total)" % (
-                query, contador / (perf_counter() - start), contador), flush=True)
+            por_minuto = contador / (perf_counter() -  start)*60
+            por_minuto = round(por_minuto, 4)
+            print("%s : %s eventos por minutos (%d total)" % (
+                query, por_minuto, contador), flush=True)
+            redis.hset(query, "epm", por_minuto)
         print("***************", flush=True)
 
     return queries
