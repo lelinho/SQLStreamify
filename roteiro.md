@@ -14,6 +14,7 @@
 ### EXPOSICAO
 
 - ip = IP no qual será exposto o middleware
+Será útil para o consumo do middleware
 
 ### Queries [nome_para_query]
 

@@ -16,12 +16,11 @@ config.read('/config/config.ini')
 
 redis = Redis("redis")
 
+queries = set()
+server_id = 1
 
-def main():
-    # Aguarda um instante enquanto os conteineres estejam prontos para receber comandos.
-    print("Aguardando inicialização dos conteineres...", flush=True)
-    time.sleep(5)
 
+def inicalizaServico():
     # Cria um set com as queries registradas no arquivo de configuração
     queries = set()
     server_id = 1
@@ -42,7 +41,14 @@ def main():
                              section_name + "/" + str(server_id))
             server_id += 1
 
-    # print(queries)
+
+def main():
+    # Aguarda um instante enquanto os conteineres estejam prontos para receber comandos.
+    print("Aguardando inicialização dos conteineres...", flush=True)
+    time.sleep(5)
+
+    inicalizaServico()
+
     # Consulta informações sobre as buscas a cada 10 segundos
     start = perf_counter()
     while True:

@@ -16,12 +16,13 @@ hostname = socket.gethostname()
 
 redis = Redis("redis")
 
-# Cria um set com as queries registradas no arquivo de configuração
-queries = set()
-for section_name in config.sections():
-    if section_name != "DB" and section_name != "EXPOSICAO":
-        queries.add(section_name)
-
+def buscaQueries():
+    # Cria um set com as queries registradas no arquivo de configuração
+    queries = set()
+    retorno_queries = redis.hgetall("queries")
+    for query in retorno_queries:        
+        queries.add(query.decode('utf-8'))
+    return queries
 
 # Retorna o contador da busca em JSON
 @app.route("/count/<string:consulta>")
@@ -38,12 +39,10 @@ def stats(consulta):
 # Página com detalhes de cada busca
 @app.route("/<string:consulta>")
 def detail(consulta):
-
+    queries = buscaQueries()
     # Especificaçoes da query
-    modo = "full_dataset"
-    if config.has_option(consulta, 'modo'):
-        if config[consulta]['modo'] == "one_at_time":
-            modo = "one_at_time"
+    modo = redis.hget(consulta,"modo").decode('utf-8')
+    sql = redis.hget("queries", consulta).decode('utf-8')
 
     contador = str(0)
     if redis.hget(consulta, "count") != None:
@@ -55,7 +54,7 @@ def detail(consulta):
         "consulta": consulta,
         "ip": config['EXPOSICAO']['ip'],
         "count": contador,
-        "sql": config[consulta]['query'],
+        "sql": sql,
         "modo": modo
     })
 
@@ -64,6 +63,7 @@ def detail(consulta):
 @app.route("/")
 def index():
     # retornar set de consultas
+    queries = buscaQueries()
     return render_template("main.html", queries=queries)
 
 
