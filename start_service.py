@@ -9,7 +9,6 @@ import configparser
 import os
 from jinja2 import Environment, FileSystemLoader
 
-
 instancias_eventos = 1
 instancias_consulta = 1
 
@@ -26,7 +25,7 @@ template = env.get_template('docker-compose.yml.j2')
 # Verificar se os itens necessarios estão no arquivo de configuração
 
 
-def geraCompose():
+def geraCompose(instancias_eventos, instancias_consulta):
     output = template.render(
         v={
             "instancias_eventos": instancias_eventos,
@@ -56,7 +55,7 @@ def main():
     print("Estão configuradas %s queries no config.ini." % (num_queries))
     instancias_consulta = num_queries * 2
     instancias_eventos = num_queries
-    geraCompose()
+    geraCompose(instancias_eventos,instancias_consulta)
     print("Arquivo docker-compose.yml gerado.")
     print("%s instancias de consulta" % (instancias_consulta))
     print("%s instancias de eventos" % (instancias_eventos))
