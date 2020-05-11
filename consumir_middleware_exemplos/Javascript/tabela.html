@@ -18,7 +18,7 @@
     //client.debug = pipe('#second');
 
     var on_connect = function(x) {
-        id = client.subscribe("/amq/queue/SQL_HISTORY", function(d) {            
+        id = client.subscribe("/exchange/SQL_HISTORY", function(d) {            
             data = JSON.parse(d.body);
             //console.log("Impressao:")            
             //console.log(data)

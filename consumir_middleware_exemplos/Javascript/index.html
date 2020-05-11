@@ -86,7 +86,7 @@ var print_first = pipe('#first', function(data) {
     client.send('/topic/test', {"content-type":"text/plain"}, data);
 });
 var on_connect = function(x) {
-    id = client.subscribe("/amq/queue/SQL_HISTORY", function(d) {
+    id = client.subscribe("/exchange/SQL_HISTORY", function(d) {
          print_first(d.body);
     });
 };

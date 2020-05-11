@@ -182,7 +182,7 @@
       var div = document.getElementById('stream');
 
       var on_connect = function(x) {
-          id = client.subscribe("/amq/queue/{{ retorno.consulta }}", function(d) {
+          id = client.subscribe("/exchange/{{ retorno.consulta }}", function(d) {
               data = JSON.parse(d.body);
               console.log("data");
               console.log(data);

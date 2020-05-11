@@ -38,12 +38,12 @@ def publicaMQTT(consulta, publicacao):
         pika.ConnectionParameters('mqtt'))
     canal = conexao_mqtt.channel()
 
-    # seta o canal de conexão do MQTT
-    canal.queue_declare(queue=consulta)
+    # utilizando o exchange com o nome da query
+    canal.exchange_declare(exchange=consulta, exchange_type='fanout')
 
     # publica a alteraçao
-    canal.basic_publish(exchange='',
-                        routing_key=consulta,
+    canal.basic_publish(exchange=consulta,
+                        routing_key='',
                         body=publicacao)
 
     # fecha a conexao do mqtt

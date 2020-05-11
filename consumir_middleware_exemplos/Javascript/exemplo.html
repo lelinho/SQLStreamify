@@ -71,7 +71,7 @@
 
         var print_stream = pipe('#stream');        
         var on_connect = function(x) {
-            id = client.subscribe("/amq/queue/SQL_HISTORY", function(d) {
+            id = client.subscribe("/exchange/SQL_HISTORY", function(d) {
                 print_stream(d.body);
             });
         };
