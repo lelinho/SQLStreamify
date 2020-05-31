@@ -35,7 +35,7 @@ def inicalizaServico():
                     modo = "one_at_time"
             redis.hset(section_name, "modo", modo)
             #inicializa um contador para cada query
-            redis.hset(section_name, "count", 0)
+            redis.hset(section_name, "count", 0)        
             try:
                 r = requests.get("http://lbeventos/" +
                              section_name + "/" + str(server_id), timeout=0.1)

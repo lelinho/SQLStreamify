@@ -60,7 +60,7 @@ def main():
     print("%s instancias de consulta" % (instancias_consulta))
     print("%s instancias de eventos" % (instancias_eventos))
     print("Inicializando o serviço")
-    cmd = 'docker-compose up --build'
+    cmd = 'docker-compose -p streamdbmiddleware up --build'
     os.system(cmd)
 
 if __name__ == "__main__":

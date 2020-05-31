@@ -108,7 +108,6 @@ def index():
 def eventos(query, server_id):
 
     # buscar query correspondente ao identificador
-
     # busca tabelas afetadas pela consulta
     tabelas = identificaTabelas(query)
 

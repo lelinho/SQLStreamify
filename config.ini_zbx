@@ -1,0 +1,24 @@
+#config.ini para o zabbix
+[DB]
+type = mysql
+host = 172.17.0.1
+port = 3306
+db = zabbix
+user = zabbix
+password = z@bb1x
+
+
+[EXPOSICAO]
+ip = 200.145.181.62
+
+[SQL_HISTORY]
+query = SELECT * FROM history_text WHERE itemid=53939 ORDER BY clock DESC LIMIT 3
+modo = full_dataset
+
+[SQL_HISTORY_TIME]
+query = SELECT * FROM history_text WHERE itemid=53939 AND clock > 1590857355 ORDER BY clock DESC
+modo = one_at_time
+
+[SQL_COUNT]
+query = SELECT COUNT(*) FROM history_text WHERE itemid=53939
+modo = full_dataset

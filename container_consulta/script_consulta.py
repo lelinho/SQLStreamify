@@ -70,7 +70,7 @@ def index():
 
 
 @app.route("/<string:consulta>")
-def query(consulta):
+def query(consulta):    
     # buscar query correspondente ao identificador
     sql = redis.hget("queries", consulta).decode('utf-8')    
     
