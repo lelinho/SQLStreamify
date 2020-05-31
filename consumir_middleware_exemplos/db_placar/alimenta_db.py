@@ -29,9 +29,12 @@ jogadores_2 = ["Stephen Curry", "Jordan Poole", "Klay Thompson", "Kevon Looney",
 
 while True:
   mycursor = db.cursor()
-  time.sleep(random.randint(3,10))
+  time.sleep(random.randint(7,20))
   time_pontuador = times[random.randint(0,1)]
-  pontuador = jogadores_1[random.randint(0,4)]
+  if time_pontuador == "New York Knicks":
+    pontuador = jogadores_1[random.randint(0,4)]
+  else:
+    pontuador = jogadores_2[random.randint(0,4)]
   pontos = random.randint(2,3)
   record_tupla = (time_pontuador, pontuador, pontos)
   insert_query = """INSERT INTO placar (time, jogador, pontos) VALUES (%s, %s, %s)"""

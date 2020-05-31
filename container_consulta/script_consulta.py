@@ -10,7 +10,7 @@ import configparser
 import socket
 import re
 import datetime
-import json
+import simplejson as json
 import pika
 from redis import Redis
 from flask import Flask, escape, request, jsonify
@@ -94,7 +94,7 @@ def query(consulta):
     row_headers = [x[0] for x in cursor.description]
     data = cursor.fetchall()
     json_data = []
-    for result in data:
+    for result in data:        
         json_data.append(dict(zip(row_headers, result)))
 
     result_json = json.dumps(json_data)

@@ -87,7 +87,7 @@ def verificaRequisitos(where, linha_binlog, query):
         # {'and': [{'eq': ['itemid', 53939]}, {'gt': ['clock', 1586801554]}]}
 
         # busca por igualdades no where
-        equal = re.findall(r'\'eq\':(.*?)}', str(where))
+        equal = re.findall(r'\'eq\':(.*?)}', str(where))        
         for eq in equal:
             # transforma a string em uma lista
             eq = eval(eq)
