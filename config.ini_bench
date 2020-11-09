@@ -1,0 +1,24 @@
+#config.ini para o zabbix
+[DB]
+type = mysql
+host = db
+port = 3306
+db = sbtest
+user = root
+password = password
+
+
+[EXPOSICAO]
+ip = 127.0.0.1
+
+#[SQL_HISTORY]
+#query = SELECT * FROM history_text WHERE itemid=53939 ORDER BY clock DESC LIMIT 3
+#modo = full_dataset
+
+[TESTE_BENCH]
+query = SELECT SUM(K) FROM sbtest1 WHERE id = 500
+modo = one_at_time
+
+#[SQL_COUNT]
+#query = SELECT COUNT(*) FROM history_text WHERE itemid=53939
+#modo = full_dataset

@@ -128,7 +128,7 @@ def query(consulta):
                     for x in item_loaded:
                         redis.hincrby(consulta, "count", 1)
                         json_data = []
-                        json_data.append(x[1])
+                        #/verificar ->>> json_data.append(x[1])
                         result_diff = json.dumps(json_data)
                         publicaMQTT(consulta, result_diff)
 

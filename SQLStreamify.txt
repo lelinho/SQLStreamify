@@ -1,0 +1,15 @@
+sysbench 1.0.20 (using system LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 8
+Target transaction rate: 31/sec
+Report intermediate results every 2 second(s)
+Initializing random number generator from current time
+
+
+Initializing worker threads...
+
+Threads started!
+
+FATAL: mysql_stmt_execute() returned error 1062 (Duplicate entry '304' for key 'PRIMARY') for query 'INSERT INTO sbtest1 (id, k, c, pad) VALUES (?, ?, ?, ?)'
+FATAL: `thread_run' function failed: /usr/share/sysbench/oltp_common.lua:488: SQL error, errno = 1062, state = '23000': Duplicate entry '304' for key 'PRIMARY'

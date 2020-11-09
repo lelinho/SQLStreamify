@@ -16,7 +16,7 @@ query = SELECT * FROM history_text WHERE itemid=53939 ORDER BY clock DESC LIMIT 
 modo = full_dataset
 
 [SQL_HISTORY_TIME]
-query = SELECT * FROM history_text WHERE itemid=53939 AND clock > 1590857355 ORDER BY clock DESC
+query = SELECT * FROM history_text WHERE itemid=53939 AND clock > 1604579764 ORDER BY clock DESC
 modo = one_at_time
 
 [SQL_COUNT]
