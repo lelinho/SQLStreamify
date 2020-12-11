@@ -122,15 +122,19 @@ def query(consulta):
                     json_data.append(i)
                     result_diff = json.dumps(json_data)
                     publicaMQTT(consulta, result_diff)
+
                 else:
                     # senao:
                     item_loaded = diff_loaded[i]
                     for x in item_loaded:
                         redis.hincrby(consulta, "count", 1)
                         json_data = []
-                        #/verificar ->>> json_data.append(x[1])
+                        #/verificar ->>> 
+                        json_data.append(x[1])
                         result_diff = json.dumps(json_data)
                         publicaMQTT(consulta, result_diff)
+
+
 
                 #publicaMQTT(consulta, json.dumps(diff))
         print("Alterado e publicado!", flush=True)

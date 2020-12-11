@@ -9,7 +9,6 @@ import configparser
 import requests
 import json
 import re
-import time
 from datetime import datetime
 from redis import Redis
 from flask import Flask, Response
@@ -120,27 +119,34 @@ def eventos(query, server_id):
     # server_id is your slave identifier, it should be unique.
     # set blocking to True if you want to block and wait for the next event at
     # the end of the stream
-    #stream = BinLogStreamReader(connection_settings=MYSQL_SETTINGS,
-    #                            server_id=server_id,
-    #                            only_events=[DeleteRowsEvent,
-    #                                         WriteRowsEvent, UpdateRowsEvent],
-    #                            only_tables=tabelas,
-    #                            # skip_to_timestamp: busca apenas novos eventos, ignora logs antigos...
-    #                            skip_to_timestamp=datetime.timestamp(
-    #                                datetime.now()),
-    #                            blocking=True)
-    ##contador = 0
+    stream = BinLogStreamReader(connection_settings=MYSQL_SETTINGS,
+                                server_id=server_id,
+                                only_events=[DeleteRowsEvent,
+                                             WriteRowsEvent, UpdateRowsEvent],
+                                only_tables=tabelas,
+                                # skip_to_timestamp: busca apenas novos eventos, ignora logs antigos...
+                                skip_to_timestamp=datetime.timestamp(
+                                    datetime.now()),
+                                blocking=True)
+    #contador = 0
 
     # Realiza uma primeira busca antes de começar a consultar apenas quando tiver eventos...
     r = requests.get("http://lbconsulta/" + query)
 
-    #versão teste com buscas consecutivas
-    while True:
-        r = requests.get("http://lbconsulta/" + query)
-        time.sleep (0.001)
+    for binlogevent in stream:
+        # binlogevent.dump()
+        #contador = contador + 1
+        # print(contador)
+        for row in binlogevent.rows:
+            #print(row, flush=True)
+            if isinstance(binlogevent, WriteRowsEvent):
+                # FAZER A VERIFICAÇÃO DO WHERE
+                verificaRequisitos(where, row["values"], query)
+            if isinstance(binlogevent, UpdateRowsEvent):
+                #print(row, flush=True)
+                verificaRequisitos(where, row["before_values"], query)
 
-
-    #stream.close()
+    stream.close()
 
 
 if __name__ == "__main__":

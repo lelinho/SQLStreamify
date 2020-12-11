@@ -109,7 +109,7 @@
 
 
       //PONTOS HOME
-      var client_home = Stomp.client('ws://200.145.181.25:15674/ws');
+      var client_home = Stomp.client('ws://localhost:15674/ws');
       
       var on_connect_home = function(x) {
           id = client_home.subscribe("/exchange/PONTOS_KNICKS", function(d) {
@@ -130,7 +130,7 @@
 
 
       //PONTOS AWAY      
-      var client_away = Stomp.client('ws://200.145.181.25:15674/ws');
+      var client_away = Stomp.client('ws://localhost:15674/ws');
       
       var on_connect_away = function(x) {
           id = client_away.subscribe("/exchange/PONTOS_WARRIORS", function(d) {
@@ -151,7 +151,7 @@
 
 
       //PONTOS
-      var client_pontos = Stomp.client('ws://200.145.181.25:15674/ws');
+      var client_pontos = Stomp.client('ws://localhost:15674/ws');
       
       var on_connect_pontos = function(x) {
           id = client_pontos.subscribe("/exchange/PONTUADORES", function(d) {

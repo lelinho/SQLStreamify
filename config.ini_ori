@@ -19,5 +19,5 @@ query = SELECT sum(pontos) FROM placar WHERE time = "Golden State Warriors"
 modo = full_dataset
 
 [PONTUADORES]
-query = SELECT * FROM placar
+query = SELECT time, jogador, pontos FROM placar
 modo = one_at_time

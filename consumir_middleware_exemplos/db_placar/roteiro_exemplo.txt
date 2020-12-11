@@ -1,0 +1,12 @@
+ROTEIRO PARA APRESENTAÇÃO DO FUNCIONAMENTO DO SQLSTREAMIFY
+
+- Executar o banco de dados e alimentação de dados do placar:
+
+ docker-compose -p db_placar up --build --renew-anon-volumes
+
+
+- Executar o SQLStreamify
+
+- Site com o exemplo
+
+- Site com o WebUI

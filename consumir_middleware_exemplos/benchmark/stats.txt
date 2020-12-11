@@ -1,0 +1,882 @@
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      0.07%               149.9MiB / 15.47GiB   0.95%               9.58kB / 1.64kB     0B / 26.1MB         16
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      0.07%               149.9MiB / 15.47GiB   0.95%               9.75kB / 1.64kB     0B / 26.1MB         16
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      0.07%               149.9MiB / 15.47GiB   0.95%               9.75kB / 1.64kB     0B / 26.1MB         16
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      0.06%               149.9MiB / 15.47GiB   0.95%               9.75kB / 1.64kB     0B / 26.1MB         16
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      0.07%               149.9MiB / 15.47GiB   0.95%               9.75kB / 1.64kB     0B / 26.1MB         16
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      0.06%               149.9MiB / 15.47GiB   0.95%               9.75kB / 1.64kB     0B / 26.1MB         16
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      0.07%               149.9MiB / 15.47GiB   0.95%               9.75kB / 1.64kB     0B / 26.1MB         16
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      0.08%               149.9MiB / 15.47GiB   0.95%               9.75kB / 1.64kB     0B / 26.1MB         16
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      1.88%               157.1MiB / 15.47GiB   0.99%               565kB / 29.4kB      0B / 26.2MB         32
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      32.39%              163.7MiB / 15.47GiB   1.03%               3.72MB / 35.6kB     0B / 30.4MB         33
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      34.33%              176.1MiB / 15.47GiB   1.11%               12.6MB / 46.1kB     0B / 54.8MB         39
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      40.19%              189.3MiB / 15.47GiB   1.19%               23.2MB / 57.6kB     0B / 87.6MB         39
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      44.45%              207.7MiB / 15.47GiB   1.31%               38.9MB / 71.1kB     0B / 125MB          39
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      42.01%              227.3MiB / 15.47GiB   1.43%               53.1MB / 85.6kB     0B / 175MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      56.93%              246MiB / 15.47GiB   1.55%               69.4MB / 101kB      0B / 221MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      39.33%              262.6MiB / 15.47GiB   1.66%               84.1MB / 122kB      0B / 259MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      40.43%              280.8MiB / 15.47GiB   1.77%               99.8MB / 138kB      0B / 306MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      39.54%              299.6MiB / 15.47GiB   1.89%               117MB / 153kB       0B / 349MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      39.72%              316.2MiB / 15.47GiB   2.00%               131MB / 166kB       0B / 393MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      47.36%              335.5MiB / 15.47GiB   2.12%               148MB / 180kB       0B / 440MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      50.26%              353.9MiB / 15.47GiB   2.23%               165MB / 195kB       0B / 482MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      43.14%              372MiB / 15.47GiB   2.35%               181MB / 207kB       0B / 527MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      28.96%              388.9MiB / 15.47GiB   2.45%               195MB / 221kB       0B / 576MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      38.04%              420.4MiB / 15.47GiB   2.65%               195MB / 221kB       0B / 665MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      0.06%               417.3MiB / 15.47GiB   2.63%               195MB / 221kB       0B / 665MB          49
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      0.07%               417.3MiB / 15.47GiB   2.63%               195MB / 221kB       0B / 665MB          49
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      0.06%               417.3MiB / 15.47GiB   2.63%               195MB / 221kB       0B / 665MB          49
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      0.05%               417.3MiB / 15.47GiB   2.63%               195MB / 221kB       0B / 665MB          49
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      0.07%               417.3MiB / 15.47GiB   2.63%               195MB / 221kB       0B / 665MB          49
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      207.59%             445.8MiB / 15.47GiB   2.81%               197MB / 20.6MB      0B / 699MB          65
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      195.95%             447.5MiB / 15.47GiB   2.82%               197MB / 34.3MB      0B / 756MB          65
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      285.37%             448.2MiB / 15.47GiB   2.83%               198MB / 48.4MB      0B / 805MB          66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      117.84%             449.6MiB / 15.47GiB   2.84%               199MB / 72.1MB      0B / 856MB          66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      58.26%              449.7MiB / 15.47GiB   2.84%               201MB / 90.8MB      0B / 906MB          66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      78.53%              450.4MiB / 15.47GiB   2.84%               201MB / 106MB       0B / 960MB          66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      229.00%             452.2MiB / 15.47GiB   2.85%               203MB / 129MB       0B / 1GB            66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      290.41%             452.2MiB / 15.47GiB   2.85%               204MB / 151MB       0B / 1.04GB         66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      110.23%             452.3MiB / 15.47GiB   2.85%               205MB / 169MB       0B / 1.1GB          66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      84.48%              452.4MiB / 15.47GiB   2.86%               206MB / 187MB       0B / 1.14GB         66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      373.51%             453.1MiB / 15.47GiB   2.86%               207MB / 217MB       0B / 1.18GB         66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      13.45%              452.7MiB / 15.47GiB   2.86%               208MB / 225MB       0B / 1.25GB         66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      276.57%             452.6MiB / 15.47GiB   2.86%               209MB / 252MB       0B / 1.29GB         66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      125.21%             452.6MiB / 15.47GiB   2.86%               211MB / 273MB       0B / 1.34GB         66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      245.03%             452.6MiB / 15.47GiB   2.86%               212MB / 293MB       0B / 1.39GB         66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      106.97%             452.6MiB / 15.47GiB   2.86%               213MB / 314MB       0B / 1.44GB         66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      158.78%             452.7MiB / 15.47GiB   2.86%               214MB / 333MB       0B / 1.5GB          66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      189.08%             452.6MiB / 15.47GiB   2.86%               215MB / 351MB       0B / 1.55GB         66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      143.59%             452.7MiB / 15.47GiB   2.86%               216MB / 368MB       0B / 1.6GB          66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      225.40%             452.7MiB / 15.47GiB   2.86%               217MB / 393MB       0B / 1.64GB         66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      182.74%             452.7MiB / 15.47GiB   2.86%               218MB / 410MB       0B / 1.7GB          66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      197.66%             452.7MiB / 15.47GiB   2.86%               219MB / 426MB       0B / 1.75GB         66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      236.08%             452.8MiB / 15.47GiB   2.86%               220MB / 447MB       0B / 1.8GB          66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      210.26%             452.7MiB / 15.47GiB   2.86%               221MB / 471MB       0B / 1.84GB         66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      188.90%             452.8MiB / 15.47GiB   2.86%               222MB / 491MB       0B / 1.89GB         66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      267.58%             452.8MiB / 15.47GiB   2.86%               224MB / 511MB       0B / 1.95GB         66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      212.41%             452.7MiB / 15.47GiB   2.86%               225MB / 529MB       0B / 2GB            66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      172.65%             452.8MiB / 15.47GiB   2.86%               226MB / 547MB       0B / 2.05GB         66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      174.98%             452.8MiB / 15.47GiB   2.86%               227MB / 565MB       0B / 2.1GB          66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      187.68%             452.8MiB / 15.47GiB   2.86%               228MB / 587MB       0B / 2.14GB         66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      202.81%             452.7MiB / 15.47GiB   2.86%               229MB / 608MB       0B / 2.19GB         66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      221.47%             452.8MiB / 15.47GiB   2.86%               230MB / 630MB       0B / 2.24GB         66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      5.11%               452.3MiB / 15.47GiB   2.85%               231MB / 637MB       0B / 2.28GB         50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      0.09%               452.3MiB / 15.47GiB   2.85%               231MB / 637MB       0B / 2.29GB         50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      0.06%               452.3MiB / 15.47GiB   2.85%               231MB / 637MB       0B / 2.29GB         50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      0.06%               452.3MiB / 15.47GiB   2.85%               231MB / 637MB       0B / 2.29GB         50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      0.07%               452.3MiB / 15.47GiB   2.85%               231MB / 637MB       0B / 2.29GB         50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+a91c46a2cc7a        benchmark_db_1      0.06%               452.3MiB / 15.47GiB   2.85%               231MB / 637MB       0B / 2.29GB         50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      1.68%               177.3MiB / 15.47GiB   1.12%               5.77kB / 246B       0B / 1.07MB         27
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      2.20%               179MiB / 15.47GiB   1.13%               6.17kB / 300B       0B / 4.43MB         21
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      0.93%               150.7MiB / 15.47GiB   0.95%               6.31kB / 354B       0B / 4.55MB         25
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      66.11%              167.6MiB / 15.47GiB   1.06%               6.51kB / 408B       0B / 14.8MB         22
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      1.97%               167.7MiB / 15.47GiB   1.06%               6.58kB / 462B       0B / 16.3MB         22
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      2.95%               151.8MiB / 15.47GiB   0.96%               6.66kB / 516B       0B / 33.6MB         5
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      0.07%               150.2MiB / 15.47GiB   0.95%               8.05kB / 1.7kB      0B / 33.6MB         18
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      0.06%               150.2MiB / 15.47GiB   0.95%               8.55kB / 1.7kB      0B / 33.6MB         18
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      0.07%               150.2MiB / 15.47GiB   0.95%               9.43kB / 1.7kB      0B / 33.6MB         18
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      0.07%               150.2MiB / 15.47GiB   0.95%               9.59kB / 1.7kB      0B / 33.6MB         18
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      3.43%               159.1MiB / 15.47GiB   1.00%               568kB / 31.8kB      0B / 34.1MB         34
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      39.04%              170.5MiB / 15.47GiB   1.08%               7.4MB / 44.9kB      0B / 51.1MB         44
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      41.15%              183.1MiB / 15.47GiB   1.16%               16.3MB / 56.6kB     0B / 75.4MB         44
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      43.49%              200.6MiB / 15.47GiB   1.27%               28.9MB / 69.5kB     0B / 114MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      36.96%              219.5MiB / 15.47GiB   1.39%               44.7MB / 85.4kB     0B / 148MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      42.57%              237.7MiB / 15.47GiB   1.50%               59.4MB / 100kB      0B / 195MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      33.59%              256.9MiB / 15.47GiB   1.62%               75.7MB / 115kB      0B / 239MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      36.59%              276MiB / 15.47GiB   1.74%               91.4MB / 131kB      0B / 285MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      40.72%              294.3MiB / 15.47GiB   1.86%               107MB / 150kB       0B / 328MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      35.95%              311.1MiB / 15.47GiB   1.96%               121MB / 164kB       0B / 377MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      5.14%               317.3MiB / 15.47GiB   2.00%               127MB / 171kB       0B / 392MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      57.85%              327.4MiB / 15.47GiB   2.07%               136MB / 180kB       0B / 407MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      46.44%              345.7MiB / 15.47GiB   2.18%               150MB / 197kB       0B / 455MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      61.16%              363MiB / 15.47GiB   2.29%               166MB / 211kB       0B / 499MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      40.21%              379.6MiB / 15.47GiB   2.40%               179MB / 227kB       0B / 539MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      48.39%              399.2MiB / 15.47GiB   2.52%               196MB / 245kB       0B / 584MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      29.87%              433MiB / 15.47GiB   2.73%               196MB / 245kB       0B / 668MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      0.06%               432.9MiB / 15.47GiB   2.73%               196MB / 245kB       0B / 675MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      0.07%               432.9MiB / 15.47GiB   2.73%               196MB / 245kB       0B / 675MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      0.05%               432.9MiB / 15.47GiB   2.73%               196MB / 245kB       0B / 675MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      0.08%               432.9MiB / 15.47GiB   2.73%               196MB / 245kB       0B / 675MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      0.05%               432.9MiB / 15.47GiB   2.73%               196MB / 245kB       0B / 675MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      290.17%             464.1MiB / 15.47GiB   2.93%               197MB / 18.5MB      0B / 687MB          66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      131.47%             467.4MiB / 15.47GiB   2.95%               198MB / 37.6MB      0B / 747MB          69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      225.10%             467.8MiB / 15.47GiB   2.95%               199MB / 57.3MB      0B / 801MB          69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      320.81%             468.5MiB / 15.47GiB   2.96%               200MB / 78.5MB      0B / 846MB          69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      13.47%              468.1MiB / 15.47GiB   2.95%               200MB / 86.5MB      0B / 921MB          69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      174.87%             470.4MiB / 15.47GiB   2.97%               202MB / 117MB       0B / 960MB          69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      202.43%             471.6MiB / 15.47GiB   2.98%               203MB / 142MB       0B / 1.01GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      12.23%              470.6MiB / 15.47GiB   2.97%               204MB / 154MB       0B / 1.08GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      158.05%             470.9MiB / 15.47GiB   2.97%               206MB / 188MB       0B / 1.12GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      95.09%              471.4MiB / 15.47GiB   2.98%               207MB / 200MB       0B / 1.19GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      160.22%             470.9MiB / 15.47GiB   2.97%               207MB / 217MB       0B / 1.24GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      122.54%             471.2MiB / 15.47GiB   2.97%               208MB / 231MB       0B / 1.3GB          69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      116.78%             471MiB / 15.47GiB   2.97%               210MB / 254MB       0B / 1.35GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      251.70%             471.6MiB / 15.47GiB   2.98%               211MB / 273MB       0B / 1.4GB          69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      178.60%             471.2MiB / 15.47GiB   2.97%               212MB / 295MB       0B / 1.45GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      115.65%             471.7MiB / 15.47GiB   2.98%               212MB / 307MB       0B / 1.51GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      69.29%              471.3MiB / 15.47GiB   2.97%               213MB / 315MB       0B / 1.58GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      246.86%             471.1MiB / 15.47GiB   2.97%               214MB / 342MB       0B / 1.63GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      265.03%             471.8MiB / 15.47GiB   2.98%               216MB / 362MB       0B / 1.68GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      153.49%             471.2MiB / 15.47GiB   2.97%               217MB / 381MB       0B / 1.73GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      148.06%             471.9MiB / 15.47GiB   2.98%               218MB / 399MB       0B / 1.79GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      74.00%              471.4MiB / 15.47GiB   2.98%               219MB / 423MB       0B / 1.83GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      39.18%              471.3MiB / 15.47GiB   2.97%               220MB / 437MB       0B / 1.9GB          69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      194.66%             471.8MiB / 15.47GiB   2.98%               221MB / 466MB       0B / 1.93GB         67
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      91.44%              471.5MiB / 15.47GiB   2.98%               222MB / 484MB       0B / 1.99GB         67
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      141.51%             471.5MiB / 15.47GiB   2.98%               223MB / 501MB       0B / 2.04GB         67
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      348.07%             471.5MiB / 15.47GiB   2.98%               225MB / 533MB       0B / 2.07GB         67
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      44.52%              471.4MiB / 15.47GiB   2.98%               225MB / 540MB       0B / 2.15GB         67
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      209.81%             472.1MiB / 15.47GiB   2.98%               227MB / 575MB       0B / 2.18GB         67
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      200.37%             471.6MiB / 15.47GiB   2.98%               229MB / 600MB       0B / 2.23GB         67
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      150.62%             472.3MiB / 15.47GiB   2.98%               229MB / 616MB       0B / 2.29GB         67
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      80.79%              471.6MiB / 15.47GiB   2.98%               230MB / 625MB       0B / 2.35GB         67
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      10.18%              471.1MiB / 15.47GiB   2.97%               231MB / 642MB       0B / 2.38GB         51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      1.51%               470.9MiB / 15.47GiB   2.97%               231MB / 642MB       0B / 2.41GB         51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      0.06%               470.9MiB / 15.47GiB   2.97%               231MB / 642MB       0B / 2.41GB         51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      0.07%               470.9MiB / 15.47GiB   2.97%               231MB / 642MB       0B / 2.41GB         51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      0.06%               470.9MiB / 15.47GiB   2.97%               231MB / 642MB       0B / 2.41GB         51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      0.06%               470.9MiB / 15.47GiB   2.97%               231MB / 642MB       0B / 2.41GB         51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      0.08%               470.9MiB / 15.47GiB   2.97%               231MB / 642MB       0B / 2.41GB         51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      0.07%               470.9MiB / 15.47GiB   2.97%               231MB / 642MB       0B / 2.41GB         51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+cce72468d761        benchmark_db_1      0.07%               470.9MiB / 15.47GiB   2.97%               231MB / 642MB       0B / 2.41GB         51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      0.06%               150.2MiB / 15.47GiB   0.95%               9.23kB / 1.64kB     0B / 33.6MB         17
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      0.06%               150.2MiB / 15.47GiB   0.95%               9.52kB / 1.64kB     0B / 33.6MB         17
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      3.14%               158.2MiB / 15.47GiB   1.00%               565kB / 29.3kB      0B / 34MB           33
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      26.93%              169.6MiB / 15.47GiB   1.07%               6.87MB / 40kB       0B / 49.8MB         47
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      40.67%              183.3MiB / 15.47GiB   1.16%               16.3MB / 54.9kB     0B / 73.5MB         47
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      44.45%              199.9MiB / 15.47GiB   1.26%               30MB / 69.4kB       0B / 113MB          47
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      48.17%              219MiB / 15.47GiB   1.38%               44.7MB / 86.5kB     0B / 156MB          47
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      43.52%              235.6MiB / 15.47GiB   1.49%               58.9MB / 102kB      0B / 197MB          47
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      53.91%              254.6MiB / 15.47GiB   1.61%               74.6MB / 119kB      0B / 241MB          47
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      43.23%              273.1MiB / 15.47GiB   1.72%               89.9MB / 134kB      0B / 281MB          47
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      55.30%              292.4MiB / 15.47GiB   1.85%               106MB / 149kB       0B / 327MB          47
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      36.93%              309.8MiB / 15.47GiB   1.96%               120MB / 166kB       0B / 368MB          47
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      11.48%              317.4MiB / 15.47GiB   2.00%               127MB / 175kB       0B / 386MB          47
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      37.99%              326.5MiB / 15.47GiB   2.06%               133MB / 185kB       0B / 403MB          47
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      45.14%              344.4MiB / 15.47GiB   2.17%               149MB / 204kB       0B / 449MB          47
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      45.45%              363MiB / 15.47GiB   2.29%               165MB / 223kB       0B / 494MB          47
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      42.51%              379.8MiB / 15.47GiB   2.40%               179MB / 240kB       0B / 535MB          47
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      43.51%              398.6MiB / 15.47GiB   2.52%               195MB / 256kB       0B / 581MB          47
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      29.55%              428.1MiB / 15.47GiB   2.70%               195MB / 257kB       0B / 666MB          46
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      0.05%               428.2MiB / 15.47GiB   2.70%               195MB / 257kB       0B / 673MB          46
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      0.05%               428.2MiB / 15.47GiB   2.70%               195MB / 257kB       0B / 673MB          46
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      0.06%               428.2MiB / 15.47GiB   2.70%               195MB / 257kB       0B / 673MB          46
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      0.07%               428.2MiB / 15.47GiB   2.70%               195MB / 257kB       0B / 673MB          46
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      0.05%               428.2MiB / 15.47GiB   2.70%               195MB / 257kB       0B / 673MB          42
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      0.06%               428.2MiB / 15.47GiB   2.70%               195MB / 257kB       0B / 673MB          42
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      0.04%               428.2MiB / 15.47GiB   2.70%               195MB / 257kB       0B / 673MB          42
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      0.05%               428.2MiB / 15.47GiB   2.70%               195MB / 257kB       0B / 673MB          42
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      0.04%               428.2MiB / 15.47GiB   2.70%               195MB / 257kB       0B / 673MB          42
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      0.04%               428.2MiB / 15.47GiB   2.70%               195MB / 257kB       0B / 673MB          42
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      162.23%             457.1MiB / 15.47GiB   2.89%               196MB / 9.96MB      0B / 685MB          69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      165.57%             465.2MiB / 15.47GiB   2.94%               198MB / 36.1MB      0B / 740MB          69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      98.83%              467.8MiB / 15.47GiB   2.95%               199MB / 61MB        0B / 802MB          69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      364.57%             470.3MiB / 15.47GiB   2.97%               200MB / 87.1MB      0B / 860MB          69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      110.33%             470.5MiB / 15.47GiB   2.97%               201MB / 102MB       0B / 918MB          69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      109.97%             471.2MiB / 15.47GiB   2.97%               203MB / 131MB       0B / 971MB          69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      102.35%             471MiB / 15.47GiB   2.97%               203MB / 144MB       0B / 1.05GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      137.74%             473MiB / 15.47GiB   2.99%               205MB / 178MB       0B / 1.1GB          69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      183.91%             472.5MiB / 15.47GiB   2.98%               207MB / 207MB       0B / 1.15GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      186.79%             472.5MiB / 15.47GiB   2.98%               207MB / 212MB       0B / 1.22GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      64.40%              473.5MiB / 15.47GiB   2.99%               209MB / 239MB       0B / 1.25GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      208.20%             473.6MiB / 15.47GiB   2.99%               210MB / 264MB       0B / 1.3GB          69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      118.37%             473.3MiB / 15.47GiB   2.99%               211MB / 276MB       0B / 1.37GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      261.75%             473.5MiB / 15.47GiB   2.99%               212MB / 297MB       0B / 1.42GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      146.97%             473.7MiB / 15.47GiB   2.99%               213MB / 320MB       0B / 1.47GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      295.75%             474MiB / 15.47GiB   2.99%               215MB / 362MB       0B / 1.51GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      46.33%              473.7MiB / 15.47GiB   2.99%               215MB / 362MB       0B / 1.6GB          69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      197.18%             474.8MiB / 15.47GiB   3.00%               217MB / 400MB       0B / 1.64GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      296.19%             475.8MiB / 15.47GiB   3.00%               219MB / 433MB       0B / 1.68GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      326.61%             476MiB / 15.47GiB   3.00%               222MB / 474MB       0B / 1.73GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      42.23%              475.7MiB / 15.47GiB   3.00%               222MB / 474MB       0B / 1.81GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      170.26%             476.3MiB / 15.47GiB   3.01%               223MB / 508MB       0B / 1.85GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      92.73%              476.1MiB / 15.47GiB   3.00%               225MB / 530MB       0B / 1.91GB         69
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+40bbb3f92e4d        benchmark_db_1      97.03%              476.9MiB / 15.47GiB   3.01%               226MB / 549MB       0B / 1.95GB         52
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      1.78%               167.8MiB / 15.47GiB   1.06%               8.86kB / 462B       0B / 10.1MB         19
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      6.36%               167.7MiB / 15.47GiB   1.06%               9.74kB / 516B       0B / 18.6MB         19
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      13.53%              150.2MiB / 15.47GiB   0.95%               10.2kB / 570B       0B / 18.7MB         15
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      0.06%               150.2MiB / 15.47GiB   0.95%               11.7kB / 1.75kB     0B / 18.7MB         16
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      0.07%               150.2MiB / 15.47GiB   0.95%               12.4kB / 1.75kB     0B / 18.7MB         16
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      2.63%               158.8MiB / 15.47GiB   1.00%               571kB / 32.5kB      0B / 18.8MB         32
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      29.35%              167.4MiB / 15.47GiB   1.06%               4.77MB / 40.8kB     0B / 29.4MB         50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      19.28%              175MiB / 15.47GiB   1.10%               9.5MB / 50.2kB      0B / 43.2MB         50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      17.68%              180.7MiB / 15.47GiB   1.14%               14.8MB / 61.4kB     0B / 57MB           50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      38.97%              191.9MiB / 15.47GiB   1.21%               23.7MB / 69.9kB     0B / 84.2MB         50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      40.05%              209.7MiB / 15.47GiB   1.32%               38.4MB / 85kB       0B / 118MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      38.19%              225.4MiB / 15.47GiB   1.42%               52MB / 98.9kB       0B / 161MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      26.18%              241.5MiB / 15.47GiB   1.52%               66.2MB / 112kB      0B / 199MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      36.84%              257.2MiB / 15.47GiB   1.62%               79.9MB / 123kB      0B / 242MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      28.53%              270.8MiB / 15.47GiB   1.71%               92MB / 136kB        0B / 278MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      28.59%              286MiB / 15.47GiB   1.80%               105MB / 149kB       0B / 311MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      42.39%              302.6MiB / 15.47GiB   1.91%               120MB / 162kB       0B / 355MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      19.16%              315.8MiB / 15.47GiB   1.99%               131MB / 175kB       0B / 389MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      29.69%              330.7MiB / 15.47GiB   2.09%               144MB / 193kB       0B / 422MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      38.24%              346MiB / 15.47GiB   2.18%               158MB / 206kB       0B / 465MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      29.33%              359MiB / 15.47GiB   2.27%               169MB / 219kB       0B / 495MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      46.44%              375.1MiB / 15.47GiB   2.37%               184MB / 230kB       0B / 537MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      64.02%              395.6MiB / 15.47GiB   2.50%               195MB / 243kB       0B / 578MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      12.24%              417.7MiB / 15.47GiB   2.64%               195MB / 243kB       0B / 658MB          49
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      0.02%               417.7MiB / 15.47GiB   2.64%               195MB / 243kB       0B / 658MB          49
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      0.03%               417.7MiB / 15.47GiB   2.64%               195MB / 243kB       0B / 658MB          49
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      0.05%               417.7MiB / 15.47GiB   2.64%               195MB / 243kB       0B / 658MB          45
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      0.05%               417.7MiB / 15.47GiB   2.64%               195MB / 243kB       0B / 658MB          45
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      0.08%               417.7MiB / 15.47GiB   2.64%               195MB / 243kB       0B / 658MB          45
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      173.89%             417.7MiB / 15.47GiB   2.64%               195MB / 254kB       0B / 658MB          41
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      208.81%             436.5MiB / 15.47GiB   2.75%               196MB / 1.73MB      0B / 658MB          59
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      131.64%             449MiB / 15.47GiB   2.83%               197MB / 27.8MB      0B / 697MB          66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      56.05%              451.9MiB / 15.47GiB   2.85%               198MB / 43.1MB      0B / 751MB          68
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      77.11%              451.8MiB / 15.47GiB   2.85%               198MB / 49.3MB      0B / 814MB          68
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      141.77%             454.5MiB / 15.47GiB   2.87%               200MB / 84.2MB      0B / 852MB          68
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      311.60%             456.4MiB / 15.47GiB   2.88%               202MB / 110MB       0B / 894MB          68
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      185.14%             458MiB / 15.47GiB   2.89%               203MB / 137MB       0B / 941MB          68
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      28.78%              458.7MiB / 15.47GiB   2.89%               204MB / 162MB       0B / 999MB          68
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      354.09%             459.2MiB / 15.47GiB   2.90%               206MB / 185MB       0B / 1.05GB         68
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      161.83%             460MiB / 15.47GiB   2.90%               207MB / 216MB       0B / 1.11GB         68
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      39.42%              460.4MiB / 15.47GiB   2.91%               209MB / 236MB       0B / 1.17GB         68
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      294.24%             461.6MiB / 15.47GiB   2.91%               210MB / 262MB       0B / 1.23GB         68
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      183.07%             462MiB / 15.47GiB   2.92%               212MB / 292MB       0B / 1.28GB         68
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      193.05%             462.3MiB / 15.47GiB   2.92%               214MB / 329MB       0B / 1.33GB         68
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      223.14%             462.3MiB / 15.47GiB   2.92%               214MB / 342MB       0B / 1.41GB         68
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      226.23%             462.9MiB / 15.47GiB   2.92%               216MB / 380MB       0B / 1.46GB         68
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      145.32%             462.9MiB / 15.47GiB   2.92%               217MB / 396MB       0B / 1.53GB         68
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      100.27%             463MiB / 15.47GiB   2.92%               218MB / 408MB       0B / 1.59GB         68
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      235.43%             463.4MiB / 15.47GiB   2.92%               220MB / 453MB       0B / 1.63GB         68
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      132.56%             463.4MiB / 15.47GiB   2.92%               222MB / 487MB       0B / 1.68GB         68
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      43.80%              464.3MiB / 15.47GiB   2.93%               224MB / 510MB       0B / 1.76GB         68
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      259.53%             464.9MiB / 15.47GiB   2.93%               225MB / 537MB       0B / 1.82GB         68
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      290.49%             465MiB / 15.47GiB   2.93%               227MB / 578MB       0B / 1.86GB         67
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      241.10%             465MiB / 15.47GiB   2.93%               230MB / 618MB       0B / 1.92GB         67
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      73.52%              465MiB / 15.47GiB   2.93%               230MB / 624MB       0B / 2GB            67
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      164.25%             465MiB / 15.47GiB   2.93%               232MB / 659MB       0B / 2.05GB         67
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      164.88%             465.1MiB / 15.47GiB   2.94%               234MB / 696MB       0B / 2.1GB          67
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      285.01%             465.7MiB / 15.47GiB   2.94%               236MB / 740MB       0B / 2.15GB         70
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      166.26%             465.5MiB / 15.47GiB   2.94%               237MB / 749MB       0B / 2.23GB         70
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      195.19%             465.7MiB / 15.47GiB   2.94%               239MB / 781MB       0B / 2.28GB         70
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      169.73%             465.7MiB / 15.47GiB   2.94%               240MB / 801MB       0B / 2.35GB         70
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      279.67%             466MiB / 15.47GiB   2.94%               241MB / 833MB       0B / 2.4GB          70
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      253.47%             466.8MiB / 15.47GiB   2.95%               244MB / 873MB       0B / 2.44GB         70
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      50.99%              466.3MiB / 15.47GiB   2.94%               245MB / 894MB       0B / 2.51GB         53
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      171.17%             466.2MiB / 15.47GiB   2.94%               245MB / 894MB       0B / 2.56GB         52
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      189.72%             466.3MiB / 15.47GiB   2.94%               245MB / 894MB       0B / 2.56GB         52
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      190.76%             466.3MiB / 15.47GiB   2.94%               245MB / 894MB       0B / 2.56GB         52
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      191.91%             466.3MiB / 15.47GiB   2.94%               245MB / 894MB       0B / 2.56GB         52
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      190.85%             466.3MiB / 15.47GiB   2.94%               245MB / 894MB       0B / 2.56GB         52
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      80.45%              466.3MiB / 15.47GiB   2.94%               245MB / 894MB       0B / 2.56GB         52
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      0.06%               466.3MiB / 15.47GiB   2.94%               245MB / 894MB       0B / 2.56GB         52
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      0.07%               466.3MiB / 15.47GiB   2.94%               245MB / 894MB       0B / 2.56GB         52
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      0.04%               466.3MiB / 15.47GiB   2.94%               245MB / 894MB       0B / 2.56GB         52
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      0.06%               466.3MiB / 15.47GiB   2.94%               245MB / 894MB       0B / 2.56GB         52
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+e0b7f5387c0e        benchmark_db_1      0.06%               466.3MiB / 15.47GiB   2.94%               245MB / 894MB       0B / 2.56GB         52
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      6.58%               168.7MiB / 15.47GiB   1.06%               6.89kB / 408B       0B / 15.6MB         22
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      15.67%              168.7MiB / 15.47GiB   1.06%               6.96kB / 462B       0B / 21.7MB         22
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      6.06%               11.12MiB / 15.47GiB   0.07%               7.04kB / 516B       0B / 33.6MB         2
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      0.68%               150.8MiB / 15.47GiB   0.95%               8.43kB / 1.7kB      0B / 33.6MB         17
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      0.07%               150.8MiB / 15.47GiB   0.95%               8.93kB / 1.7kB      0B / 33.6MB         17
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      0.06%               150.8MiB / 15.47GiB   0.95%               9.81kB / 1.7kB      0B / 33.6MB         17
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      7.04%               159.3MiB / 15.47GiB   1.01%               568kB / 31.8kB      0B / 33.7MB         33
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      32.14%              167.4MiB / 15.47GiB   1.06%               4.29MB / 40.1kB     0B / 41.9MB         51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      18.39%              173.6MiB / 15.47GiB   1.10%               8.49MB / 48.2kB     0B / 56.7MB         51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      28.73%              183MiB / 15.47GiB   1.16%               15.3MB / 59.8kB     0B / 75.7MB         51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      27.51%              196.4MiB / 15.47GiB   1.24%               24.8MB / 70.5kB     0B / 102MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      34.69%              212.3MiB / 15.47GiB   1.34%               38.4MB / 82.5kB     0B / 134MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      32.68%              226.3MiB / 15.47GiB   1.43%               49.5MB / 94.7kB     0B / 171MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      28.20%              240.2MiB / 15.47GiB   1.52%               61.5MB / 107kB      0B / 206MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      45.20%              257.1MiB / 15.47GiB   1.62%               75.7MB / 121kB      0B / 241MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      15.66%              269.4MiB / 15.47GiB   1.70%               85.7MB / 132kB      0B / 277MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      2.95%               272MiB / 15.47GiB   1.72%               87.8MB / 137kB      0B / 281MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      40.89%              287.2MiB / 15.47GiB   1.81%               101MB / 152kB       0B / 314MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      54.47%              301.8MiB / 15.47GiB   1.90%               113MB / 167kB       0B / 353MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      26.88%              316.1MiB / 15.47GiB   1.99%               125MB / 177kB       0B / 389MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      24.67%              331.9MiB / 15.47GiB   2.09%               137MB / 188kB       0B / 421MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      35.23%              347.3MiB / 15.47GiB   2.19%               150MB / 203kB       0B / 459MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      29.40%              363MiB / 15.47GiB   2.29%               163MB / 216kB       0B / 495MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      41.79%              377.4MiB / 15.47GiB   2.38%               176MB / 229kB       0B / 532MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      45.92%              393.8MiB / 15.47GiB   2.49%               189MB / 243kB       0B / 568MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      46.37%              421MiB / 15.47GiB   2.66%               195MB / 250kB       0B / 646MB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      0.70%               430.1MiB / 15.47GiB   2.71%               195MB / 250kB       0B / 676MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      0.06%               430MiB / 15.47GiB   2.71%               195MB / 250kB       0B / 676MB          46
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      0.05%               430MiB / 15.47GiB   2.71%               195MB / 250kB       0B / 676MB          46
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      0.02%               430MiB / 15.47GiB   2.71%               195MB / 250kB       0B / 676MB          46
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      0.03%               430MiB / 15.47GiB   2.71%               195MB / 250kB       0B / 676MB          46
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      0.05%               430MiB / 15.47GiB   2.71%               195MB / 250kB       0B / 676MB          46
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      0.05%               430MiB / 15.47GiB   2.71%               195MB / 250kB       0B / 676MB          46
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      0.06%               430MiB / 15.47GiB   2.71%               195MB / 250kB       0B / 676MB          46
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      0.03%               430MiB / 15.47GiB   2.71%               195MB / 250kB       0B / 676MB          46
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      0.08%               430MiB / 15.47GiB   2.71%               195MB / 250kB       0B / 676MB          46
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      21.66%              433.9MiB / 15.47GiB   2.74%               196MB / 774MB       0B / 676MB          46
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      212.56%             467.9MiB / 15.47GiB   2.95%               197MB / 793MB       0B / 690MB          68
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      195.21%             472.1MiB / 15.47GiB   2.98%               198MB / 814MB       0B / 731MB          72
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      353.62%             473.3MiB / 15.47GiB   2.99%               200MB / 840MB       0B / 776MB          72
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      50.47%              473.5MiB / 15.47GiB   2.99%               200MB / 854MB       0B / 840MB          75
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      335.90%             475.2MiB / 15.47GiB   3.00%               202MB / 880MB       0B / 881MB          75
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      78.92%              476.8MiB / 15.47GiB   3.01%               203MB / 908MB       0B / 928MB          75
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      34.49%              476.7MiB / 15.47GiB   3.01%               204MB / 926MB       0B / 990MB          75
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      142.79%             477.5MiB / 15.47GiB   3.01%               205MB / 950MB       0B / 1.05GB         75
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      99.75%              478.1MiB / 15.47GiB   3.02%               207MB / 975MB       0B / 1.09GB         75
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      65.77%              478.2MiB / 15.47GiB   3.02%               208MB / 992MB       0B / 1.14GB         75
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      344.03%             479.3MiB / 15.47GiB   3.02%               209MB / 1.01GB      0B / 1.2GB          75
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      215.65%             479.4MiB / 15.47GiB   3.03%               210MB / 1.03GB      0B / 1.25GB         75
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      144.11%             480MiB / 15.47GiB   3.03%               212MB / 1.06GB      0B / 1.29GB         75
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      25.85%              480MiB / 15.47GiB   3.03%               212MB / 1.07GB      0B / 1.35GB         75
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      387.68%             480.5MiB / 15.47GiB   3.03%               213MB / 1.1GB       0B / 1.38GB         75
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      137.07%             480.8MiB / 15.47GiB   3.03%               215MB / 1.12GB      0B / 1.43GB         75
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      70.72%              481MiB / 15.47GiB   3.04%               217MB / 1.15GB      0B / 1.47GB         75
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      96.34%              481.1MiB / 15.47GiB   3.04%               218MB / 1.18GB      0B / 1.52GB         75
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      75.30%              481MiB / 15.47GiB   3.04%               218MB / 1.18GB      0B / 1.59GB         75
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      137.99%             481.7MiB / 15.47GiB   3.04%               220MB / 1.21GB      0B / 1.62GB         75
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      158.45%             481.5MiB / 15.47GiB   3.04%               221MB / 1.24GB      0B / 1.65GB         75
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      155.39%             482.2MiB / 15.47GiB   3.04%               223MB / 1.27GB      0B / 1.69GB         75
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      93.52%              481.7MiB / 15.47GiB   3.04%               224MB / 1.3GB       0B / 1.74GB         75
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      70.88%              482.1MiB / 15.47GiB   3.04%               225MB / 1.3GB       0B / 1.8GB          74
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      234.80%             482.6MiB / 15.47GiB   3.05%               227MB / 1.34GB      0B / 1.83GB         74
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      95.60%              482.6MiB / 15.47GiB   3.05%               228MB / 1.37GB      0B / 1.88GB         74
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      262.47%             482.7MiB / 15.47GiB   3.05%               230MB / 1.4GB       0B / 1.91GB         74
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      41.65%              482.4MiB / 15.47GiB   3.04%               231MB / 1.41GB      0B / 1.99GB         74
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      167.50%             483MiB / 15.47GiB   3.05%               233MB / 1.44GB      0B / 2.04GB         74
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      207.05%             483.1MiB / 15.47GiB   3.05%               234MB / 1.46GB      0B / 2.09GB         74
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      126.28%             482.8MiB / 15.47GiB   3.05%               234MB / 1.48GB      0B / 2.13GB         74
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      201.20%             482.9MiB / 15.47GiB   3.05%               236MB / 1.51GB      0B / 2.17GB         74
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      34.91%              482.8MiB / 15.47GiB   3.05%               238MB / 1.54GB      0B / 2.2GB          65
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      166.72%             482.7MiB / 15.47GiB   3.05%               238MB / 1.54GB      0B / 2.24GB         53
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      155.90%             482.6MiB / 15.47GiB   3.05%               238MB / 1.54GB      0B / 2.28GB         53
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      181.82%             482.6MiB / 15.47GiB   3.05%               238MB / 1.54GB      0B / 2.3GB          53
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      0.05%               482.5MiB / 15.47GiB   3.05%               238MB / 1.54GB      0B / 2.3GB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      0.05%               482.5MiB / 15.47GiB   3.05%               238MB / 1.54GB      0B / 2.3GB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      0.06%               482.5MiB / 15.47GiB   3.05%               238MB / 1.54GB      0B / 2.3GB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      0.07%               482.5MiB / 15.47GiB   3.05%               238MB / 1.54GB      0B / 2.3GB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      0.08%               482.5MiB / 15.47GiB   3.05%               238MB / 1.54GB      0B / 2.3GB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+43c9c64ab691        benchmark_db_1      0.06%               482.5MiB / 15.47GiB   3.05%               238MB / 1.54GB      0B / 2.3GB          51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.05%               150.4MiB / 15.47GiB   0.95%               8.4kB / 1.64kB      0B / 33.6MB         18
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.05%               150.4MiB / 15.47GiB   0.95%               9.23kB / 1.64kB     0B / 33.6MB         18
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.06%               150.4MiB / 15.47GiB   0.95%               9.52kB / 1.64kB     0B / 33.6MB         18
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.06%               150.4MiB / 15.47GiB   0.95%               9.52kB / 1.64kB     0B / 33.6MB         18
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.06%               150.4MiB / 15.47GiB   0.95%               9.52kB / 1.64kB     0B / 33.6MB         18
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      1.91%               159.2MiB / 15.47GiB   1.00%               565kB / 28.4kB      0B / 34.2MB         34
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      26.68%              175MiB / 15.47GiB   1.10%               10MB / 42.3kB       0B / 57.6MB         50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      36.11%              188.2MiB / 15.47GiB   1.19%               20.1MB / 55.5kB     0B / 83.1MB         50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      27.09%              202.5MiB / 15.47GiB   1.28%               31.7MB / 67.6kB     0B / 120MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      42.12%              223.4MiB / 15.47GiB   1.41%               48.5MB / 83.7kB     0B / 168MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      41.64%              242.4MiB / 15.47GiB   1.53%               64.2MB / 101kB      0B / 208MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      35.04%              262.7MiB / 15.47GiB   1.66%               80.5MB / 116kB      0B / 253MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      27.12%              280.1MiB / 15.47GiB   1.77%               95.2MB / 129kB      0B / 302MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      56.29%              300.7MiB / 15.47GiB   1.90%               113MB / 144kB       0B / 349MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      26.76%              317.6MiB / 15.47GiB   2.00%               127MB / 157kB       0B / 388MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      6.81%               319MiB / 15.47GiB   2.01%               128MB / 159kB       0B / 395MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      38.87%              331.2MiB / 15.47GiB   2.09%               138MB / 170kB       0B / 426MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      47.65%              350.3MiB / 15.47GiB   2.21%               155MB / 186kB       0B / 463MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      29.19%              365.7MiB / 15.47GiB   2.31%               168MB / 198kB       0B / 510MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      48.47%              384.8MiB / 15.47GiB   2.43%               185MB / 212kB       0B / 556MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      75.31%              407.7MiB / 15.47GiB   2.57%               196MB / 228kB       0B / 619MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      2.52%               422.8MiB / 15.47GiB   2.67%               196MB / 228kB       0B / 655MB          50
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.06%               426.9MiB / 15.47GiB   2.69%               196MB / 229kB       0B / 675MB          49
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.07%               426.9MiB / 15.47GiB   2.69%               196MB / 229kB       0B / 675MB          49
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.06%               426.9MiB / 15.47GiB   2.69%               196MB / 229kB       0B / 675MB          49
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      152.60%             459MiB / 15.47GiB   2.90%               197MB / 21.8MB      0B / 711MB          65
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      67.93%              460.1MiB / 15.47GiB   2.90%               197MB / 28.2MB      0B / 778MB          65
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      324.84%             461.5MiB / 15.47GiB   2.91%               198MB / 46.9MB      0B / 826MB          65
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      95.81%              462.9MiB / 15.47GiB   2.92%               199MB / 64.5MB      0B / 878MB          66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      85.54%              462.5MiB / 15.47GiB   2.92%               200MB / 74.5MB      0B / 947MB          66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      28.74%              462.3MiB / 15.47GiB   2.92%               200MB / 86.2MB      0B / 1.01GB         66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      255.95%             463.8MiB / 15.47GiB   2.93%               202MB / 112MB       0B / 1.05GB         66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      128.86%             464.7MiB / 15.47GiB   2.93%               203MB / 127MB       0B / 1.11GB         66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      116.51%             464.3MiB / 15.47GiB   2.93%               204MB / 147MB       0B / 1.16GB         66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      242.90%             464.8MiB / 15.47GiB   2.93%               205MB / 168MB       0B / 1.21GB         66
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      104.07%             465.2MiB / 15.47GiB   2.94%               206MB / 185MB       0B / 1.26GB         67
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      111.57%             464.9MiB / 15.47GiB   2.93%               207MB / 200MB       0B / 1.33GB         67
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      61.43%              465MiB / 15.47GiB   2.93%               208MB / 219MB       0B / 1.38GB         67
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      411.24%             465.1MiB / 15.47GiB   2.94%               209MB / 238MB       0B / 1.43GB         67
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      114.60%             465.5MiB / 15.47GiB   2.94%               210MB / 257MB       0B / 1.48GB         67
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      174.72%             465.6MiB / 15.47GiB   2.94%               211MB / 272MB       0B / 1.54GB         67
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.06%               464.3MiB / 15.47GiB   2.93%               211MB / 272MB       0B / 1.57GB         51
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.00%               0B / 0B             0.00%               0B / 0B             0B / 0B             0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.00%               0B / 0B             0.00%               0B / 0B             0B / 0B             0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.00%               0B / 0B             0.00%               0B / 0B             0B / 0B             0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.00%               0B / 0B             0.00%               0B / 0B             0B / 0B             0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.00%               0B / 0B             0.00%               0B / 0B             0B / 0B             0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.00%               0B / 0B             0.00%               0B / 0B             0B / 0B             0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.00%               0B / 0B             0.00%               0B / 0B             0B / 0B             0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.00%               0B / 0B             0.00%               0B / 0B             0B / 0B             0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.00%               0B / 0B             0.00%               0B / 0B             0B / 0B             0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.00%               0B / 0B             0.00%               0B / 0B             0B / 0B             0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.00%               0B / 0B             0.00%               0B / 0B             0B / 0B             0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.00%               0B / 0B             0.00%               0B / 0B             0B / 0B             0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.00%               0B / 0B             0.00%               0B / 0B             0B / 0B             0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.00%               0B / 0B             0.00%               0B / 0B             0B / 0B             0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.00%               0B / 0B             0.00%               0B / 0B             0B / 0B             0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.00%               0B / 0B             0.00%               0B / 0B             0B / 0B             0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.00%               0B / 0B             0.00%               0B / 0B             0B / 0B             0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.00%               0B / 0B             0.00%               0B / 0B             0B / 0B             0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.00%               0B / 0B             0.00%               0B / 0B             0B / 0B             0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT   MEM %               NET I/O             BLOCK I/O           PIDS
+383d362f9242        benchmark_db_1      0.00%               0B / 0B             0.00%               0B / 0B             0B / 0B             0
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      14.18%              686.6MiB / 15.47GiB   4.33%               391MB / 478kB       0B / 1.37GB         48
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      0.08%               686.5MiB / 15.47GiB   4.33%               391MB / 478kB       0B / 1.37GB         48
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      0.06%               686.5MiB / 15.47GiB   4.33%               391MB / 478kB       0B / 1.37GB         48
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      0.06%               686.5MiB / 15.47GiB   4.33%               391MB / 478kB       0B / 1.37GB         48
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      0.06%               686.5MiB / 15.47GiB   4.33%               391MB / 478kB       0B / 1.37GB         48
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      0.05%               686.5MiB / 15.47GiB   4.33%               391MB / 478kB       0B / 1.37GB         48
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      106.78%             722.7MiB / 15.47GiB   4.56%               392MB / 18.4MB      0B / 1.41GB         64
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      268.33%             725.7MiB / 15.47GiB   4.58%               393MB / 32.7MB      0B / 1.47GB         64
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      284.58%             727.2MiB / 15.47GiB   4.59%               393MB / 39.9MB      0B / 1.52GB         70
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      117.03%             729.7MiB / 15.47GiB   4.61%               394MB / 55.6MB      0B / 1.58GB         70
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      43.04%              730.8MiB / 15.47GiB   4.61%               395MB / 71.5MB      0B / 1.62GB         70
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      207.61%             731.2MiB / 15.47GiB   4.62%               395MB / 77.1MB      0B / 1.68GB         70
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      117.90%             732.5MiB / 15.47GiB   4.62%               396MB / 95.4MB      0B / 1.73GB         70
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      233.34%             733.6MiB / 15.47GiB   4.63%               397MB / 116MB       0B / 1.77GB         70
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      108.92%             733.7MiB / 15.47GiB   4.63%               398MB / 125MB       0B / 1.83GB         70
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      355.92%             733.8MiB / 15.47GiB   4.63%               399MB / 140MB       0B / 1.89GB         70
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      47.16%              733.6MiB / 15.47GiB   4.63%               399MB / 145MB       0B / 1.95GB         70
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      181.89%             734.3MiB / 15.47GiB   4.63%               400MB / 170MB       0B / 1.99GB         70
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      109.93%             734.3MiB / 15.47GiB   4.63%               401MB / 180MB       0B / 2.05GB         70
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      189.77%             734.4MiB / 15.47GiB   4.63%               402MB / 201MB       0B / 2.1GB          70
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      194.36%             734.6MiB / 15.47GiB   4.64%               403MB / 209MB       0B / 2.17GB         70
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      153.77%             734.9MiB / 15.47GiB   4.64%               404MB / 230MB       0B / 2.22GB         70
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      169.77%             734.9MiB / 15.47GiB   4.64%               405MB / 253MB       0B / 2.26GB         70
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      11.75%              734.2MiB / 15.47GiB   4.63%               406MB / 265MB       0B / 2.32GB         70
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      247.96%             735.1MiB / 15.47GiB   4.64%               406MB / 281MB       0B / 2.38GB         70
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      256.58%             735.2MiB / 15.47GiB   4.64%               408MB / 302MB       0B / 2.41GB         70
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      160.65%             735.2MiB / 15.47GiB   4.64%               409MB / 325MB       0B / 2.45GB         70
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      13.07%              734.1MiB / 15.47GiB   4.63%               410MB / 339MB       0B / 2.51GB         68
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      377.84%             734.7MiB / 15.47GiB   4.64%               410MB / 354MB       0B / 2.57GB         68
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      169.04%             734.6MiB / 15.47GiB   4.64%               412MB / 375MB       0B / 2.62GB         68
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      322.80%             734.9MiB / 15.47GiB   4.64%               413MB / 399MB       0B / 2.66GB         68
+CONTAINER ID        NAME                CPU %               MEM USAGE / LIMIT     MEM %               NET I/O             BLOCK I/O           PIDS
+4d79f99241c3        benchmark_db_1      89.15%              735.4MiB / 15.47GiB   4.64%               414MB / 420MB       0B / 2.71GB         68
