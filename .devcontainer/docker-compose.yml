@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  vscode:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../:/workspace
+      # Docker socket to access Docker server
+      - /var/run/docker.sock:/var/run/docker.sock
+      # SSH directory
+      - ~/.ssh:/root/.ssh
+      # Git config
+      - ~/.gitconfig:/root/.gitconfig
+    environment:
+      - TZ=
+    command: bash -c "while sleep 1000; do :; done"

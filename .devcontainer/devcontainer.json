@@ -1,0 +1,24 @@
+{
+    "name": "project-SQLStreamify",
+    "dockerComposeFile": ["docker-compose.yml"],
+    "service": "vscode",
+    "runServices": ["vscode"],
+    "shutdownAction": "stopCompose",
+    "workspaceFolder": "/workspace",
+    "postCreateCommand": "",
+    "extensions": [
+        // Git
+        "eamodio.gitlens",
+        // Other helpers
+        // Other
+        "vscode-icons-team.vscode-icons",
+    ],
+    "settings": {
+        // General settings
+        "files.eol": "\n",
+        // Docker
+        "remote.extensionKind": {
+            "ms-azuretools.vscode-docker": "workspace"
+        }        
+    }
+}
