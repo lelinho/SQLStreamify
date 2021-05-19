@@ -1,4 +1,4 @@
-# StreamDB_middleware
+# SQLStreamify
 
 Middleware disponibilizando funções reativas para consultas estáticas transformando-as em buscas contínuas para bancos de dados relacionais.
 
