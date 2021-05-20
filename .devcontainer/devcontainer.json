@@ -15,6 +15,7 @@
     ],
     "settings": {
         // General settings
+        "terminal.integrated.shell.linux": "/bin/zsh",
         "files.eol": "\n",
         // Docker
         "remote.extensionKind": {
