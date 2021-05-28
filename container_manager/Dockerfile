@@ -8,5 +8,5 @@ WORKDIR /app
 
 ADD . /app
 
-CMD [ "python", "/app/streamdb_manager.py" ]
+CMD [ "python", "/app/sqlstreamify_manager.py" ]
 #EXPOSE 80

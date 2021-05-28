@@ -1,4 +1,4 @@
-version: "2.2"
+version: "3.9"
 
 services:
   redis:
@@ -27,7 +27,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      - ADDITIONAL_SERVICES=streamdbmiddleware:consulta
+      - ADDITIONAL_SERVICES=sqlstreamify:consulta
 
   lbeventos:
     image: dockercloud/haproxy
@@ -36,15 +36,18 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     environment:
-      - ADDITIONAL_SERVICES=streamdbmiddleware:eventos
+      - ADDITIONAL_SERVICES=sqlstreamify:eventos
 
   eventos:
     scale: {{ v.instancias_eventos }}
     build: container_eventos
     #ports:
     #    - "8001:80"
+    environment:
+        FLASK_DEBUG: 1
     volumes:
       - ./config.ini:/config/config.ini
+      - './container_eventos:/app'
     links:
       - lbconsulta
       - consulta
@@ -57,8 +60,11 @@ services:
   consulta:
     scale: {{ v.instancias_consulta }}
     build: container_consulta
+    environment:
+        FLASK_DEBUG: 1
     volumes:
       - ./config.ini:/config/config.ini
+      - './container_consulta:/app'
     links:
       - redis
       - mqtt
@@ -68,7 +74,7 @@ services:
     ports:
       - 8080:80
     environment:
-        FLASK_DEBUG: 1         
+        FLASK_DEBUG: 1
     volumes:
       - ./config.ini:/config/config.ini
       - './webui:/app'

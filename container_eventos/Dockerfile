@@ -10,16 +10,15 @@ RUN apk add --virtual .build-dependencies \
 
 RUN apk add --no-cache pcre
 
-COPY requirements.txt ./
-
 #Instala as bibliotecas python necessarias para a execução
+COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 RUN apk del .build-dependencies && rm -rf /var/cache/apk/*
 
-WORKDIR /app
+RUN mkdir -p /app
 
-ADD . /app
+WORKDIR /app
 
 CMD ["uwsgi", "--ini", "uwsgi.ini"]
 EXPOSE 80

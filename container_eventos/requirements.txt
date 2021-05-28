@@ -4,3 +4,4 @@ requests
 moz-sql-parser
 redis
 uwsgi
+pymysql<0.9

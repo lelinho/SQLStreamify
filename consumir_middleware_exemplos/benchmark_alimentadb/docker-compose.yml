@@ -24,4 +24,4 @@ services:
 networks:
   default:
     external:
-      name: streamdbmiddleware_default
+      name: sqlstreamify_default

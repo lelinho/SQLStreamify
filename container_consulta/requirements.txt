@@ -1,4 +1,4 @@
-pymysql
+pymysql<0.9
 flask
 redis
 jsondiff

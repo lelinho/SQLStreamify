@@ -17,7 +17,7 @@ while True:
 mycursor = db.cursor()
 mycursor.execute("CREATE DATABASE IF NOT EXISTS placar;")
 mycursor.execute("USE placar;")
-mycursor.execute("CREATE TABLE IF NOT EXISTS placar (id INT AUTO_INCREMENT PRIMARY KEY, time VARCHAR(255), jogador VARCHAR(255), pontos INT)")
+mycursor.execute("CREATE TABLE IF NOT EXISTS placar (id INT AUTO_INCREMENT PRIMARY KEY, equipe VARCHAR(255), jogador VARCHAR(255), pontos INT)")
 mycursor.execute("GRANT ALL ON *.* TO 'root'@'%' IDENTIFIED BY 'password' WITH GRANT OPTION")
 mycursor.execute("FLUSH PRIVILEGES;")
 db.commit()
@@ -37,7 +37,7 @@ while True:
     pontuador = jogadores_2[random.randint(0,4)]
   pontos = random.randint(2,3)
   record_tupla = (time_pontuador, pontuador, pontos)
-  insert_query = """INSERT INTO placar (time, jogador, pontos) VALUES (%s, %s, %s)"""
+  insert_query = """INSERT INTO placar (equipe, jogador, pontos) VALUES (%s, %s, %s)"""
   try:
     mycursor.execute(insert_query, record_tupla)
   except mysql.connector.Error as error:

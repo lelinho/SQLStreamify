@@ -82,8 +82,9 @@ def identificaTabelas(query):
 
 
 def verificaRequisitos(where, linha_binlog, query):
-    if where:
-        #print(where, flush=True)
+    if where:                
+        print("TESTE", flush=True)
+        print(where, flush=True)
         # {'and': [{'eq': ['itemid', 53939]}, {'gt': ['clock', 1586801554]}]}
 
         # busca por igualdades no where
@@ -91,7 +92,7 @@ def verificaRequisitos(where, linha_binlog, query):
         for eq in equal:
             # transforma a string em uma lista
             eq = eval(eq)
-            #print(eq, flush=True)
+            print(eq, flush=True)
             #print(eq[0], flush=True)
             if linha_binlog[eq[0]] == eq[1]:
                 r = requests.get("http://lbconsulta/" + query)
@@ -150,4 +151,5 @@ def eventos(query, server_id):
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=80)
+    #app.run(host="0.0.0.0", port=80)
+    app.run(debug=True, host='0.0.0.0', port=80)

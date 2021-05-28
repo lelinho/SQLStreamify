@@ -22,7 +22,5 @@ RUN mkdir -p /app
 
 WORKDIR /app
 
-#ADD . /app
-
 CMD ["uwsgi", "--ini", "uwsgi.ini"]
 EXPOSE 80
