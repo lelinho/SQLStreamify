@@ -67,8 +67,11 @@ services:
     build: webui
     ports:
       - 8080:80
+    environment:
+        FLASK_DEBUG: 1         
     volumes:
       - ./config.ini:/config/config.ini
+      - './webui:/app'
     links:
       - redis
 

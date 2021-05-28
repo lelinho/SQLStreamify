@@ -17,9 +17,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 RUN apk del .build-dependencies && rm -rf /var/cache/apk/*
 
+
+RUN mkdir -p /app
+
 WORKDIR /app
 
-ADD . /app
+#ADD . /app
 
 CMD ["uwsgi", "--ini", "uwsgi.ini"]
 EXPOSE 80
