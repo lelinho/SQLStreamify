@@ -35,7 +35,7 @@ def inicalizaServico():
                     modo = "one_at_time"
             redis.hset(section_name, "modo", modo)
             #inicializa um contador para cada query
-            redis.hset(section_name, "count", 0)        
+            redis.hset(section_name, "count", 0)
             try:
                 r = requests.get("http://lbeventos/" +
                              section_name + "/" + str(server_id), timeout=0.1)
@@ -52,7 +52,7 @@ def main():
 
     inicalizaServico()
 
-    # Consulta informações sobre as buscas a cada 10 segundos
+    # Consulta informações sobre as buscas a cada 5 segundos
     start = perf_counter()
     while True:
         time.sleep(5)
@@ -64,6 +64,12 @@ def main():
             #print("%s : %s eventos por minutos (%d total)" % (
             #    query, por_minuto, contador), flush=True)
             redis.hset(query, "epm", por_minuto)
+
+            #Verifica se existe alguma ação a ser tomada para alguma query
+            #inclusão
+            #exclusão
+            #alteração
+
         #print("***************", flush=True)
 
     return queries

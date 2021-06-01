@@ -83,12 +83,12 @@ def identificaTabelas(query):
 
 def verificaRequisitos(where, linha_binlog, query):
     if where:                
-        print("TESTE", flush=True)
-        print(where, flush=True)
+        #print("TESTE", flush=True)
+        #print(where, flush=True)
         # {'and': [{'eq': ['itemid', 53939]}, {'gt': ['clock', 1586801554]}]}
-
+        
         # busca por igualdades no where
-        equal = re.findall(r'\'eq\':(.*?)}', str(where))        
+        equal = re.findall(r'\'eq\':(.*?)}', str(where))
         for eq in equal:
             # transforma a string em uma lista
             eq = eval(eq)
@@ -104,6 +104,12 @@ def verificaRequisitos(where, linha_binlog, query):
 def index():
     return "log_eventos running on {}\n".format(hostname)
 
+#Rota para healthckeck do container
+@app.route("/healthy")
+def healthy():
+    #retornar a saude do containers
+    return ""
+
 
 @app.route("/<string:query>/<int:server_id>")
 def eventos(query, server_id):
@@ -115,6 +121,10 @@ def eventos(query, server_id):
     # busca condições
     where = identificaWhere(query)
 
+    
+    #Salva informações da execução do docker
+    host = redis.hset(query, "container_evento", hostname)
+    
     # Monitora eventos das tabelas que fazem parte da consulta
 
     # server_id is your slave identifier, it should be unique.
@@ -139,6 +149,8 @@ def eventos(query, server_id):
         #contador = contador + 1
         # print(contador)
         for row in binlogevent.rows:
+            #INCREMENTA UM EM UM CONTADOR DE CHECK-ALIVE DO CONTAINER DE EVENTOS
+            redis.hincrby(query, "check-alive-evento", 1) #incrementa um contador de check-alive
             #print(row, flush=True)
             if isinstance(binlogevent, WriteRowsEvent):
                 # FAZER A VERIFICAÇÃO DO WHERE

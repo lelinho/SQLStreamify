@@ -82,6 +82,10 @@ def query(consulta):
     #print("****** Ultimo ********", flush=True)
     #print(ultimo, flush=True)
 
+    # adiciona informações de execução do docker
+    host = redis.hset(consulta, "container_consulta", hostname) #hostname do último container que executou a consulta
+    redis.hincrby(consulta, "check-alive-consulta", 1) #incrementa um contador de check-alive
+
     # Conexão com o Banco de Dados
     db = MySQLdb.connect(config['DB']['host'], config['DB']
                          ['user'], config['DB']['password'], config['DB']['db'])
