@@ -35,6 +35,28 @@ def stats(consulta):
         count=str(contador)
     )
 
+
+# Retorna o containerEvento no qual a busca está sendo executada
+@app.route("/containerEvento/<string:consulta>")
+def retorna_stat_containerEvento(consulta):
+    container_evento = ""
+    if redis.hget(consulta, "container_evento") != None:
+        container_evento = str(redis.hget(consulta, "container_evento").decode('utf-8'))
+    return jsonify(
+        container=str(container_evento)
+    )
+
+
+# Retorna o containerConsulta no qual a busca está sendo executada
+@app.route("/containerConsulta/<string:consulta>")
+def retorna_stat_containerConsulta(consulta):
+    container_consulta = ""
+    if redis.hget(consulta, "container_consulta") != None:
+        container_consulta = str(redis.hget(consulta, "container_consulta").decode("utf-8"))
+    return jsonify(
+        container=str(container_consulta)
+    )
+
 # Retorna a performance da busca em JSON
 @app.route("/epm/<string:consulta>")
 def stats_epm(consulta):

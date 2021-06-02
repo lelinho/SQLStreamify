@@ -73,20 +73,45 @@
                     <div class="col mr-2">
                       <a
                         href="/{{ item }}"
-                        class="text-xs font-weight-bold text-primary text-uppercase mb-1"
+                        class="text-xs h5 font-weight-bold text-primary text-uppercase mb-1"
                         >{{ item }}</a
                       >
                       <div
-                        class="h5 mb-0 font-weight-bold"
+                        class="h6 mb-0 font-weight-bold"
                         id="viewCount{{ item }}"
                       >
-                        -
+                      Eventos:  -
                       </div>
                     </div>
                     <div class="col-auto">
-                      <i class="fas fa-box-open fa-2x"></i>
+                      <i class="fas fa-search fa-2x"></i>
                     </div>
                   </div>
+                  <div class="row no-gutters align-items-left">
+                    <div
+                    class="h6 mb-0 font-weight-bold">
+                      Conteineres:
+                    </div>
+                  </div>
+                  <div class="row no-gutters align-items-left mb-0">
+                    <i class="fas fa-truck"></i>
+                    <div
+                    class="mb-0"
+                    id="viewContainerEvento{{ item }}"
+                    >
+                      hostname.container
+                    </div>
+                  </div>
+                  <div class="row no-gutters align-items-left mb-0">
+                    <i class="fas fa-truck"></i>
+                    <div
+                    class="mb-0"
+                    id="viewContainerConsulta{{ item }}"
+                    >
+                      hostname.container
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -105,6 +130,8 @@
       function buscarStatsLive() {
         {% for item in queries %}
           const textViewCount{{ item }} = document.getElementById('viewCount{{ item }}');
+          const textViewContainerEvento{{ item }} = document.getElementById('viewContainerEvento{{ item }}');
+          const textViewContainerConsulta{{ item }} = document.getElementById('viewContainerConsulta{{ item }}');
         {% endfor %}
 
           setInterval(function (){
@@ -113,13 +140,41 @@
               return response.json();
             }).then(function (data) {
               $('viewCount{{ item }}').fadeOut("slow");
-              textViewCount{{ item }}.textContent = data.count;
+              textViewCount{{ item }}.textContent = "Eventos: " + data.count;
               $('viewCount{{ item }}').fadeIn();
             }).catch (function (error) {
               console.log(error);
             });
             {% endfor %}
-          }, 5000);
+
+            {% for item in queries %}
+            fetch('/containerEvento/{{ item }}').then(function (response) {
+              return response.json();
+            }).then(function (data) {
+              $('viewContainerEvento{{ item }}').fadeOut("slow");
+              textViewContainerEvento{{ item }}.textContent = data.container;
+              $('viewContainerEvento{{ item }}').fadeIn();
+            }).catch (function (error) {
+              console.log(error);
+            });
+            {% endfor %}
+
+
+            {% for item in queries %}
+            fetch('/containerConsulta/{{ item }}').then(function (response) {
+              return response.json();
+            }).then(function (data) {
+              $('viewContainerConsulta{{ item }}').fadeOut("slow");
+              textViewContainerConsulta{{ item }}.textContent = data.container;
+              $('viewContainerConsulta{{ item }}').fadeIn();
+            }).catch (function (error) {
+              console.log(error);
+            });
+            {% endfor %}
+
+
+
+          }, 1000);
         }
 
 

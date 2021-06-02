@@ -12,6 +12,7 @@ import re
 import datetime
 import simplejson as json
 import pika
+import subprocess
 from redis import Redis
 from flask import Flask, escape, request, jsonify
 from jsondiff import diff
@@ -23,6 +24,12 @@ config.read('/config/config.ini')
 # informações sobre o script
 app = Flask(__name__)
 hostname = socket.gethostname()
+
+#busca o hostname do container em execução para guardar o histórico da execução
+bashCommand = """curl -s -XGET --unix-socket /var/run/docker.sock -H "Content-Type: application/json" http://v1.24/containers/$(hostname)/json | jq -r .Name[1:]"""
+subprocess = subprocess.Popen(bashCommand, shell=True, stdout=subprocess.PIPE)
+hostname_cont = subprocess.stdout.read()
+hostname_cont = hostname_cont.rstrip()
 
 # conexão com o redis
 redis = Redis("redis")
@@ -83,7 +90,8 @@ def query(consulta):
     #print(ultimo, flush=True)
 
     # adiciona informações de execução do docker
-    host = redis.hset(consulta, "container_consulta", hostname) #hostname do último container que executou a consulta
+    print(hostname_cont, flush=True)
+    host = redis.hset(consulta, "container_consulta", hostname_cont) #hostname do último container que executou a consulta
     redis.hincrby(consulta, "check-alive-consulta", 1) #incrementa um contador de check-alive
 
     # Conexão com o Banco de Dados

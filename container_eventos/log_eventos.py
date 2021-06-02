@@ -9,6 +9,7 @@ import configparser
 import requests
 import json
 import re
+import subprocess
 from datetime import datetime
 from redis import Redis
 from flask import Flask, Response
@@ -32,6 +33,14 @@ MYSQL_SETTINGS = {
 
 app = Flask(__name__)
 hostname = socket.gethostname()
+
+
+#busca o hostname do container em execução para guardar o histórico da execução
+bashCommand = """curl -s -XGET --unix-socket /var/run/docker.sock -H "Content-Type: application/json" http://v1.24/containers/$(hostname)/json | jq -r .Name[1:]"""
+subprocess = subprocess.Popen(bashCommand, shell=True, stdout=subprocess.PIPE)
+hostname_cont = subprocess.stdout.read()
+hostname_cont = hostname_cont.rstrip()
+
 
 redis = Redis("redis")
 
@@ -123,7 +132,7 @@ def eventos(query, server_id):
 
     
     #Salva informações da execução do docker
-    host = redis.hset(query, "container_evento", hostname)
+    host = redis.hset(query, "container_evento", hostname_cont)
     
     # Monitora eventos das tabelas que fazem parte da consulta
 

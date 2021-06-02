@@ -8,7 +8,7 @@ RUN apk add --virtual .build-dependencies \
             linux-headers \
             pcre-dev
 
-RUN apk add --no-cache pcre
+RUN apk add --no-cache pcre jq curl
 
 #Instala as bibliotecas python necessarias para a execução
 COPY requirements.txt ./
