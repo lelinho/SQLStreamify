@@ -101,7 +101,7 @@ def verificaRequisitos(where, linha_binlog, query):
         for eq in equal:
             # transforma a string em uma lista
             eq = eval(eq)
-            print(eq, flush=True)
+            #print(eq, flush=True)
             #print(eq[0], flush=True)
             if linha_binlog[eq[0]] == eq[1]:
                 r = requests.get("http://lbconsulta/" + query)
