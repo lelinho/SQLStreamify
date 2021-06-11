@@ -1,7 +1,7 @@
 ===
 
 <p align="center" style="text-align:center;">
-    <img alt="HashiCorp Nomad logo" src="webui/static/img/SQLStreamify_logo.png" width="500" />
+    <img alt="SQLStreamify logo" src="images/SQLStreamify_logo.png" width="500" />
 </p>
 
 SQLStreamify is a simple and flexible middleware, with microservice-based architecture, capable of providing real-time data streams obtained by converting queries into continuous queries, without all the CEP tool complexity and with the possibility of execution without changes in legacy systems databases.
@@ -27,6 +27,28 @@ Nomad provides several key features:
 * **Proven Scalability**: Nomad is optimistically concurrent, which increases throughput and reduces latency for workloads.  Nomad has been proven to scale to clusters of 10K+ nodes in real-world production environments.
 
 * **HashiCorp Ecosystem**: Nomad integrates seamlessly with Terraform, Consul, Vault for provisioning, service discovery, and secrets management.
+
+Pipeline
+---
+<p align="center" style="text-align:center;">
+    <img alt="SQLStreamify Pipeline" src="images/SQLStreamify-pipeline.png" width="300" />
+</p>
+
+
+Structure
+---
+<p align="center" style="text-align:center;">
+    <img alt="SQLStreamify Structure" src="images/diagrama-estrutura.png" width="300" />
+</p>
+
+
+Delivery Modes
+---
+<p align="center" style="text-align:center;">
+    <img alt="SQLStreamify Modes" src="images/diagramas_modos_publicacao.png" width="300" />
+</p>
+
+
 
 Quick Start
 ---
