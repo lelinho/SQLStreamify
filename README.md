@@ -31,21 +31,21 @@ Nomad provides several key features:
 Pipeline
 ---
 <p align="center" style="text-align:center;">
-    <img alt="SQLStreamify Pipeline" src="images/SQLStreamify-pipeline.png" width="300" />
+    <img alt="SQLStreamify Pipeline" src="images/SQLStreamify-pipeline.png" width="600" />
 </p>
 
 
 Structure
 ---
 <p align="center" style="text-align:center;">
-    <img alt="SQLStreamify Structure" src="images/diagrama-estrutura.png" width="300" />
+    <img alt="SQLStreamify Structure" src="images/diagrama-estrutura.png" width="600" />
 </p>
 
 
 Delivery Modes
 ---
 <p align="center" style="text-align:center;">
-    <img alt="SQLStreamify Modes" src="images/diagramas_modos_publicacao.png" width="300" />
+    <img alt="SQLStreamify Modes" src="images/diagramas_modos_publicacao.png" width="600" />
 </p>
 
 
