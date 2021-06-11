@@ -37,7 +37,7 @@ services:
       - ADDITIONAL_SERVICES=sqlstreamify:eventos
 
   eventos:
-    scale: 3
+    scale: 1
     build: container_eventos
     #ports:
     #    - "8001:80"
@@ -57,7 +57,7 @@ services:
       - redis
 
   consulta:
-    scale: 6
+    scale: 2
     build: container_consulta
     environment:
         FLASK_DEBUG: 1

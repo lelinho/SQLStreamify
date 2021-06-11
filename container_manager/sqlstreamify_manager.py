@@ -44,7 +44,6 @@ def inicalizaServico():
             
             server_id += 1
 
-
 def main():
     # Aguarda um instante enquanto os conteineres estejam prontos para receber comandos.
     print("Aguardando inicialização dos conteineres...", flush=True)
