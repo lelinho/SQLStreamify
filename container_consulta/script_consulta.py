@@ -123,7 +123,7 @@ def query(consulta):
         # No modo "one_at_time" cada registro da consulta é retornado um por vez, para montagem e atualização do dataset
         if modo == "one_at_time":
             created = redis.hset(consulta, "resultado", result_json)
-            #print(diff, flush=True)
+            print(diff, flush=True)
             diff_loaded = json.loads(diff)
             for i in diff_loaded:
                 # verificar se é lista - primeiro diff
@@ -157,4 +157,5 @@ def query(consulta):
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=80)
+    app.run(debug=True, host='0.0.0.0', port=80)
+    #app.run(host="0.0.0.0", port=80)

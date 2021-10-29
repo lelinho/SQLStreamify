@@ -1,4 +1,4 @@
-FROM python:3-alpine
+FROM python:3.8-alpine
 
 #Instala as dependencias para instalar o uwsgi
 RUN apk add --virtual .build-dependencies \ 
