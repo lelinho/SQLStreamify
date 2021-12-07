@@ -26,6 +26,14 @@ template = env.get_template('docker-compose.yml.j2')
 
 
 def geraCompose(instancias_eventos, instancias_consulta):
+    """
+    Utilizando o template do docker-compose.yml.j2, gera e escreve um arquivo docker-compose para a inicialização e orquestração do SQLStreamify utilizando o Docker Compose.
+
+    São passados os números de instâncias de eventos e consultas como parâmetros.
+
+    :param instancias_eventos: Número de instâncias de eventos
+    :param instancias_consulta: Número de instâncias de consultas        
+    """      
     output = template.render(
         v={
             "instancias_eventos": instancias_eventos,
@@ -39,6 +47,12 @@ def geraCompose(instancias_eventos, instancias_consulta):
 
 
 def buscaNumQueries():
+    """
+    Pela leitura do arquivo de configuração config.ini, retorna o número de queries configuradas.
+    
+    :return número de consultas cadastradas no arquivo de configuração
+    """  
+
     # Cria um set com as queries registradas no arquivo de configuração
     queries = set()
     contador_queries = 0
@@ -51,6 +65,11 @@ def buscaNumQueries():
 
 
 def main():
+    """
+    Função principal que chama as funções de contagem de consultas cadastradas e de geração do arquivo docker-compose.yml.
+    Faz a chamada do comando para execução do Docker Compose e inicializa o serviço.
+    """      
+    
     num_queries = buscaNumQueries()
     print("Estão configuradas %s queries no config.ini." % (num_queries))
     instancias_consulta = num_queries * 2

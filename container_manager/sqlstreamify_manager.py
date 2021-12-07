@@ -21,6 +21,10 @@ server_id = 1
 
 
 def inicalizaServico():
+    """
+    Função de inicialização do SQLStreamify. Realiza a leitura do arquivo de configuração do serviço. Armazena configurações no Redis (BD executado em )memória). Após isso realiza requisições dos verificadores de alteração nos dados por chamada HTTP ao load balancer de eventos, com o nome da query e o server_id para inicialização como um servidor de replicação para consumo do log binário.
+    """  
+
     # Cria um set com as queries registradas no arquivo de configuração    
     server_id = 1
     for section_name in config.sections():
@@ -45,7 +49,10 @@ def inicalizaServico():
             server_id += 1
 
 def main():
-    # Aguarda um instante enquanto os conteineres estejam prontos para receber comandos.
+    """
+    Função principal que aguarda a inicialização dos serviços, chama a inicialização e realiza um controle com dados de performance das consultas. Fica em execução durante a execução do SQLStreamify, cuidando das performances de cada consulta cadastrada.
+    """      
+    # Aguarda um instante enquanto os conteineres estejam prontos para receberem comandos.
     print("Aguardando inicialização dos conteineres...", flush=True)
     time.sleep(5)
 

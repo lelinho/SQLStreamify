@@ -98,17 +98,22 @@ def comparaResultados(consulta1, consulta2):
 @app.route("/")
 def index():
     """
-    Respondendo na rota padrão "/", retorna em qual host está sendo executado o serviço.
-
-    :param consulta: nome da exchange
-    :param publicacao: conteúdo da publicação
+    Respondendo na rota padrão "/", retorna por HTTP a mensagem em qual host está sendo executado o serviço.
     """
     
     return "script_consulta running on {}\n".format(hostname)
 
 
 @app.route("/<string:consulta>")
-def query(consulta):    
+def query(consulta):
+    """
+    Respondendo na rota "/nome_da_consulta". É através desta rota que são realizadas as consultas.
+    Primeiramente de acordo com a estrutura do SQLStreamify a requisição é feita ao loadbalancer de consultas que repassa a requisição à instância livre do conteineires através de um balancemaneto round robin.
+
+    É retornado o json com a mensagem da consulta, além disso é realizada a publicação na exchange com o nome da consulta com a mensagem obtida. Para consumo das aplicações que assinam esta consulta.
+
+    :param <string:consulta> nome da consulta
+    """    
     # buscar query correspondente ao identificador
     sql = redis.hget("queries", consulta).decode('utf-8')    
     

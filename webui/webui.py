@@ -17,16 +17,27 @@ hostname = socket.gethostname()
 redis = Redis("redis")
 
 def buscaQueries():
-    # Cria um set com as queries registradas no arquivo de configuração
+    """
+    Função que cria um set com as consultas registradas no arquivo de configuração.
+    
+    :return set com as consultas cadastradas
+    """      
+
     queries = set()
     retorno_queries = redis.hgetall("queries")
     for query in retorno_queries:        
         queries.add(query.decode('utf-8'))
     return queries
 
-# Retorna o contador da busca em JSON
+
 @app.route("/count/<string:consulta>")
 def stats(consulta):
+    """
+    Respondendo na rota /count/<string:consulta> essa requisição retorna o contador da consulta em JSON.
+    :param <string:consulta> nome da consulta
+    
+    :return contador em formato JSON
+    """      
     contador = 0
     if redis.hget(consulta, "count") != None:
         #print(redis.hget(consulta, "count"), flush=True)
@@ -39,6 +50,14 @@ def stats(consulta):
 # Retorna o containerEvento no qual a busca está sendo executada
 @app.route("/containerEvento/<string:consulta>")
 def retorna_stat_containerEvento(consulta):
+    """
+    Respondendo na rota /containerEvento/<string:consulta> essa requisição retorna o contêiner de eventos no qual a busca está sendo executada.
+    Isso por conta do balanceamento dos microsserviços, é interessante checar os contêineres nos quais estão sendo executados.
+
+    :param <string:consulta> nome da consulta
+    
+    :return o contêiner de eventos no qual a busca está sendo executada
+    """
     container_evento = ""
     if redis.hget(consulta, "container_evento") != None:
         container_evento = str(redis.hget(consulta, "container_evento").decode('utf-8'))
@@ -47,9 +66,16 @@ def retorna_stat_containerEvento(consulta):
     )
 
 
-# Retorna o containerConsulta no qual a busca está sendo executada
 @app.route("/containerConsulta/<string:consulta>")
 def retorna_stat_containerConsulta(consulta):
+    """
+    Respondendo na rota /containerConsulta/<string:consulta> essa requisição retorna o contêiner de consulta no qual a busca está sendo executada.
+    Isso por conta do balanceamento dos microsserviços, é interessante checar os contêineres nos quais estão sendo executados.
+
+    :param <string:consulta> nome da consulta
+    
+    :return o contêiner de consulta no qual a busca está sendo executada
+    """
     container_consulta = ""
     if redis.hget(consulta, "container_consulta") != None:
         container_consulta = str(redis.hget(consulta, "container_consulta").decode("utf-8"))
@@ -57,9 +83,17 @@ def retorna_stat_containerConsulta(consulta):
         container=str(container_consulta)
     )
 
-# Retorna a performance da busca em JSON
+
 @app.route("/epm/<string:consulta>")
 def stats_epm(consulta):
+    """
+    Respondendo na rota /epm/<string:consulta> essa requisição retorna a performance da consulta em eventos por minutos. Interessante para verificação da ocorrência de eventos e consequente execução da busca por alterações nas consultas cadastradas.
+
+    :param <string:consulta> nome da consulta
+    
+    :return epm da consulta passada por parâmetro (Eventos por minuto)
+    """
+
     epm_calc = 0
     if redis.hget(consulta, "epm") != None:
         #print(redis.hget(consulta, "count"), flush=True)
@@ -69,9 +103,15 @@ def stats_epm(consulta):
     )
 
 
-# Página com detalhes de cada busca
+
 @app.route("/<string:consulta>")
 def detail(consulta):
+    """
+    Respondendo na rota /<string:consulta> essa requisição HTTP retorna a página com detalhes da consulta.
+
+    :param <string:consulta> nome da consulta
+    """
+
     queries = buscaQueries()
     # Especificaçoes da query
     modo = redis.hget(consulta,"modo").decode('utf-8')
@@ -97,9 +137,11 @@ def detail(consulta):
     })
 
 
-# Página inicial do Dashboard
 @app.route("/")
 def index():
+    """
+    Respondendo na rota padrão "/". Essa requisição HTTP é a página inicial do Dashboard de gerenciamento do SQLStreamify.
+    """
     # retornar set de consultas
     queries = buscaQueries()
     return render_template("main.html", queries=queries)
