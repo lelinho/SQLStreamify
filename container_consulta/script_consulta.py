@@ -36,6 +36,12 @@ redis = Redis("redis")
 
 
 def publicaMQTT(consulta, publicacao):
+    """
+    Realiza uma publicação na exchange "consulta" com o contéudo "publicação".
+
+    :param consulta: nome da exchange
+    :param publicacao: conteúdo da publicação
+    """
     ###############################
     # publicacao por MQTT         #
     ###############################
@@ -58,6 +64,14 @@ def publicaMQTT(consulta, publicacao):
 
 
 def ultimoResultado(consulta):
+    """
+    Retorna o último resultado da consulta, passada como parâmetro, armazenado no banco de dados em memória principal.
+
+    :param consulta: nome da consulta
+
+    :return: último resultado da consulta
+    """
+
     ultimo = redis.hget(consulta, "resultado")
     if ultimo:
         ultimo = ultimo.decode("utf-8")
@@ -67,12 +81,29 @@ def ultimoResultado(consulta):
 
 
 def comparaResultados(consulta1, consulta2):
+    """
+    Compara e retorna o resultado da diferença entre duas consultas.
+
+    :param consulta1: primeiro resultado da consulta a ser comparado
+    :param consulta2: segundo resultado da consulta a ser comparado
+    
+    :return: diferença entre as consultas
+    """
+
+
     # utilizando o jsondiff
     return diff(consulta1, consulta2, load=True, dump=True)
 
 
 @app.route("/")
 def index():
+    """
+    Respondendo na rota padrão "/", retorna em qual host está sendo executado o serviço.
+
+    :param consulta: nome da exchange
+    :param publicacao: conteúdo da publicação
+    """
+    
     return "script_consulta running on {}\n".format(hostname)
 
 
