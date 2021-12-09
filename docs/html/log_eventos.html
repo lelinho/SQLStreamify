@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>log_eventos module &mdash; SQLStreamify  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> SQLStreamify
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">SQLStreamify</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SQLStreamify</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>log_eventos module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/log_eventos.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="module-log_eventos">
+<span id="log-eventos-module"></span><h1>log_eventos module<a class="headerlink" href="#module-log_eventos" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="log_eventos.eventos">
+<code class="descclassname">log_eventos.</code><code class="descname">eventos</code><span class="sig-paren">(</span><em>query</em>, <em>server_id</em><span class="sig-paren">)</span><a class="headerlink" href="#log_eventos.eventos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Respondendo na rota “/nome_da_consulta/server_id_log_binario”. É através desta rota que são verificadas as alterações nos dados que correspondam com a consulta.
+Primeiramente de acordo com a estrutura do SQLStreamify a requisição é feita ao loadbalancer de eventos que repassa a requisição à instância livre  através de um balancemaneto round robin.</p>
+<p>Sempre que uma alteração for detectada será feita uma requisição ao loadbalancer de consultas, para a realização da consulta, obtenção da diferença e publicação no canal de comunicação.</p>
+<p>:param &lt;string:query&gt; nome da consulta
+:param &lt;int:server_id&gt; identificador do servidor de log binário</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="log_eventos.healthy">
+<code class="descclassname">log_eventos.</code><code class="descname">healthy</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#log_eventos.healthy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="log_eventos.identificaTabelas">
+<code class="descclassname">log_eventos.</code><code class="descname">identificaTabelas</code><span class="sig-paren">(</span><em>query</em><span class="sig-paren">)</span><a class="headerlink" href="#log_eventos.identificaTabelas" title="Permalink to this definition">¶</a></dt>
+<dd><p>Função que busca o SQL gravado no arquivo de configuração pela consulta passada como parâmetro. Realiza um parse no SQL em busca das tabelas afetadas pela consulta e retorna uma lista com as tabelas.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>consulta</strong> – nome da consulta</td>
+</tr>
+</tbody>
+</table>
+<p>:return lista com as tabelas afetadas pela consulta</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="log_eventos.identificaWhere">
+<code class="descclassname">log_eventos.</code><code class="descname">identificaWhere</code><span class="sig-paren">(</span><em>query</em><span class="sig-paren">)</span><a class="headerlink" href="#log_eventos.identificaWhere" title="Permalink to this definition">¶</a></dt>
+<dd><p>Função que busca o SQL gravado no arquivo de configuração pela consulta passada como parâmetro. Realiza um parse no SQL em busca da cláusula WHERE e retorna.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>consulta</strong> – nome da consulta</td>
+</tr>
+</tbody>
+</table>
+<p>:return cláusula WHERE do SQL cadastrado</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="log_eventos.index">
+<code class="descclassname">log_eventos.</code><code class="descname">index</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#log_eventos.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Respondendo na rota padrão “/”, retorna por HTTP a mensagem em qual host está sendo executado o serviço.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="log_eventos.verificaRequisitos">
+<code class="descclassname">log_eventos.</code><code class="descname">verificaRequisitos</code><span class="sig-paren">(</span><em>where</em>, <em>linha_binlog</em>, <em>query</em><span class="sig-paren">)</span><a class="headerlink" href="#log_eventos.verificaRequisitos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Função recebe o conteúdo da cláusula WHERE, conteúdo da linha do log binário que identificou alteração nos dados e o nome da consulta. Verifica e realiza a chamada da função de consulta aos dados através da requisição ao load balancer de consultas.
+Função que busca o SQL gravado no arquivo de configuração pela consulta passada como parâmetro. Realiza um parse no SQL em busca das tabelas afetadas pela consulta e retorna uma lista com as tabelas.</p>
+<p>Essa função além da verificação de dados nas tabelas afetadas por alterações, prevê identificar se o dado coincide com clausulas de igualdades encontradas no SQL cadastrado. Caso não se verifiquem igualdade, solicita a verificação através de consulta, sempre que forem alterados dados nessas tabelas. Caso verificadas igualdades, realiza a checagem apenas quando os dados forem alterados que coincidam com a igualdade.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>where</strong> – cláusula where do SQL</li>
+<li><strong>linha_binlog</strong> – conteúdo da linha do log binário que identificou alteração nos dados</li>
+<li><strong>query</strong> – nome da consulta</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Aurélio Carlos.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

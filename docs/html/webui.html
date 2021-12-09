@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>webui module &mdash; SQLStreamify  documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> SQLStreamify
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">SQLStreamify</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SQLStreamify</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>webui module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/webui.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="module-webui">
+<span id="webui-module"></span><h1>webui module<a class="headerlink" href="#module-webui" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="webui.buscaQueries">
+<code class="descclassname">webui.</code><code class="descname">buscaQueries</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#webui.buscaQueries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Função que cria um set com as consultas registradas no arquivo de configuração.</p>
+<p>:return set com as consultas cadastradas</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="webui.detail">
+<code class="descclassname">webui.</code><code class="descname">detail</code><span class="sig-paren">(</span><em>consulta</em><span class="sig-paren">)</span><a class="headerlink" href="#webui.detail" title="Permalink to this definition">¶</a></dt>
+<dd><p>Respondendo na rota /&lt;string:consulta&gt; essa requisição HTTP retorna a página com detalhes da consulta.</p>
+<p>:param &lt;string:consulta&gt; nome da consulta</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="webui.index">
+<code class="descclassname">webui.</code><code class="descname">index</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#webui.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Respondendo na rota padrão “/”. Essa requisição HTTP é a página inicial do Dashboard de gerenciamento do SQLStreamify.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="webui.retorna_stat_containerConsulta">
+<code class="descclassname">webui.</code><code class="descname">retorna_stat_containerConsulta</code><span class="sig-paren">(</span><em>consulta</em><span class="sig-paren">)</span><a class="headerlink" href="#webui.retorna_stat_containerConsulta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Respondendo na rota /containerConsulta/&lt;string:consulta&gt; essa requisição retorna o contêiner de consulta no qual a busca está sendo executada.
+Isso por conta do balanceamento dos microsserviços, é interessante checar os contêineres nos quais estão sendo executados.</p>
+<p>:param &lt;string:consulta&gt; nome da consulta</p>
+<p>:return o contêiner de consulta no qual a busca está sendo executada</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="webui.retorna_stat_containerEvento">
+<code class="descclassname">webui.</code><code class="descname">retorna_stat_containerEvento</code><span class="sig-paren">(</span><em>consulta</em><span class="sig-paren">)</span><a class="headerlink" href="#webui.retorna_stat_containerEvento" title="Permalink to this definition">¶</a></dt>
+<dd><p>Respondendo na rota /containerEvento/&lt;string:consulta&gt; essa requisição retorna o contêiner de eventos no qual a busca está sendo executada.
+Isso por conta do balanceamento dos microsserviços, é interessante checar os contêineres nos quais estão sendo executados.</p>
+<p>:param &lt;string:consulta&gt; nome da consulta</p>
+<p>:return o contêiner de eventos no qual a busca está sendo executada</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="webui.stats">
+<code class="descclassname">webui.</code><code class="descname">stats</code><span class="sig-paren">(</span><em>consulta</em><span class="sig-paren">)</span><a class="headerlink" href="#webui.stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Respondendo na rota /count/&lt;string:consulta&gt; essa requisição retorna o contador da consulta em JSON.
+:param &lt;string:consulta&gt; nome da consulta</p>
+<p>:return contador em formato JSON</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="webui.stats_epm">
+<code class="descclassname">webui.</code><code class="descname">stats_epm</code><span class="sig-paren">(</span><em>consulta</em><span class="sig-paren">)</span><a class="headerlink" href="#webui.stats_epm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Respondendo na rota /epm/&lt;string:consulta&gt; essa requisição retorna a performance da consulta em eventos por minutos. Interessante para verificação da ocorrência de eventos e consequente execução da busca por alterações nas consultas cadastradas.</p>
+<p>:param &lt;string:consulta&gt; nome da consulta</p>
+<p>:return epm da consulta passada por parâmetro (Eventos por minuto)</p>
+</dd></dl>
+
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Aurélio Carlos.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
